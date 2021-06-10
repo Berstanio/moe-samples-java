@@ -80,7 +80,8 @@ public class AppViewController extends UIViewController {
     @Override
     public void viewDidLoad() {
         super.viewDidLoad();
-
+        String s = null;
+        s.charAt(0);
         myCalculatorAdapter = new CalculatorAdapter();
 
         calcNum = getDisplayLabel();
