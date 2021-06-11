@@ -6,12 +6,19 @@ buildscript {
     // Add central and local Maven repos
     repositories {
         jcenter()
+        maven {
+            url 'https://oss.sonatype.org/content/repositories/snapshots/'
+        }
         mavenLocal()
     }
     dependencies {
-        // MOE plugin
-        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '1.4.+'
+        // Multi-OS Engine plugin
+        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '2.0.0-SNAPSHOT'
     }
+    configurations.all {
+        resolutionStrategy.cacheChangingModulesFor 1, 'seconds'
+    }
+
 }
 
 /*******************/

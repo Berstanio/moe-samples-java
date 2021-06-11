@@ -29,9 +29,9 @@ import apple.audiotoolbox.enums.Enums;
 import apple.audiotoolbox.opaque.AudioFileID;
 import apple.audiotoolbox.opaque.AudioQueueRef;
 import apple.audiotoolbox.struct.AudioQueueBuffer;
-import apple.coreaudio.struct.AudioChannelLayout;
-import apple.coreaudio.struct.AudioStreamBasicDescription;
-import apple.coreaudio.struct.AudioStreamPacketDescription;
+import apple.coreaudiotypes.struct.AudioChannelLayout;
+import apple.coreaudiotypes.struct.AudioStreamBasicDescription;
+import apple.coreaudiotypes.struct.AudioStreamPacketDescription;
 import apple.corefoundation.enums.CFStringBuiltInEncodings;
 import apple.corefoundation.enums.CFURLPathStyle;
 import apple.corefoundation.opaque.CFStringRef;
@@ -40,6 +40,7 @@ import apple.foundation.NSNotificationCenter;
 
 import org.moe.natj.c.CRuntime;
 import org.moe.natj.general.ann.Keep;
+import org.moe.natj.general.ann.RegisterOnStartup;
 import org.moe.natj.general.ptr.BytePtr;
 import org.moe.natj.general.ptr.IntPtr;
 import org.moe.natj.general.ptr.Ptr;
@@ -48,6 +49,7 @@ import org.moe.natj.general.ptr.impl.PtrFactory;
 import org.moe.natj.general.ptr.impl.PtrUtils;
 
 @Keep
+@RegisterOnStartup
 public class AQPlayer implements Function_AudioQueueNewOutput, Function_AudioQueueAddPropertyListener {
 
 	private static final byte FALSE = 0;
@@ -71,7 +73,9 @@ public class AQPlayer implements Function_AudioQueueNewOutput, Function_AudioQue
 
 	@SuppressWarnings("unchecked")
 	public AQPlayer() {
+		System.out.println("Log 311");
 		mBuffers = (Ptr<Ptr<AudioQueueBuffer>>) PtrFactory.newPointerPtr(AudioQueueBuffer.class, 2, kNumberBuffers, true, false);
+		System.out.println("Log 312");
 	}
 
 	public void dispose() {
@@ -321,6 +325,7 @@ public class AQPlayer implements Function_AudioQueueNewOutput, Function_AudioQue
 
 	@Override
 	public void call_AudioQueueAddPropertyListener(VoidPtr inUserData, AudioQueueRef inAQ, int inID) {
+		System.out.println("Log -10");
 		IntPtr size = PtrFactory.newIntReference(4);
 		IntPtr isRunningRef = PtrFactory.newIntReference(mIsRunning);
 
@@ -329,10 +334,12 @@ public class AQPlayer implements Function_AudioQueueNewOutput, Function_AudioQue
 
 		if ((result == noErr) && (mIsRunning == 0))
 			NSNotificationCenter.defaultCenter().postNotificationNameObject("playbackQueueStopped", null);
+		System.out.println("Log -11");
 	}
 
 	@Override
 	public void call_AudioQueueNewOutput(VoidPtr inUserData, AudioQueueRef inAQ, AudioQueueBuffer inCompleteAQBuffer) {
+		System.out.println("Log -12");
 		if (mIsDone)
 			return;
 
@@ -359,5 +366,6 @@ public class AQPlayer implements Function_AudioQueueNewOutput, Function_AudioQue
 				AudioQueueStop(mQueue, FALSE);
 			}
 		}
+		System.out.println("Log -13");
 	}
 }

@@ -1,5 +1,8 @@
 package com.migeran.speakhere;
 
+import org.moe.natj.general.ann.RegisterOnStartup;
+
+@RegisterOnStartup
 public class CAXException extends Exception {
 
 	/**

@@ -1,0 +1,58 @@
+[
+  {
+    "name" : "apple.coregraphics.opaque.CGContextRef",
+    "allDeclaredClasses" : true
+  },
+  {
+    "name" : "apple.coregraphics.opaque.CGContextRef$Impl",
+    "allDeclaredConstructors" : true
+  },
+  {
+    "name" : "apple.coregraphics.opaque.CGColorSpaceRef",
+    "allDeclaredClasses" : true
+  },
+  {
+    "name" : "apple.coregraphics.opaque.CGColorSpaceRef$Impl",
+    "allDeclaredConstructors" : true
+  },
+  {
+    "name" : "apple.corefoundation.opaque.CFAllocatorRef",
+    "allDeclaredClasses" : true
+  },
+  {
+    "name" : "apple.corefoundation.opaque.CFAllocatorRef$Impl",
+    "allDeclaredConstructors" : true
+  },
+  {
+    "name" : "apple.corefoundation.opaque.CFStringRef",
+    "allDeclaredClasses" : true
+  },
+  {
+    "name" : "apple.corefoundation.opaque.CFStringRef$Impl",
+    "allDeclaredConstructors" : true
+  },
+  {
+    "name" : "apple.audiotoolbox.opaque.AudioQueueRef",
+    "allDeclaredClasses" : true
+  },
+  {
+    "name" : "apple.audiotoolbox.opaque.AudioQueueRef$Impl",
+    "allDeclaredConstructors" : true
+  },
+  {
+    "name" : "apple.audiotoolbox.opaque.AudioFileID",
+    "allDeclaredClasses" : true
+  },
+  {
+    "name" : "apple.audiotoolbox.opaque.AudioFileID$Impl",
+    "allDeclaredConstructors" : true
+  },
+  {
+    "name" : "apple.corefoundation.opaque.CFURLRef",
+    "allDeclaredClasses" : true
+  },
+  {
+    "name" : "apple.corefoundation.opaque.CFURLRef$Impl",
+    "allDeclaredConstructors" : true
+  }
+]

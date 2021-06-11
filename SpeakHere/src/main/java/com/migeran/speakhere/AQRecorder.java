@@ -1,5 +1,34 @@
 package com.migeran.speakhere;
 
+import org.moe.natj.c.CRuntime;
+import org.moe.natj.general.ann.Keep;
+import org.moe.natj.general.ann.ReferenceInfo;
+import org.moe.natj.general.ann.RegisterOnStartup;
+import org.moe.natj.general.ptr.BytePtr;
+import org.moe.natj.general.ptr.ConstPtr;
+import org.moe.natj.general.ptr.IntPtr;
+import org.moe.natj.general.ptr.Ptr;
+import org.moe.natj.general.ptr.VoidPtr;
+import org.moe.natj.general.ptr.impl.PtrFactory;
+import org.moe.natj.general.ptr.impl.PtrUtils;
+
+import java.io.File;
+
+import apple.audiotoolbox.c.AudioToolbox.Function_AudioQueueNewInput;
+import apple.audiotoolbox.enums.AudioFileFlags;
+import apple.audiotoolbox.enums.Enums;
+import apple.audiotoolbox.opaque.AudioFileID;
+import apple.audiotoolbox.opaque.AudioQueueRef;
+import apple.audiotoolbox.struct.AudioQueueBuffer;
+import apple.avfoundation.AVAudioSession;
+import apple.coreaudiotypes.struct.AudioStreamPacketDescription;
+import apple.coreaudiotypes.struct.AudioTimeStamp;
+import apple.coreaudiotypes.struct.AudioStreamBasicDescription;
+import apple.corefoundation.enums.CFStringBuiltInEncodings;
+import apple.corefoundation.opaque.CFStringRef;
+import apple.corefoundation.opaque.CFURLRef;
+import apple.foundation.c.Foundation;
+
 import static apple.audiotoolbox.c.AudioToolbox.AudioFileClose;
 import static apple.audiotoolbox.c.AudioToolbox.AudioFileCreateWithURL;
 import static apple.audiotoolbox.c.AudioToolbox.AudioFileGetPropertyInfo;
@@ -17,35 +46,9 @@ import static apple.corefoundation.c.CoreFoundation.CFRelease;
 import static apple.corefoundation.c.CoreFoundation.CFStringCreateWithCString;
 import static apple.corefoundation.c.CoreFoundation.CFURLCreateWithString;
 import static apple.corefoundation.c.CoreFoundation.kCFAllocatorDefault;
-import apple.audiotoolbox.c.AudioToolbox.Function_AudioQueueNewInput;
-import apple.audiotoolbox.enums.AudioFileFlags;
-import apple.audiotoolbox.enums.Enums;
-import apple.audiotoolbox.opaque.AudioFileID;
-import apple.audiotoolbox.opaque.AudioQueueRef;
-import apple.audiotoolbox.struct.AudioQueueBuffer;
-import apple.avfoundation.AVAudioSession;
-import apple.coreaudio.struct.AudioStreamBasicDescription;
-import apple.coreaudio.struct.AudioStreamPacketDescription;
-import apple.coreaudio.struct.AudioTimeStamp;
-import apple.corefoundation.enums.CFStringBuiltInEncodings;
-import apple.corefoundation.opaque.CFStringRef;
-import apple.corefoundation.opaque.CFURLRef;
-import apple.foundation.c.Foundation;
-
-import java.io.File;
-
-import org.moe.natj.c.CRuntime;
-import org.moe.natj.general.ann.Keep;
-import org.moe.natj.general.ann.ReferenceInfo;
-import org.moe.natj.general.ptr.BytePtr;
-import org.moe.natj.general.ptr.ConstPtr;
-import org.moe.natj.general.ptr.IntPtr;
-import org.moe.natj.general.ptr.Ptr;
-import org.moe.natj.general.ptr.VoidPtr;
-import org.moe.natj.general.ptr.impl.PtrFactory;
-import org.moe.natj.general.ptr.impl.PtrUtils;
 
 @Keep
+@RegisterOnStartup
 public class AQRecorder implements Function_AudioQueueNewInput {
 
 	private static final byte FALSE = 0;
@@ -206,9 +209,9 @@ public class AQRecorder implements Function_AudioQueueNewInput {
 		mRecordFormat.setMSampleRate(preferredSampleRate);
 		mRecordFormat.setMChannelsPerFrame((int)session.inputNumberOfChannels());
 		mRecordFormat.setMFormatID(inFormatID);
-		if (inFormatID == apple.coreaudio.enums.Enums.kAudioFormatLinearPCM) {
+		if (inFormatID == apple.coreaudiotypes.enums.Enums.kAudioFormatLinearPCM) {
 			// if we want pcm, default to signed 16-bit little-endian
-			mRecordFormat.setMFormatFlags(apple.coreaudio.enums.Enums.kLinearPCMFormatFlagIsSignedInteger | apple.coreaudio.enums.Enums.kLinearPCMFormatFlagIsPacked);
+			mRecordFormat.setMFormatFlags(apple.coreaudiotypes.enums.Enums.kLinearPCMFormatFlagIsSignedInteger | apple.coreaudiotypes.enums.Enums.kLinearPCMFormatFlagIsPacked);
 			mRecordFormat.setMBitsPerChannel(16);
 			mRecordFormat.setMBytesPerFrame((mRecordFormat.mBitsPerChannel() / 8) * mRecordFormat.mChannelsPerFrame());
 			mRecordFormat.setMFramesPerPacket(1);
@@ -221,13 +224,27 @@ public class AQRecorder implements Function_AudioQueueNewInput {
 			mFileName = CFStringCreateWithCString(kCFAllocatorDefault(), inRecordFile, CFStringBuiltInEncodings.UTF8);
 
 			// specify the recording format
-			SetupAudioFormat(apple.coreaudio.enums.Enums.kAudioFormatLinearPCM);
+			SetupAudioFormat(apple.coreaudiotypes.enums.Enums.kAudioFormatLinearPCM);
 
 			// create the queue
+			/*java.lang.RuntimeException: Unable to construct pointer
+	at org.moe.natj.general.ptr.impl.IndirectPtrImpl.get(IndirectPtrImpl.java:144)
+	at org.moe.natj.general.ptr.impl.IndirectPtrImpl.get(IndirectPtrImpl.java:36)
+	at org.moe.natj.general.ptr.impl.AbstractTypedPtr.get(AbstractTypedPtr.java:97)
+	at com.migeran.speakhere.AQRecorder.StartRecord(AQRecorder.java:233)
+	at com.migeran.speakhere.ui.SpeakHereViewController.record(SpeakHereViewController.java:269)
+	at com.oracle.svm.jni.JNIJavaCallWrappers.jniInvoke_VARARGS:Lcom_migeran_speakhere_ui_SpeakHereViewController_2_0002erecord_00028Lapple_uikit_UIBarButtonItem_2_00029V(JNIJavaCallWrappers.java:0)
+	at apple.uikit.c.UIKit.UIApplicationMain(UIKit.java)
+	at com.migeran.speakhere.Main.main(Main.java:19)
+	at java.lang.reflect.Method.invoke(Method.java:566)
+	at org.moe.MOE.main(MOE.java:55)
+Caused by: java.lang.RuntimeException: No suitable indirect ptr impl was found
+	at org.moe.natj.general.ptr.impl.IndirectPtrImpl.get(IndirectPtrImpl.java:137)
+	... 9 more*/
 			Ptr<AudioQueueRef> queueRef = PtrFactory.newOpaquePtrReference(AudioQueueRef.class);
 			XThrowIfError(AudioQueueNewInput(mRecordFormat, this, null /* userData */,
 					null /* run loop */, null /* run loop mode */, 0 /* flags */, queueRef), "AudioQueueNewInput failed");
-			mQueue = queueRef.get();
+			mQueue = queueRef.get();//Das hier ist 233
 
 			// get the record format back from the queue's audio converter --
 			// the file may require a more specific stream description than was
@@ -270,7 +287,7 @@ public class AQRecorder implements Function_AudioQueueNewInput {
 		} catch (CAXException e) {
 			System.err.println("Error: " + e.getMessage() + " (" + e.getError() + ")");
 		} catch (Exception e) {
-			System.err.println("An unknown error occurred");
+			e.printStackTrace();
 		}
 
 	}

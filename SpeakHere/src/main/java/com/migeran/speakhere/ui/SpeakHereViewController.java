@@ -4,7 +4,7 @@ import apple.avfoundation.AVAudioSession;
 import apple.avfoundation.c.AVFoundation;
 import apple.avfoundation.enums.AVAudioSessionRouteChangeReason;
 import apple.avfoundation.protocol.AVAudioSessionDelegate;
-import apple.coreaudio.struct.AudioStreamBasicDescription;
+import apple.coreaudiotypes.struct.AudioStreamBasicDescription;
 import apple.foundation.NSBundle;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSNotification;
@@ -18,6 +18,7 @@ import apple.uikit.UIViewController;
 import apple.uikit.c.UIKit;
 import apple.uikit.enums.UIBarPosition;
 import apple.uikit.enums.UIStatusBarStyle;
+import apple.uikit.protocol.UIBarPositioning;
 import apple.uikit.protocol.UINavigationBarDelegate;
 
 import java.io.File;
@@ -110,6 +111,7 @@ public class SpeakHereViewController extends UIViewController implements AVAudio
 
 	@Generated
 	public void setBtn_play(UIBarButtonItem value) {
+		System.out.println("Log 2");
 		Object __old = btn_play();
 		if (value != null) {
 			org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -118,6 +120,7 @@ public class SpeakHereViewController extends UIViewController implements AVAudio
 		if (__old != null) {
 			org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
 		}
+		System.out.println("Log 3");
 	}
 
 	@Generated
@@ -227,6 +230,7 @@ public class SpeakHereViewController extends UIViewController implements AVAudio
 
 	@Selector("play:")
 	public void play(UIBarButtonItem sender) {
+		System.out.println("Log 211");
 		if (player.IsRunning()) {
 			if (playbackWasPaused) {
 				int result = player.StartQueue(true);
@@ -243,34 +247,44 @@ public class SpeakHereViewController extends UIViewController implements AVAudio
 				NSNotificationCenter.defaultCenter().postNotificationNameObject("playbackQueueResumed", this);
 			}
 		}
+		System.out.println("Log 212");
 	}
 
 	@Selector("record:")
 	public void record(UIBarButtonItem sender) throws CAXException {
-		if (recorder.IsRunning()) {
-			// If we are currently recording, stop and save the file.
-			stopRecord();
-		} else {
-			// If we're not recording, start.
-			btn_play().setEnabled(NO);
-
-			// Set the button's state to "stop"
-			btn_record().setTitle("Stop");
-
-			// Start the recorder
-			recorder.StartRecord("recordedFile.caf");
-
-			setFileDescriptionForFormat(recorder.DataFormat());
-
-			// Hook the level meter up to the Audio Queue for the recorder
-			lvlMeter_in().setAq(recorder.Queue());
+		System.out.println("Log 213");
+		try {
+			if (recorder.IsRunning()) {
+				// If we are currently recording, stop and save the file.
+				stopRecord();
+			} else {
+				// If we're not recording, start.
+				System.out.println("Log 2131");
+				btn_play().setEnabled(NO);
+				System.out.println("Log 2132");
+				// Set the button's state to "stop"
+				btn_record().setTitle("Stop");
+				System.out.println("Log 2133");
+				// Start the recorder
+				recorder.StartRecord("recordedFile.caf");
+				System.out.println("Log 2134");
+				setFileDescriptionForFormat(recorder.DataFormat());
+				System.out.println("Log 2135");
+				// Hook the level meter up to the Audio Queue for the recorder
+				lvlMeter_in().setAq(recorder.Queue());
+				System.out.println("Log 2136");
+			}
+		}catch (Throwable e){
+			System.out.println("Loolsa");
+			e.printStackTrace();
 		}
+		System.out.println("Log 214");
 	}
 
 	@Selector("awakeFromNib")
 	public void awakeFromNib() {
+		System.out.println("Log 215");
 		super.awakeFromNib();
-
 		NSNotificationCenter center = NSNotificationCenter.defaultCenter();
 
 		// Allocate our singleton instance for the recorder & player object
@@ -296,10 +310,12 @@ public class SpeakHereViewController extends UIViewController implements AVAudio
 		playbackWasPaused = NO;
 
 		registerForBackgroundNotifications();
+		System.out.println("Log 216");
 	}
 
 	@Selector("propListener:")
 	private void propListener(NSNotification notif) {
+		System.out.println("Log 216");
 		if (notif.name().equals(AVFoundation.AVAudioSessionRouteChangeNotification())) {
 			Object value = ((NSDictionary<Object, Object>)notif.userInfo()).objectForKey(AVFoundation.AVAudioSessionRouteChangeReasonKey());
 			int reason = ((NSNumber) value).intValue();
@@ -320,13 +336,14 @@ public class SpeakHereViewController extends UIViewController implements AVAudio
 				}
 			}
 		}
+		System.out.println("Log 217");
 	}
 
 	@Selector("viewDidLoad")
 	@Override
 	public void viewDidLoad() {
 		super.viewDidLoad();
-
+		System.out.println("Log 5");
 		AVAudioSession session = AVAudioSession.sharedInstance();
 		btn_record().setEnabled(session.isInputAvailable());
 
@@ -337,20 +354,32 @@ public class SpeakHereViewController extends UIViewController implements AVAudio
 		lvlMeter_in().setBorderColor(bgColor);
 
 		fileDescription().setText("");
+		System.out.println("Log 6");
+		/*Thread.currentThread().setUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
+			@Override
+			public void uncaughtException(Thread t, Throwable e) {
+				System.out.println(t.getName());
+				e.printStackTrace();
+			}
+		});*/
 	}
 
 	@Selector("playbackQueueStopped:")
 	public void playbackQueueStopped(NSNotification note) {
+		System.out.println("Log -1");
 		btn_play().setTitle("Play");
 		lvlMeter_in().setAq(null);
 		btn_record().setEnabled(YES);
+		System.out.println("Log -2");
 	}
 
 	@Selector("playbackQueueResumed:")
 	public void playbackQueueResumed(NSNotification note) {
+		System.out.println("Log -3");
 		btn_play().setTitle("Stop");
 		btn_record().setEnabled(NO);
 		lvlMeter_in().setAq(player.Queue());
+		System.out.println("Log -4");
 	}
 
 	private void registerForBackgroundNotifications() {
@@ -361,6 +390,7 @@ public class SpeakHereViewController extends UIViewController implements AVAudio
 
 	@Selector("resignActive")
 	public void resignActive() {
+		System.out.println("Log -5");
 		if (recorder.IsRunning()) {
 			try {
 				stopRecord();
@@ -372,15 +402,18 @@ public class SpeakHereViewController extends UIViewController implements AVAudio
 		if (player.IsRunning())
 			stopPlayQueue();
 		inBackground = true;
+		System.out.println("Log -6");
 	}
 
 	@Selector("enterForeground")
 	public void enterForeground() {
+		System.out.println("Log 218");
 		AVAudioSession session = AVAudioSession.sharedInstance();
 		if (!session.setActiveError(true, null)) {
 			System.out.println("AudioSessionSetActive (true) failed");
 		}
 		inBackground = false;
+		System.out.println("Log 219");
 	}
 
 	@NotImplemented
@@ -408,7 +441,7 @@ public class SpeakHereViewController extends UIViewController implements AVAudio
 	}
 
 	@Override
-	public long positionForBar(@Mapped(ObjCObjectMapper.class) Object bar) {
+	public long positionForBar(UIBarPositioning bar) {
 		return UIBarPosition.TopAttached;
 	}
 

@@ -25,7 +25,9 @@ import apple.uikit.c.UIKit;
 
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
+import org.moe.natj.general.ann.RegisterOnStartup;
 
+@RegisterOnStartup
 public class LevelMeter extends UIView {
 	private static final boolean YES = true;
 	private static final boolean NO = false;
@@ -66,6 +68,7 @@ public class LevelMeter extends UIView {
 	}
 
 	private void _performInit() {
+		System.out.println("Log 9");
 		_level = 0.f;
 		_numLights = 0;
 		_numColorThresholds = 3;
@@ -83,24 +86,30 @@ public class LevelMeter extends UIView {
 		_colorThresholds[2].maxValue = 1.f;
 		_colorThresholds[2].color = UIColor.alloc().initWithRedGreenBlueAlpha(1.f, 0.f, 0.f, 1.f);
 		_vertical = (frame().size().width() < frame().size().height()) ? YES : NO;
+		System.out.println("Log 10");
 	}
 
 	@Override
 	public LevelMeter initWithFrame(CGRect frame) {
+		System.out.println("Log 91");
 		super.initWithFrame(frame);
 		_performInit();
+		System.out.println("Log 92");
 		return this;
 	}
 
 	@Override
 	public LevelMeter initWithCoder(NSCoder aDecoder) {
+		System.out.println("Log 93");
 		super.initWithCoder(aDecoder);
 		_performInit();
+		System.out.println("Log 94");
 		return this;
 	}
 
 	@Override
 	public void drawRect(CGRect rect) {
+		System.out.println("Log 11");
 		CGColorSpaceRef cs = null;
 		CGContextRef cxt = null;
 		CGRect bds;
@@ -222,6 +231,7 @@ public class LevelMeter extends UIView {
 		}
 
 		CGColorSpaceRelease(cs);
+		System.out.println("Log 12");
 	}
 
 	public float level() {

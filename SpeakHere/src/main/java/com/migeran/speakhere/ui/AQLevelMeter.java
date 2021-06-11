@@ -6,7 +6,7 @@ import static apple.corefoundation.c.CoreFoundation.CFAbsoluteTimeGetCurrent;
 import apple.audiotoolbox.enums.Enums;
 import apple.audiotoolbox.opaque.AudioQueueRef;
 import apple.audiotoolbox.struct.AudioQueueLevelMeterState;
-import apple.coreaudio.struct.AudioStreamBasicDescription;
+import apple.coreaudiotypes.struct.AudioStreamBasicDescription;
 import apple.coregraphics.c.CoreGraphics;
 import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGRect;
@@ -98,6 +98,7 @@ public class AQLevelMeter extends UIView {
 	private double _peakFalloffLastFire;
 
 	private void _performInit() {
+		System.out.println("Log 7");
 		_refreshHz = 1.f / 30.f;
 		_showsPeaks = YES;
 		NSMutableArray channelNumbers = NSMutableArray.alloc().init();
@@ -112,21 +113,26 @@ public class AQLevelMeter extends UIView {
 		_bgColor = null;
 		_borderColor = null;
 		layoutSubLevelMeters();
+		System.out.println("Log 8");
 	}
 
 	@Override
 	@Selector("initWithFrame:")
 	public AQLevelMeter initWithFrame(CGRect frame) {
+		System.out.println("Log 111");
 		super.initWithFrame(frame);
 		_performInit();
+		System.out.println("Log 112");
 		return this;
 	}
 
 	@Override
 	@Selector("initWithCoder:")
 	public AQLevelMeter initWithCoder(NSCoder aDecoder) {
+		System.out.println("Log 113");
 		AQLevelMeter self = (AQLevelMeter) super.initWithCoder(aDecoder);
 		self._performInit();
+		System.out.println("Log 114");
 		return self;
 	}
 
@@ -144,18 +150,26 @@ public class AQLevelMeter extends UIView {
 
 	@Selector("setBackgroundColor:")
 	public void setBackgroundColor(UIColor bgColor) {
-		_bgColor = bgColor;
+		System.out.println("Log 115");
+		try {
 
-		if (_subLevelMeters == null) {
-			return;
-		}
-		for (int i = 0; i < _subLevelMeters.count(); i++) {
-			Object meter = _subLevelMeters.objectAtIndex(i);
-			((LevelMeter) meter).setBgColor(bgColor);
+			_bgColor = bgColor;
+
+			if (_subLevelMeters == null) {
+				return;
+			}
+			for (int i = 0; i < _subLevelMeters.count(); i++) {
+				Object meter = _subLevelMeters.objectAtIndex(i);
+				((LevelMeter) meter).setBgColor(bgColor);
+			}
+			System.out.println("Log 116");
+		}catch (Throwable e){
+			e.printStackTrace();
 		}
 	}
 
 	private void layoutSubLevelMeters() {
+		System.out.println("Log 117");
 		if (_subLevelMeters != null) {
 			for (int i = 0; i < _subLevelMeters.count(); i++) {
 				UIView thisMeter = (UIView) _subLevelMeters.objectAtIndex(i);
@@ -197,11 +211,13 @@ public class AQLevelMeter extends UIView {
 		}
 
 		_subLevelMeters = meters_build;
+		System.out.println("Log 118");
 	}
 
 	@Selector("_refresh")
 	private void _refresh() {
 		boolean success = NO;
+		System.out.println("Log 119");
 
 		// if we have no queue, but still have levels, gradually bring them down
 		if (_aq == null) {
@@ -280,6 +296,7 @@ public class AQLevelMeter extends UIView {
 			}
 			System.out.print("ERROR: metering failed\n");
 		}
+		System.out.println("Log 120");
 	}
 
 	public AudioQueueRef aq() {
@@ -287,6 +304,7 @@ public class AQLevelMeter extends UIView {
 	}
 
 	public void setAq(AudioQueueRef v) {
+		System.out.println("Log 121");
 		if ((_aq == null) && (v != null)) {
 			if (_updateTimer != null)
 				_updateTimer.invalidate();
@@ -335,6 +353,7 @@ public class AQLevelMeter extends UIView {
 				thisMeter.setNeedsDisplay();
 			}
 		}
+		System.out.println("Log 122");
 	}
 
 	public float refreshHz() {
