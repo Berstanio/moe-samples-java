@@ -4,7 +4,7 @@ buildscript {
         maven { url "https://oss.sonatype.org/content/repositories/releases/" }
     }
     dependencies {
-        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '2.0.0-SNAPSHOT'
+        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '1.9.0-SNAPSHOT'
     }
 }
 
@@ -51,15 +51,12 @@ dependencies {
 
     compile project(":common")
 
-    compile "io.github.berstanio:gdx-backend-moe-metalangle:$gdxVersion"
+    compile "io.github.berstanio:gdx-backend-moe-art-metalangle:$gdxVersion"
     natives "io.github.berstanio:gdx-platform:$gdxVersion:natives-ios-metalangle"
     natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-ios"
 }
 
 moe {
-    nativeImage {
-        options = ["--features=com.badlogic.gdx.backends.svm.ConfigCollectionFeatureBase"]
-    }
     xcode {
         project 'xcode/LibGDXMissileCommand.xcodeproj'
         mainTarget 'LibGDXMissileCommand'
