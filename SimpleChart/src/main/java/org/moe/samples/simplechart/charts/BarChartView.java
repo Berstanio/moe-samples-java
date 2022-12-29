@@ -72,10 +72,9 @@ public class BarChartView extends BarLineChartViewBase implements BarChartDataPr
     @Selector("alloc")
     public static native BarChartView alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native BarChartView allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("animateKeyframesWithDuration:delay:options:animations:completion:")
@@ -121,25 +120,21 @@ public class BarChartView extends BarLineChartViewBase implements BarChartDataPr
 
     @Generated
     @Selector("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearance();
+    public static native BarChartView appearance();
 
     @Generated
     @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
+    public BarChartView _appearance() {
         return appearance();
     }
 
     @Generated
     @Selector("appearanceForTraitCollection:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollection(UITraitCollection trait);
+    public static native BarChartView appearanceForTraitCollection(UITraitCollection trait);
 
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+    public BarChartView _appearanceForTraitCollection(UITraitCollection trait) {
         return appearanceForTraitCollection(trait);
     }
 
@@ -147,29 +142,25 @@ public class BarChartView extends BarLineChartViewBase implements BarChartDataPr
     @Variadic()
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+    public static native BarChartView appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+    public BarChartView _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+    public static native BarChartView appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+    public BarChartView _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
@@ -178,28 +169,24 @@ public class BarChartView extends BarLineChartViewBase implements BarChartDataPr
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(
+    public static native BarChartView appearanceWhenContainedIn(
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+    public BarChartView _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
             Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+    public static native BarChartView appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+    public BarChartView _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
@@ -232,7 +219,7 @@ public class BarChartView extends BarLineChartViewBase implements BarChartDataPr
     @Generated
     @Selector("centerOffsets")
     @ByValue
-    public native CGPoint centerOffsets();
+    public native apple.coregraphics.struct.CGPoint centerOffsets();
 
     @Generated
     @Selector("chartXMax")
@@ -307,7 +294,7 @@ public class BarChartView extends BarLineChartViewBase implements BarChartDataPr
     @Generated
     @Selector("getBarBoundsWithEntry:")
     @ByValue
-    public native CGRect getBarBoundsWithEntry(BarChartDataEntry e);
+    public native apple.coregraphics.struct.CGRect getBarBoundsWithEntry(BarChartDataEntry e);
 
     /**
      * returns:
@@ -315,11 +302,11 @@ public class BarChartView extends BarLineChartViewBase implements BarChartDataPr
      */
     @Generated
     @Selector("getHighlightByTouchPoint:")
-    public native ChartHighlight getHighlightByTouchPoint(@ByValue CGPoint pt);
+    public native ChartHighlight getHighlightByTouchPoint(@ByValue apple.coregraphics.struct.CGPoint pt);
 
     @Generated
     @Selector("getTransformerForAxis:")
-    public native ChartTransformer getTransformerForAxis(@NInt long forAxis);
+    public native ChartTransformer getTransformerForAxis(long forAxis);
 
     /**
      * Groups all BarDataSet objects this data object holds together by modifying the x-value of their entries.
@@ -362,8 +349,8 @@ public class BarChartView extends BarLineChartViewBase implements BarChartDataPr
      */
     @Generated
     @Selector("highlightValueWithX:dataSetIndex:stackIndex:")
-    public native void highlightValueWithXDataSetIndexStackIndex(double x, @NInt long dataSetIndex,
-            @NInt long stackIndex);
+    public native void highlightValueWithXDataSetIndexStackIndex(double x, long dataSetIndex,
+            long stackIndex);
 
     @Generated
     @Selector("inheritedAnimationDuration")
@@ -379,7 +366,7 @@ public class BarChartView extends BarLineChartViewBase implements BarChartDataPr
 
     @Generated
     @Selector("initWithFrame:")
-    public native BarChartView initWithFrame(@ByValue CGRect frame);
+    public native BarChartView initWithFrame(@ByValue apple.coregraphics.struct.CGRect frame);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -408,7 +395,7 @@ public class BarChartView extends BarLineChartViewBase implements BarChartDataPr
 
     @Generated
     @Selector("isInvertedWithAxis:")
-    public native boolean isInvertedWithAxis(@NInt long axis);
+    public native boolean isInvertedWithAxis(long axis);
 
     @Generated
     @Selector("isSubclassOfClass:")
@@ -428,12 +415,10 @@ public class BarChartView extends BarLineChartViewBase implements BarChartDataPr
 
     @Generated
     @Selector("maxHighlightDistance")
-    @NFloat
     public native double maxHighlightDistance();
 
     @Generated
     @Selector("maxVisibleCount")
-    @NInt
     public native long maxVisibleCount();
 
     @Generated
@@ -446,8 +431,7 @@ public class BarChartView extends BarLineChartViewBase implements BarChartDataPr
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native BarChartView new_objc();
 
     @Generated
     @Selector("performSystemAnimation:onViews:options:animations:completion:")

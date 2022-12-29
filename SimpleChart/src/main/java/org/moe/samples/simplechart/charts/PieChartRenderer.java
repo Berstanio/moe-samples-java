@@ -29,13 +29,16 @@ import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.samples.simplechart.charts.protocol.IPieChartDataSet;
+import org.moe.samples.simplechart.charts.protocol.ChartDataProvider;
+import org.moe.samples.simplechart.charts.protocol.ChartDataRenderer;
+import org.moe.samples.simplechart.charts.protocol.PieChartDataSetProtocol;
 
 @Generated
 @Library("Charts")
 @Runtime(ObjCRuntime.class)
 @ObjCClassName("_TtC6Charts16PieChartRenderer")
 @ObjCClassBinding
-public class PieChartRenderer extends ChartDataRendererBase {
+public class PieChartRenderer extends NSObject implements ChartDataRenderer {
     static {
         NatJ.register();
     }
@@ -54,10 +57,9 @@ public class PieChartRenderer extends ChartDataRendererBase {
     @Selector("alloc")
     public static native PieChartRenderer alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native PieChartRenderer allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -65,10 +67,9 @@ public class PieChartRenderer extends ChartDataRendererBase {
 
     @Generated
     @Selector("calculateMinimumRadiusForSpacedSliceWithCenter:radius:angle:arcStartPointX:arcStartPointY:startAngle:sweepAngle:")
-    @NFloat
     public native double calculateMinimumRadiusForSpacedSliceWithCenterRadiusAngleArcStartPointXArcStartPointYStartAngleSweepAngle(
-            @ByValue CGPoint center, @NFloat double radius, @NFloat double angle, @NFloat double arcStartPointX,
-            @NFloat double arcStartPointY, @NFloat double startAngle, @NFloat double sweepAngle);
+            @ByValue apple.coregraphics.struct.CGPoint center, double radius, double angle, double arcStartPointX,
+            double arcStartPointY, double startAngle, double sweepAngle);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -103,7 +104,7 @@ public class PieChartRenderer extends ChartDataRendererBase {
     @Generated
     @Selector("drawDataSetWithContext:dataSet:")
     public native void drawDataSetWithContextDataSet(CGContextRef context,
-            @Mapped(ObjCObjectMapper.class) IPieChartDataSet dataSet);
+            @Mapped(ObjCObjectMapper.class) PieChartDataSetProtocol dataSet);
 
     @Generated
     @Selector("drawDataWithContext:")
@@ -115,7 +116,7 @@ public class PieChartRenderer extends ChartDataRendererBase {
 
     @Generated
     @Selector("drawHighlightedWithContext:indices:")
-    public native void drawHighlightedWithContextIndices(CGContextRef context, NSArray<? extends ChartHighlight> indices);
+    public native void drawHighlightedWithContextIndices(CGContextRef context, NSArray<? extends ChartHighlight> highlights);
 
     @Generated
     @Selector("drawValuesWithContext:")
@@ -126,8 +127,7 @@ public class PieChartRenderer extends ChartDataRendererBase {
      */
     @Generated
     @Selector("getSliceSpaceWithDataSet:")
-    @NFloat
-    public native double getSliceSpaceWithDataSet(@Mapped(ObjCObjectMapper.class) IPieChartDataSet dataSet);
+    public native double getSliceSpaceWithDataSet(@Mapped(ObjCObjectMapper.class) PieChartDataSetProtocol dataSet);
 
     @Generated
     @Selector("hash")
@@ -143,18 +143,9 @@ public class PieChartRenderer extends ChartDataRendererBase {
     public native void initBuffers();
 
     @Generated
-    @Selector("initWithAnimator:viewPortHandler:")
-    public native PieChartRenderer initWithAnimatorViewPortHandler(ChartAnimator animator,
-            ChartViewPortHandler viewPortHandler);
-
-    @Generated
     @Selector("initWithChart:animator:viewPortHandler:")
     public native PieChartRenderer initWithChartAnimatorViewPortHandler(PieChartView chart, ChartAnimator animator,
             ChartViewPortHandler viewPortHandler);
-
-    @Generated
-    @Selector("initWithViewPortHandler:")
-    public native PieChartRenderer initWithViewPortHandler(ChartViewPortHandler viewPortHandler);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -180,8 +171,7 @@ public class PieChartRenderer extends ChartDataRendererBase {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native PieChartRenderer new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -219,4 +209,30 @@ public class PieChartRenderer extends ChartDataRendererBase {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("accessibleChartElements")
+    public native NSArray<? extends NSUIAccessibilityElement> accessibleChartElements();
+
+    @Generated
+    @Selector("animator")
+    public native ChartAnimator animator();
+
+    @Generated
+    @Selector("createAccessibleHeaderUsingChart:andData:withDefaultDescription:")
+    public native NSUIAccessibilityElement createAccessibleHeaderUsingChartAndDataWithDefaultDescription(
+            ChartViewBase chart, ChartData data, String defaultDescription);
+
+    @Generated
+    @Selector("isDrawingValuesAllowedWithDataProvider:")
+    public native boolean isDrawingValuesAllowedWithDataProvider(
+            @Mapped(ObjCObjectMapper.class) ChartDataProvider dataProvider);
+
+    @Generated
+    @Selector("setAccessibleChartElements:")
+    public native void setAccessibleChartElements(NSArray<? extends NSUIAccessibilityElement> value);
+
+    @Generated
+    @Selector("viewPortHandler")
+    public native ChartViewPortHandler viewPortHandler();
 }

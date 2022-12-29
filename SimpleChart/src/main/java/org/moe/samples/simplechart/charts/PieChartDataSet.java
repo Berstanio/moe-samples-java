@@ -32,13 +32,15 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.samples.simplechart.charts.protocol.IChartValueFormatter;
 import org.moe.samples.simplechart.charts.protocol.IPieChartDataSet;
+import org.moe.samples.simplechart.charts.protocol.ChartValueFormatter;
+import org.moe.samples.simplechart.charts.protocol.PieChartDataSetProtocol;
 
 @Generated
 @Library("Charts")
 @Runtime(ObjCRuntime.class)
 @ObjCClassName("_TtC6Charts15PieChartDataSet")
 @ObjCClassBinding
-public class PieChartDataSet extends ChartDataSet implements IPieChartDataSet {
+public class PieChartDataSet extends ChartDataSet implements PieChartDataSetProtocol {
     static {
         NatJ.register();
     }
@@ -69,10 +71,9 @@ public class PieChartDataSet extends ChartDataSet implements IPieChartDataSet {
     @Selector("alloc")
     public static native PieChartDataSet alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native PieChartDataSet allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyDisableSliceSpacing")
@@ -84,7 +85,6 @@ public class PieChartDataSet extends ChartDataSet implements IPieChartDataSet {
 
     @Generated
     @Selector("axisDependency")
-    @NInt
     public native long axisDependency();
 
     @Generated
@@ -119,7 +119,7 @@ public class PieChartDataSet extends ChartDataSet implements IPieChartDataSet {
 
     @Generated
     @Selector("colorAtIndex:")
-    public native UIColor colorAtIndex(@NInt long atIndex);
+    public native UIColor colorAtIndex(long atIndex);
 
     @Generated
     @Selector("colors")
@@ -157,12 +157,11 @@ public class PieChartDataSet extends ChartDataSet implements IPieChartDataSet {
 
     @Generated
     @Selector("entryCount")
-    @NInt
     public native long entryCount();
 
     @Generated
     @Selector("entryForIndex:")
-    public native ChartDataEntry entryForIndex(@NInt long i);
+    public native ChartDataEntry entryForIndex(long i);
 
     @Generated
     @Selector("entryForXValue:closestToY:")
@@ -170,17 +169,15 @@ public class PieChartDataSet extends ChartDataSet implements IPieChartDataSet {
 
     @Generated
     @Selector("entryForXValue:closestToY:rounding:")
-    public native ChartDataEntry entryForXValueClosestToYRounding(double xValue, double yValue, @NInt long rounding);
+    public native ChartDataEntry entryForXValueClosestToYRounding(double xValue, double yValue, long rounding);
 
     @Generated
     @Selector("entryIndexWithEntry:")
-    @NInt
     public native long entryIndexWithEntry(ChartDataEntry e);
 
     @Generated
     @Selector("entryIndexWithX:closestToY:rounding:")
-    @NInt
-    public native long entryIndexWithXClosestToYRounding(double xValue, double yValue, @NInt long rounding);
+    public native long entryIndexWithXClosestToYRounding(double xValue, double yValue, long rounding);
 
     @Generated
     @Selector("entryLabelColor")
@@ -192,7 +189,6 @@ public class PieChartDataSet extends ChartDataSet implements IPieChartDataSet {
 
     @Generated
     @Selector("form")
-    @NInt
     public native long form();
 
     @Generated
@@ -201,17 +197,14 @@ public class PieChartDataSet extends ChartDataSet implements IPieChartDataSet {
 
     @Generated
     @Selector("formLineDashPhase")
-    @NFloat
     public native double formLineDashPhase();
 
     @Generated
     @Selector("formLineWidth")
-    @NFloat
     public native double formLineWidth();
 
     @Generated
     @Selector("formSize")
-    @NFloat
     public native double formSize();
 
     @Generated
@@ -230,7 +223,7 @@ public class PieChartDataSet extends ChartDataSet implements IPieChartDataSet {
     @Generated
     @Selector("iconsOffset")
     @ByValue
-    public native CGPoint iconsOffset();
+    public native apple.coregraphics.struct.CGPoint iconsOffset();
 
     @Generated
     @Selector("init")
@@ -290,14 +283,9 @@ public class PieChartDataSet extends ChartDataSet implements IPieChartDataSet {
     public native String label();
 
     @Generated
-    @Selector("needsFormatter")
-    public native boolean needsFormatter();
-
-    @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native PieChartDataSet new_objc();
 
     @Generated
     @Selector("notifyDataSetChanged")
@@ -309,7 +297,7 @@ public class PieChartDataSet extends ChartDataSet implements IPieChartDataSet {
 
     @Generated
     @Selector("removeEntryWithIndex:")
-    public native boolean removeEntryWithIndex(@NInt long index);
+    public native boolean removeEntryWithIndex(long index);
 
     @Generated
     @Selector("removeEntryWithX:")
@@ -337,7 +325,6 @@ public class PieChartDataSet extends ChartDataSet implements IPieChartDataSet {
 
     @Generated
     @Selector("selectionShift")
-    @NFloat
     public native double selectionShift();
 
     @Generated
@@ -374,15 +361,15 @@ public class PieChartDataSet extends ChartDataSet implements IPieChartDataSet {
 
     @Generated
     @Selector("setIconsOffset:")
-    public native void setIconsOffset(@ByValue CGPoint value);
+    public native void setIconsOffset(@ByValue apple.coregraphics.struct.CGPoint value);
 
     @Generated
     @Selector("setSelectionShift:")
-    public native void setSelectionShift(@NFloat double value);
+    public native void setSelectionShift(double value);
 
     @Generated
     @Selector("setSliceSpace:")
-    public native void setSliceSpace(@NFloat double value);
+    public native void setSliceSpace(double value);
 
     @Generated
     @Selector("setUseValueColorForLine:")
@@ -394,7 +381,7 @@ public class PieChartDataSet extends ChartDataSet implements IPieChartDataSet {
 
     @Generated
     @Selector("setValueFormatter:")
-    public native void setValueFormatter(@Mapped(ObjCObjectMapper.class) IChartValueFormatter value);
+    public native void setValueFormatter(@Mapped(ObjCObjectMapper.class) ChartValueFormatter value);
 
     @Generated
     @Selector("setValueLineColor:")
@@ -402,15 +389,15 @@ public class PieChartDataSet extends ChartDataSet implements IPieChartDataSet {
 
     @Generated
     @Selector("setValueLinePart1Length:")
-    public native void setValueLinePart1Length(@NFloat double value);
+    public native void setValueLinePart1Length(double value);
 
     @Generated
     @Selector("setValueLinePart1OffsetPercentage:")
-    public native void setValueLinePart1OffsetPercentage(@NFloat double value);
+    public native void setValueLinePart1OffsetPercentage(double value);
 
     @Generated
     @Selector("setValueLinePart2Length:")
-    public native void setValueLinePart2Length(@NFloat double value);
+    public native void setValueLinePart2Length(double value);
 
     @Generated
     @Selector("setValueLineVariableLength:")
@@ -418,7 +405,7 @@ public class PieChartDataSet extends ChartDataSet implements IPieChartDataSet {
 
     @Generated
     @Selector("setValueLineWidth:")
-    public native void setValueLineWidth(@NFloat double value);
+    public native void setValueLineWidth(double value);
 
     @Generated
     @Selector("setValueTextColor:")
@@ -434,15 +421,14 @@ public class PieChartDataSet extends ChartDataSet implements IPieChartDataSet {
 
     @Generated
     @Selector("setXValuePosition:")
-    public native void setXValuePosition(@NInt long value);
+    public native void setXValuePosition(long value);
 
     @Generated
     @Selector("setYValuePosition:")
-    public native void setYValuePosition(@NInt long value);
+    public native void setYValuePosition(long value);
 
     @Generated
     @Selector("sliceSpace")
-    @NFloat
     public native double sliceSpace();
 
     @Generated
@@ -464,7 +450,7 @@ public class PieChartDataSet extends ChartDataSet implements IPieChartDataSet {
     @Generated
     @Selector("valueFormatter")
     @MappedReturn(ObjCObjectMapper.class)
-    public native IChartValueFormatter valueFormatter();
+    public native ChartValueFormatter valueFormatter();
 
     @Generated
     @Selector("valueLineColor")
@@ -472,17 +458,14 @@ public class PieChartDataSet extends ChartDataSet implements IPieChartDataSet {
 
     @Generated
     @Selector("valueLinePart1Length")
-    @NFloat
     public native double valueLinePart1Length();
 
     @Generated
     @Selector("valueLinePart1OffsetPercentage")
-    @NFloat
     public native double valueLinePart1OffsetPercentage();
 
     @Generated
     @Selector("valueLinePart2Length")
-    @NFloat
     public native double valueLinePart2Length();
 
     @Generated
@@ -491,7 +474,6 @@ public class PieChartDataSet extends ChartDataSet implements IPieChartDataSet {
 
     @Generated
     @Selector("valueLineWidth")
-    @NFloat
     public native double valueLineWidth();
 
     @Generated
@@ -500,7 +482,7 @@ public class PieChartDataSet extends ChartDataSet implements IPieChartDataSet {
 
     @Generated
     @Selector("valueTextColorAt:")
-    public native UIColor valueTextColorAt(@NInt long index);
+    public native UIColor valueTextColorAt(long index);
 
     @Generated
     @Selector("version")
@@ -521,7 +503,6 @@ public class PieChartDataSet extends ChartDataSet implements IPieChartDataSet {
 
     @Generated
     @Selector("xValuePosition")
-    @NInt
     public native long xValuePosition();
 
     @Generated
@@ -534,6 +515,13 @@ public class PieChartDataSet extends ChartDataSet implements IPieChartDataSet {
 
     @Generated
     @Selector("yValuePosition")
-    @NInt
     public native long yValuePosition();
+
+    @Generated
+    @Selector("setValueLabelAngle:")
+    public native void setValueLabelAngle(double value);
+
+    @Generated
+    @Selector("valueLabelAngle")
+    public native double valueLabelAngle();
 }

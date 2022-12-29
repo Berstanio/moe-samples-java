@@ -23,12 +23,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.coregraphics.opaque.CGContextRef;
+import org.moe.samples.simplechart.charts.protocol.ChartDataProvider;
+import org.moe.samples.simplechart.charts.protocol.ChartDataRenderer;
 
 @Generated
 @Library("Charts")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class BarLineScatterCandleBubbleChartRenderer extends ChartDataRendererBase {
+public class BarLineScatterCandleBubbleChartRenderer extends NSObject implements ChartDataRenderer {
     static {
         NatJ.register();
     }
@@ -47,10 +50,9 @@ public class BarLineScatterCandleBubbleChartRenderer extends ChartDataRendererBa
     @Selector("alloc")
     public static native BarLineScatterCandleBubbleChartRenderer alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native BarLineScatterCandleBubbleChartRenderer allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -96,15 +98,6 @@ public class BarLineScatterCandleBubbleChartRenderer extends ChartDataRendererBa
     public native void initBuffers();
 
     @Generated
-    @Selector("initWithAnimator:viewPortHandler:")
-    public native BarLineScatterCandleBubbleChartRenderer initWithAnimatorViewPortHandler(ChartAnimator animator,
-            ChartViewPortHandler viewPortHandler);
-
-    @Generated
-    @Selector("initWithViewPortHandler:")
-    public native BarLineScatterCandleBubbleChartRenderer initWithViewPortHandler(ChartViewPortHandler viewPortHandler);
-
-    @Generated
     @Selector("instanceMethodForSelector:")
     @FunctionPtr(name = "call_instanceMethodForSelector_ret")
     public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
@@ -128,8 +121,7 @@ public class BarLineScatterCandleBubbleChartRenderer extends ChartDataRendererBa
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native BarLineScatterCandleBubbleChartRenderer new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -151,4 +143,46 @@ public class BarLineScatterCandleBubbleChartRenderer extends ChartDataRendererBa
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("accessibleChartElements")
+    public native NSArray<? extends NSUIAccessibilityElement> accessibleChartElements();
+
+    @Generated
+    @Selector("animator")
+    public native ChartAnimator animator();
+
+    @Generated
+    @Selector("createAccessibleHeaderUsingChart:andData:withDefaultDescription:")
+    public native NSUIAccessibilityElement createAccessibleHeaderUsingChartAndDataWithDefaultDescription(
+            ChartViewBase chart, ChartData data, String defaultDescription);
+
+    @Generated
+    @Selector("drawDataWithContext:")
+    public native void drawDataWithContext(CGContextRef context);
+
+    @Generated
+    @Selector("drawExtrasWithContext:")
+    public native void drawExtrasWithContext(CGContextRef context);
+
+    @Generated
+    @Selector("drawHighlightedWithContext:indices:")
+    public native void drawHighlightedWithContextIndices(CGContextRef context, NSArray<? extends ChartHighlight> indices);
+
+    @Generated
+    @Selector("drawValuesWithContext:")
+    public native void drawValuesWithContext(CGContextRef context);
+
+    @Generated
+    @Selector("isDrawingValuesAllowedWithDataProvider:")
+    public native boolean isDrawingValuesAllowedWithDataProvider(
+            @Mapped(ObjCObjectMapper.class) ChartDataProvider dataProvider);
+
+    @Generated
+    @Selector("setAccessibleChartElements:")
+    public native void setAccessibleChartElements(NSArray<? extends NSUIAccessibilityElement> value);
+
+    @Generated
+    @Selector("viewPortHandler")
+    public native ChartViewPortHandler viewPortHandler();
 }

@@ -25,13 +25,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.moe.samples.simplechart.charts.protocol.ChartDataProvider;
+import org.moe.samples.simplechart.charts.protocol.ChartDataRenderer;
 
 @Generated
 @Library("Charts")
 @Runtime(ObjCRuntime.class)
 @ObjCClassName("_TtC6Charts21CombinedChartRenderer")
 @ObjCClassBinding
-public class CombinedChartRenderer extends ChartDataRendererBase {
+public class CombinedChartRenderer extends NSObject implements ChartDataRenderer {
     static {
         NatJ.register();
     }
@@ -50,10 +52,9 @@ public class CombinedChartRenderer extends ChartDataRendererBase {
     @Selector("alloc")
     public static native CombinedChartRenderer alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CombinedChartRenderer allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -119,14 +120,6 @@ public class CombinedChartRenderer extends ChartDataRendererBase {
     @Selector("drawValuesWithContext:")
     public native void drawValuesWithContext(CGContextRef context);
 
-    /**
-     * returns:
-     * The sub-renderer object at the specified index.
-     */
-    @Generated
-    @Selector("getSubRendererWithIndex:")
-    public native ChartDataRendererBase getSubRendererWithIndex(@NInt long index);
-
     @Generated
     @Selector("hash")
     @NUInt
@@ -141,18 +134,9 @@ public class CombinedChartRenderer extends ChartDataRendererBase {
     public native void initBuffers();
 
     @Generated
-    @Selector("initWithAnimator:viewPortHandler:")
-    public native CombinedChartRenderer initWithAnimatorViewPortHandler(ChartAnimator animator,
-            ChartViewPortHandler viewPortHandler);
-
-    @Generated
     @Selector("initWithChart:animator:viewPortHandler:")
     public native CombinedChartRenderer initWithChartAnimatorViewPortHandler(CombinedChartView chart,
             ChartAnimator animator, ChartViewPortHandler viewPortHandler);
-
-    @Generated
-    @Selector("initWithViewPortHandler:")
-    public native CombinedChartRenderer initWithViewPortHandler(ChartViewPortHandler viewPortHandler);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -192,8 +176,7 @@ public class CombinedChartRenderer extends ChartDataRendererBase {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CombinedChartRenderer new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -238,7 +221,7 @@ public class CombinedChartRenderer extends ChartDataRendererBase {
      */
     @Generated
     @Selector("setSubRenderers:")
-    public native void setSubRenderers(NSArray<? extends ChartDataRendererBase> value);
+    public native void setSubRenderers(NSArray<?> value);
 
     @Generated
     @Selector("setVersion:")
@@ -249,7 +232,7 @@ public class CombinedChartRenderer extends ChartDataRendererBase {
      */
     @Generated
     @Selector("subRenderers")
-    public native NSArray<? extends ChartDataRendererBase> subRenderers();
+    public native NSArray<?> subRenderers();
 
     @Generated
     @Selector("superclass")
@@ -259,4 +242,30 @@ public class CombinedChartRenderer extends ChartDataRendererBase {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("accessibleChartElements")
+    public native NSArray<? extends NSUIAccessibilityElement> accessibleChartElements();
+
+    @Generated
+    @Selector("animator")
+    public native ChartAnimator animator();
+
+    @Generated
+    @Selector("createAccessibleHeaderUsingChart:andData:withDefaultDescription:")
+    public native NSUIAccessibilityElement createAccessibleHeaderUsingChartAndDataWithDefaultDescription(
+            ChartViewBase chart, ChartData data, String defaultDescription);
+
+    @Generated
+    @Selector("isDrawingValuesAllowedWithDataProvider:")
+    public native boolean isDrawingValuesAllowedWithDataProvider(
+            @Mapped(ObjCObjectMapper.class) ChartDataProvider dataProvider);
+
+    @Generated
+    @Selector("setAccessibleChartElements:")
+    public native void setAccessibleChartElements(NSArray<? extends NSUIAccessibilityElement> value);
+
+    @Generated
+    @Selector("viewPortHandler")
+    public native ChartViewPortHandler viewPortHandler();
 }

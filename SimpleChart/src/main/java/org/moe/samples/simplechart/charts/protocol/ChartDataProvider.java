@@ -23,7 +23,7 @@ public interface ChartDataProvider {
     @Generated
     @Selector("centerOffsets")
     @ByValue
-    CGPoint centerOffsets();
+    apple.coregraphics.struct.CGPoint centerOffsets();
 
     /**
      * The maximum x-value of the chart, regardless of zoom or translation.
@@ -59,12 +59,10 @@ public interface ChartDataProvider {
 
     @Generated
     @Selector("maxHighlightDistance")
-    @NFloat
     double maxHighlightDistance();
 
     @Generated
     @Selector("maxVisibleCount")
-    @NInt
     long maxVisibleCount();
 
     @Generated

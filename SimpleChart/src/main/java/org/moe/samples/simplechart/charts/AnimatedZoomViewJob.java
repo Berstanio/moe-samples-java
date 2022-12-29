@@ -51,10 +51,9 @@ public class AnimatedZoomViewJob extends AnimatedViewPortJob {
     @Selector("alloc")
     public static native AnimatedZoomViewJob alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AnimatedZoomViewJob allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -103,14 +102,14 @@ public class AnimatedZoomViewJob extends AnimatedViewPortJob {
             ChartViewBase view,
             ChartYAxis yAxis,
             double xAxisRange,
-            @NFloat double scaleX,
-            @NFloat double scaleY,
-            @NFloat double xOrigin,
-            @NFloat double yOrigin,
-            @NFloat double zoomCenterX,
-            @NFloat double zoomCenterY,
-            @NFloat double zoomOriginX,
-            @NFloat double zoomOriginY,
+            double scaleX,
+            double scaleY,
+            double xOrigin,
+            double yOrigin,
+            double zoomCenterX,
+            double zoomCenterY,
+            double zoomOriginX,
+            double zoomOriginY,
             double duration,
             @ObjCBlock(name = "call_initWithViewPortHandlerTransformerViewYAxisXAxisRangeScaleXScaleYXOriginYOriginZoomCenterXZoomCenterYZoomOriginXZoomOriginYDurationEasing") Block_initWithViewPortHandlerTransformerViewYAxisXAxisRangeScaleXScaleYXOriginYOriginZoomCenterXZoomCenterYZoomOriginXZoomOriginYDurationEasing easing);
 
@@ -136,8 +135,8 @@ public class AnimatedZoomViewJob extends AnimatedViewPortJob {
             double yValue,
             ChartTransformer transformer,
             ChartViewBase view,
-            @NFloat double xOrigin,
-            @NFloat double yOrigin,
+            double xOrigin,
+            double yOrigin,
             double duration,
             @ObjCBlock(name = "call_initWithViewPortHandlerXValueYValueTransformerViewXOriginYOriginDurationEasing") AnimatedViewPortJob.Block_initWithViewPortHandlerXValueYValueTransformerViewXOriginYOriginDurationEasing easing);
 
@@ -165,8 +164,7 @@ public class AnimatedZoomViewJob extends AnimatedViewPortJob {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AnimatedZoomViewJob new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

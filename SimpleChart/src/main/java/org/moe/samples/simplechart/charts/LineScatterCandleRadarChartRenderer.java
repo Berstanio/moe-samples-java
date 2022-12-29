@@ -27,6 +27,7 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.samples.simplechart.charts.protocol.ILineScatterCandleRadarChartDataSet;
+import org.moe.samples.simplechart.charts.protocol.LineScatterCandleRadarChartDataSetProtocol;
 
 @Generated
 @Library("Charts")
@@ -51,10 +52,9 @@ public class LineScatterCandleRadarChartRenderer extends BarLineScatterCandleBub
     @Selector("alloc")
     public static native LineScatterCandleRadarChartRenderer alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native LineScatterCandleRadarChartRenderer allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -95,8 +95,8 @@ public class LineScatterCandleRadarChartRenderer extends BarLineScatterCandleBub
      */
     @Generated
     @Selector("drawHighlightLinesWithContext:point:set:")
-    public native void drawHighlightLinesWithContextPointSet(CGContextRef context, @ByValue CGPoint point,
-            @Mapped(ObjCObjectMapper.class) ILineScatterCandleRadarChartDataSet set);
+    public native void drawHighlightLinesWithContextPointSet(CGContextRef context, @ByValue apple.coregraphics.struct.CGPoint point,
+            @Mapped(ObjCObjectMapper.class) LineScatterCandleRadarChartDataSetProtocol set);
 
     @Generated
     @Selector("hash")
@@ -110,15 +110,6 @@ public class LineScatterCandleRadarChartRenderer extends BarLineScatterCandleBub
     @Generated
     @Selector("initBuffers")
     public native void initBuffers();
-
-    @Generated
-    @Selector("initWithAnimator:viewPortHandler:")
-    public native LineScatterCandleRadarChartRenderer initWithAnimatorViewPortHandler(ChartAnimator animator,
-            ChartViewPortHandler viewPortHandler);
-
-    @Generated
-    @Selector("initWithViewPortHandler:")
-    public native LineScatterCandleRadarChartRenderer initWithViewPortHandler(ChartViewPortHandler viewPortHandler);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -144,8 +135,7 @@ public class LineScatterCandleRadarChartRenderer extends BarLineScatterCandleBub
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native LineScatterCandleRadarChartRenderer new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

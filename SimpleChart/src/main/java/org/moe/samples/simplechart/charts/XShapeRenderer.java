@@ -30,13 +30,15 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.samples.simplechart.charts.protocol.IScatterChartDataSet;
 import org.moe.samples.simplechart.charts.protocol.IShapeRenderer;
+import org.moe.samples.simplechart.charts.protocol.ScatterChartDataSetProtocol;
+import org.moe.samples.simplechart.charts.protocol.ShapeRenderer;
 
 @Generated
 @Library("Charts")
 @Runtime(ObjCRuntime.class)
 @ObjCClassName("_TtC6Charts14XShapeRenderer")
 @ObjCClassBinding
-public class XShapeRenderer extends NSObject implements IShapeRenderer {
+public class XShapeRenderer extends NSObject implements ShapeRenderer {
     static {
         NatJ.register();
     }
@@ -55,10 +57,9 @@ public class XShapeRenderer extends NSObject implements IShapeRenderer {
     @Selector("alloc")
     public static native XShapeRenderer alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native XShapeRenderer allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -123,14 +124,13 @@ public class XShapeRenderer extends NSObject implements IShapeRenderer {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native XShapeRenderer new_objc();
 
     @Generated
     @Selector("renderShapeWithContext:dataSet:viewPortHandler:point:color:")
     public native void renderShapeWithContextDataSetViewPortHandlerPointColor(CGContextRef context,
-            @Mapped(ObjCObjectMapper.class) IScatterChartDataSet dataSet, ChartViewPortHandler viewPortHandler,
-            @ByValue CGPoint point, UIColor color);
+            @Mapped(ObjCObjectMapper.class) ScatterChartDataSetProtocol dataSet, ChartViewPortHandler viewPortHandler,
+            @ByValue apple.coregraphics.struct.CGPoint point, UIColor color);
 
     @Generated
     @Selector("resolveClassMethod:")

@@ -50,10 +50,9 @@ public class ChartHighlight extends NSObject {
     @Selector("alloc")
     public static native ChartHighlight alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ChartHighlight allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -61,7 +60,6 @@ public class ChartHighlight extends NSObject {
 
     @Generated
     @Selector("axis")
-    @NInt
     public native long axis();
 
     @Generated
@@ -87,12 +85,10 @@ public class ChartHighlight extends NSObject {
      */
     @Generated
     @Selector("dataIndex")
-    @NInt
     public native long dataIndex();
 
     @Generated
     @Selector("dataSetIndex")
-    @NInt
     public native long dataSetIndex();
 
     @Generated
@@ -108,7 +104,6 @@ public class ChartHighlight extends NSObject {
      */
     @Generated
     @Selector("drawX")
-    @NFloat
     public native double drawX();
 
     /**
@@ -116,7 +111,6 @@ public class ChartHighlight extends NSObject {
      */
     @Generated
     @Selector("drawY")
-    @NFloat
     public native double drawY();
 
     @Generated
@@ -137,8 +131,8 @@ public class ChartHighlight extends NSObject {
      */
     @Generated
     @Selector("initWithX:dataSetIndex:stackIndex:")
-    public native ChartHighlight initWithXDataSetIndexStackIndex(double x, @NInt long dataSetIndex,
-            @NInt long stackIndex);
+    public native ChartHighlight initWithXDataSetIndexStackIndex(double x, long dataSetIndex,
+            long stackIndex);
 
     /**
      * \param x the x-value of the highlighted value
@@ -151,8 +145,8 @@ public class ChartHighlight extends NSObject {
      */
     @Generated
     @Selector("initWithX:y:dataSetIndex:dataIndex:")
-    public native ChartHighlight initWithXYDataSetIndexDataIndex(double x, double y, @NInt long dataSetIndex,
-            @NInt long dataIndex);
+    public native ChartHighlight initWithXYDataSetIndexDataIndex(double x, double y, long dataSetIndex,
+            long dataIndex);
 
     /**
      * \param x the x-value of the highlighted value
@@ -174,8 +168,8 @@ public class ChartHighlight extends NSObject {
     @Generated
     @Selector("initWithX:y:xPx:yPx:dataIndex:dataSetIndex:stackIndex:axis:")
     public native ChartHighlight initWithXYXPxYPxDataIndexDataSetIndexStackIndexAxis(double x, double y,
-            @NFloat double xPx, @NFloat double yPx, @NInt long dataIndex, @NInt long dataSetIndex,
-            @NInt long stackIndex, @NInt long axis);
+            double xPx, double yPx, long dataIndex, long dataSetIndex,
+            long stackIndex, long axis);
 
     /**
      * \param x the x-value of the highlighted value
@@ -196,8 +190,8 @@ public class ChartHighlight extends NSObject {
      */
     @Generated
     @Selector("initWithX:y:xPx:yPx:dataSetIndex:axis:")
-    public native ChartHighlight initWithXYXPxYPxDataSetIndexAxis(double x, double y, @NFloat double xPx,
-            @NFloat double yPx, @NInt long dataSetIndex, @NInt long axis);
+    public native ChartHighlight initWithXYXPxYPxDataSetIndexAxis(double x, double y, double xPx,
+            double yPx, long dataSetIndex, long axis);
 
     /**
      * \param x the x-value of the highlighted value
@@ -216,8 +210,8 @@ public class ChartHighlight extends NSObject {
      */
     @Generated
     @Selector("initWithX:y:xPx:yPx:dataSetIndex:stackIndex:axis:")
-    public native ChartHighlight initWithXYXPxYPxDataSetIndexStackIndexAxis(double x, double y, @NFloat double xPx,
-            @NFloat double yPx, @NInt long dataSetIndex, @NInt long stackIndex, @NInt long axis);
+    public native ChartHighlight initWithXYXPxYPxDataSetIndexStackIndexAxis(double x, double y, double xPx,
+            double yPx, long dataSetIndex, long stackIndex, long axis);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -251,8 +245,7 @@ public class ChartHighlight extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ChartHighlight new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -267,35 +260,35 @@ public class ChartHighlight extends NSObject {
      */
     @Generated
     @Selector("setDataIndex:")
-    public native void setDataIndex(@NInt long value);
+    public native void setDataIndex(long value);
 
     /**
      * Sets the x- and y-position (pixels) where this highlight was last drawn.
      */
     @Generated
     @Selector("setDrawWithPt:")
-    public native void setDrawWithPt(@ByValue CGPoint pt);
+    public native void setDrawWithPt(@ByValue apple.coregraphics.struct.CGPoint pt);
 
     /**
      * Sets the x- and y-position (pixels) where this highlight was last drawn.
      */
     @Generated
     @Selector("setDrawWithX:y:")
-    public native void setDrawWithXY(@NFloat double x, @NFloat double y);
+    public native void setDrawWithXY(double x, double y);
 
     /**
      * the x-position (pixels) on which this highlight object was last drawn
      */
     @Generated
     @Selector("setDrawX:")
-    public native void setDrawX(@NFloat double value);
+    public native void setDrawX(double value);
 
     /**
      * the y-position (pixels) on which this highlight object was last drawn
      */
     @Generated
     @Selector("setDrawY:")
-    public native void setDrawY(@NFloat double value);
+    public native void setDrawY(double value);
 
     @Generated
     @Selector("setVersion:")
@@ -303,7 +296,6 @@ public class ChartHighlight extends NSObject {
 
     @Generated
     @Selector("stackIndex")
-    @NInt
     public native long stackIndex();
 
     @Generated
@@ -321,7 +313,6 @@ public class ChartHighlight extends NSObject {
 
     @Generated
     @Selector("xPx")
-    @NFloat
     public native double xPx();
 
     @Generated
@@ -330,6 +321,5 @@ public class ChartHighlight extends NSObject {
 
     @Generated
     @Selector("yPx")
-    @NFloat
     public native double yPx();
 }

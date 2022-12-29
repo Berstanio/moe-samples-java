@@ -57,10 +57,9 @@ public class ChartYAxis extends ChartAxisBase {
     @Selector("alloc")
     public static native ChartYAxis alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ChartYAxis allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -68,7 +67,6 @@ public class ChartYAxis extends ChartAxisBase {
 
     @Generated
     @Selector("axisDependency")
-    @NInt
     public native long axisDependency();
 
     @Generated
@@ -124,7 +122,6 @@ public class ChartYAxis extends ChartAxisBase {
 
     @Generated
     @Selector("getRequiredHeightSpace")
-    @NFloat
     public native double getRequiredHeightSpace();
 
     @Generated
@@ -138,7 +135,7 @@ public class ChartYAxis extends ChartAxisBase {
 
     @Generated
     @Selector("initWithPosition:")
-    public native ChartYAxis initWithPosition(@NInt long position);
+    public native ChartYAxis initWithPosition(long position);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -185,7 +182,6 @@ public class ChartYAxis extends ChartAxisBase {
      */
     @Generated
     @Selector("labelAlignment")
-    @NInt
     public native long labelAlignment();
 
     /**
@@ -193,7 +189,6 @@ public class ChartYAxis extends ChartAxisBase {
      */
     @Generated
     @Selector("labelPosition")
-    @NInt
     public native long labelPosition();
 
     /**
@@ -201,7 +196,6 @@ public class ChartYAxis extends ChartAxisBase {
      */
     @Generated
     @Selector("labelXOffset")
-    @NFloat
     public native double labelXOffset();
 
     /**
@@ -211,7 +205,6 @@ public class ChartYAxis extends ChartAxisBase {
      */
     @Generated
     @Selector("maxWidth")
-    @NFloat
     public native double maxWidth();
 
     /**
@@ -220,7 +213,6 @@ public class ChartYAxis extends ChartAxisBase {
      */
     @Generated
     @Selector("minWidth")
-    @NFloat
     public native double minWidth();
 
     /**
@@ -233,13 +225,12 @@ public class ChartYAxis extends ChartAxisBase {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ChartYAxis new_objc();
 
     @Generated
     @Selector("requiredSize")
     @ByValue
-    public native CGSize requiredSize();
+    public native apple.coregraphics.struct.CGSize requiredSize();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -282,21 +273,21 @@ public class ChartYAxis extends ChartAxisBase {
      */
     @Generated
     @Selector("setLabelAlignment:")
-    public native void setLabelAlignment(@NInt long value);
+    public native void setLabelAlignment(long value);
 
     /**
      * the position of the y-labels relative to the chart
      */
     @Generated
     @Selector("setLabelPosition:")
-    public native void setLabelPosition(@NInt long value);
+    public native void setLabelPosition(long value);
 
     /**
      * the horizontal offset of the y-label
      */
     @Generated
     @Selector("setLabelXOffset:")
-    public native void setLabelXOffset(@NFloat double value);
+    public native void setLabelXOffset(double value);
 
     /**
      * the maximum width that the axis can take.
@@ -305,7 +296,7 @@ public class ChartYAxis extends ChartAxisBase {
      */
     @Generated
     @Selector("setMaxWidth:")
-    public native void setMaxWidth(@NFloat double value);
+    public native void setMaxWidth(double value);
 
     /**
      * the minimum width that the axis should take
@@ -313,21 +304,21 @@ public class ChartYAxis extends ChartAxisBase {
      */
     @Generated
     @Selector("setMinWidth:")
-    public native void setMinWidth(@NFloat double value);
+    public native void setMinWidth(double value);
 
     /**
      * axis space from the smallest value to the bottom in percent of the total axis range
      */
     @Generated
     @Selector("setSpaceBottom:")
-    public native void setSpaceBottom(@NFloat double value);
+    public native void setSpaceBottom(double value);
 
     /**
      * axis space from the largest value to the top in percent of the total axis range
      */
     @Generated
     @Selector("setSpaceTop:")
-    public native void setSpaceTop(@NFloat double value);
+    public native void setSpaceTop(double value);
 
     @Generated
     @Selector("setVersion:")
@@ -354,21 +345,20 @@ public class ChartYAxis extends ChartAxisBase {
      */
     @Generated
     @Selector("setZeroLineDashPhase:")
-    public native void setZeroLineDashPhase(@NFloat double value);
+    public native void setZeroLineDashPhase(double value);
 
     /**
      * Width of the zero line
      */
     @Generated
     @Selector("setZeroLineWidth:")
-    public native void setZeroLineWidth(@NFloat double value);
+    public native void setZeroLineWidth(double value);
 
     /**
      * axis space from the smallest value to the bottom in percent of the total axis range
      */
     @Generated
     @Selector("spaceBottom")
-    @NFloat
     public native double spaceBottom();
 
     /**
@@ -376,7 +366,6 @@ public class ChartYAxis extends ChartAxisBase {
      */
     @Generated
     @Selector("spaceTop")
-    @NFloat
     public native double spaceTop();
 
     @Generated
@@ -409,7 +398,6 @@ public class ChartYAxis extends ChartAxisBase {
      */
     @Generated
     @Selector("zeroLineDashPhase")
-    @NFloat
     public native double zeroLineDashPhase();
 
     /**
@@ -417,6 +405,5 @@ public class ChartYAxis extends ChartAxisBase {
      */
     @Generated
     @Selector("zeroLineWidth")
-    @NFloat
     public native double zeroLineWidth();
 }

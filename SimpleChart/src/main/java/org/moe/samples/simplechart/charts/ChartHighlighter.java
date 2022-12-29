@@ -35,7 +35,7 @@ import org.moe.samples.simplechart.charts.protocol.IChartHighlighter;
 @Runtime(ObjCRuntime.class)
 @ObjCClassName("_TtC6Charts16ChartHighlighter")
 @ObjCClassBinding
-public class ChartHighlighter extends NSObject implements IChartHighlighter {
+public class ChartHighlighter extends NSObject implements org.moe.samples.simplechart.charts.protocol.ChartHighlighter {
     static {
         NatJ.register();
     }
@@ -54,10 +54,9 @@ public class ChartHighlighter extends NSObject implements IChartHighlighter {
     @Selector("alloc")
     public static native ChartHighlighter alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ChartHighlighter allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -99,7 +98,7 @@ public class ChartHighlighter extends NSObject implements IChartHighlighter {
 
     @Generated
     @Selector("getHighlightWithX:y:")
-    public native ChartHighlight getHighlightWithXY(@NFloat double x, @NFloat double y);
+    public native ChartHighlight getHighlightWithXY(double x, double y);
 
     /**
      * \param xValue
@@ -114,7 +113,7 @@ public class ChartHighlighter extends NSObject implements IChartHighlighter {
      */
     @Generated
     @Selector("getHighlightWithXValue:x:y:")
-    public native ChartHighlight getHighlightWithXValueXY(double xVal, @NFloat double x, @NFloat double y);
+    public native ChartHighlight getHighlightWithXValueXY(double xVal, double x, double y);
 
     /**
      * \param xValue the transformed x-value of the x-touch position
@@ -130,8 +129,8 @@ public class ChartHighlighter extends NSObject implements IChartHighlighter {
      */
     @Generated
     @Selector("getHighlightsWithXValue:x:y:")
-    public native NSArray<? extends ChartHighlight> getHighlightsWithXValueXY(double xValue, @NFloat double x,
-            @NFloat double y);
+    public native NSArray<? extends ChartHighlight> getHighlightsWithXValueXY(double xValue, double x,
+            double y);
 
     /**
      * \param x
@@ -143,7 +142,7 @@ public class ChartHighlighter extends NSObject implements IChartHighlighter {
     @Generated
     @Selector("getValsForTouchWithX:y:")
     @ByValue
-    public native CGPoint getValsForTouchWithXY(@NFloat double x, @NFloat double y);
+    public native apple.coregraphics.struct.CGPoint getValsForTouchWithXY(double x, double y);
 
     @Generated
     @Selector("hash")
@@ -182,8 +181,7 @@ public class ChartHighlighter extends NSObject implements IChartHighlighter {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ChartHighlighter new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

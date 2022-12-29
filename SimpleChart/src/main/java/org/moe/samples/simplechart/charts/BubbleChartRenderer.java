@@ -27,6 +27,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.samples.simplechart.charts.protocol.BubbleChartDataProvider;
 import org.moe.samples.simplechart.charts.protocol.IBubbleChartDataSet;
+import org.moe.samples.simplechart.charts.protocol.BubbleChartDataSetProtocol;
 
 @Generated
 @Library("Charts")
@@ -52,10 +53,9 @@ public class BubbleChartRenderer extends BarLineScatterCandleBubbleChartRenderer
     @Selector("alloc")
     public static native BubbleChartRenderer alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native BubbleChartRenderer allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -95,7 +95,7 @@ public class BubbleChartRenderer extends BarLineScatterCandleBubbleChartRenderer
     @Generated
     @Selector("drawDataSetWithContext:dataSet:dataSetIndex:")
     public native void drawDataSetWithContextDataSetDataSetIndex(CGContextRef context,
-            @Mapped(ObjCObjectMapper.class) IBubbleChartDataSet dataSet, @NInt long dataSetIndex);
+            @Mapped(ObjCObjectMapper.class) BubbleChartDataSetProtocol dataSet, long dataSetIndex);
 
     @Generated
     @Selector("drawDataWithContext:")
@@ -127,19 +127,10 @@ public class BubbleChartRenderer extends BarLineScatterCandleBubbleChartRenderer
     public native void initBuffers();
 
     @Generated
-    @Selector("initWithAnimator:viewPortHandler:")
-    public native BubbleChartRenderer initWithAnimatorViewPortHandler(ChartAnimator animator,
-            ChartViewPortHandler viewPortHandler);
-
-    @Generated
     @Selector("initWithDataProvider:animator:viewPortHandler:")
     public native BubbleChartRenderer initWithDataProviderAnimatorViewPortHandler(
             @Mapped(ObjCObjectMapper.class) BubbleChartDataProvider dataProvider, ChartAnimator animator,
             ChartViewPortHandler viewPortHandler);
-
-    @Generated
-    @Selector("initWithViewPortHandler:")
-    public native BubbleChartRenderer initWithViewPortHandler(ChartViewPortHandler viewPortHandler);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -165,8 +156,7 @@ public class BubbleChartRenderer extends BarLineScatterCandleBubbleChartRenderer
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native BubbleChartRenderer new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

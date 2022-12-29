@@ -25,6 +25,7 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.samples.simplechart.charts.protocol.IBarChartDataSet;
+import org.moe.samples.simplechart.charts.protocol.BarChartDataSetProtocol;
 
 @Generated
 @Library("Charts")
@@ -49,10 +50,9 @@ public class BarChartHighlighter extends ChartHighlighter {
     @Selector("alloc")
     public static native BarChartHighlighter alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native BarChartHighlighter allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -95,12 +95,11 @@ public class BarChartHighlighter extends ChartHighlighter {
      */
     @Generated
     @Selector("getClosestStackIndexWithRanges:value:")
-    @NInt
     public native long getClosestStackIndexWithRangesValue(NSArray<? extends ChartRange> ranges, double value);
 
     @Generated
     @Selector("getHighlightWithX:y:")
-    public native ChartHighlight getHighlightWithXY(@NFloat double x, @NFloat double y);
+    public native ChartHighlight getHighlightWithXY(double x, double y);
 
     /**
      * This method creates the Highlight object that also indicates which value of a stacked BarEntry has been selected.
@@ -118,7 +117,7 @@ public class BarChartHighlighter extends ChartHighlighter {
     @Generated
     @Selector("getStackedHighlightWithHigh:set:xValue:yValue:")
     public native ChartHighlight getStackedHighlightWithHighSetXValueYValue(ChartHighlight high,
-            @Mapped(ObjCObjectMapper.class) IBarChartDataSet set, double xValue, double yValue);
+            @Mapped(ObjCObjectMapper.class) BarChartDataSetProtocol set, double xValue, double yValue);
 
     @Generated
     @Selector("hash")
@@ -157,8 +156,7 @@ public class BarChartHighlighter extends ChartHighlighter {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native BarChartHighlighter new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

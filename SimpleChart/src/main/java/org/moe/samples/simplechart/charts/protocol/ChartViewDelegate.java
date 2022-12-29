@@ -24,14 +24,14 @@ public interface ChartViewDelegate {
     @Generated
     @IsOptional
     @Selector("chartScaled:scaleX:scaleY:")
-    default void chartScaledScaleXScaleY(ChartViewBase chartView, @NFloat double scaleX, @NFloat double scaleY) {
+    default void chartScaledScaleXScaleY(ChartViewBase chartView, double scaleX, double scaleY) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("chartTranslated:dX:dY:")
-    default void chartTranslatedDXDY(ChartViewBase chartView, @NFloat double dX, @NFloat double dY) {
+    default void chartTranslatedDXDY(ChartViewBase chartView, double dX, double dY) {
         throw new java.lang.UnsupportedOperationException();
     }
 

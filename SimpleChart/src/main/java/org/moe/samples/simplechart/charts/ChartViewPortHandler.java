@@ -55,10 +55,9 @@ public class ChartViewPortHandler extends NSObject {
     @Selector("alloc")
     public static native ChartViewPortHandler alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ChartViewPortHandler allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -109,16 +108,14 @@ public class ChartViewPortHandler extends NSObject {
      */
     @Generated
     @Selector("centerViewPortWithPt:chart:")
-    public native void centerViewPortWithPtChart(@ByValue CGPoint pt, ChartViewBase chart);
+    public native void centerViewPortWithPtChart(@ByValue apple.coregraphics.struct.CGPoint pt, ChartViewBase chart);
 
     @Generated
     @Selector("chartHeight")
-    @NFloat
     public native double chartHeight();
 
     @Generated
     @Selector("chartWidth")
-    @NFloat
     public native double chartWidth();
 
     @Generated
@@ -131,42 +128,39 @@ public class ChartViewPortHandler extends NSObject {
 
     @Generated
     @Selector("contentBottom")
-    @NFloat
     public native double contentBottom();
 
     @Generated
     @Selector("contentCenter")
     @ByValue
-    public native CGPoint contentCenter();
+    public native apple.coregraphics.struct.CGPoint contentCenter();
 
     @Generated
     @Selector("contentHeight")
-    @NFloat
     public native double contentHeight();
 
     @Generated
     @Selector("contentLeft")
-    @NFloat
     public native double contentLeft();
 
+    /**
+     * this rectangle defines the area in which graph values can be drawn
+     */
     @Generated
     @Selector("contentRect")
     @ByValue
-    public native CGRect contentRect();
+    public native apple.coregraphics.struct.CGRect contentRect();
 
     @Generated
     @Selector("contentRight")
-    @NFloat
     public native double contentRight();
 
     @Generated
     @Selector("contentTop")
-    @NFloat
     public native double contentTop();
 
     @Generated
     @Selector("contentWidth")
-    @NFloat
     public native double contentWidth();
 
     @Generated
@@ -183,7 +177,7 @@ public class ChartViewPortHandler extends NSObject {
     @Generated
     @Selector("fitScreen")
     @ByValue
-    public native CGAffineTransform fitScreen();
+    public native apple.coregraphics.struct.CGAffineTransform fitScreen();
 
     @Generated
     @Selector("hasChartDimens")
@@ -210,7 +204,7 @@ public class ChartViewPortHandler extends NSObject {
      */
     @Generated
     @Selector("initWithWidth:height:")
-    public native ChartViewPortHandler initWithWidthHeight(@NFloat double width, @NFloat double height);
+    public native ChartViewPortHandler initWithWidthHeight(double width, double height);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -248,19 +242,19 @@ public class ChartViewPortHandler extends NSObject {
 
     @Generated
     @Selector("isInBoundsBottom:")
-    public native boolean isInBoundsBottom(@NFloat double y);
+    public native boolean isInBoundsBottom(double y);
 
     @Generated
     @Selector("isInBoundsLeft:")
-    public native boolean isInBoundsLeft(@NFloat double x);
+    public native boolean isInBoundsLeft(double x);
 
     @Generated
     @Selector("isInBoundsRight:")
-    public native boolean isInBoundsRight(@NFloat double x);
+    public native boolean isInBoundsRight(double x);
 
     @Generated
     @Selector("isInBoundsTop:")
-    public native boolean isInBoundsTop(@NFloat double y);
+    public native boolean isInBoundsTop(double y);
 
     /**
      * A method to check whether coordinate lies within the viewport.
@@ -268,19 +262,19 @@ public class ChartViewPortHandler extends NSObject {
      */
     @Generated
     @Selector("isInBoundsWithPoint:")
-    public native boolean isInBoundsWithPoint(@ByValue CGPoint point);
+    public native boolean isInBoundsWithPoint(@ByValue apple.coregraphics.struct.CGPoint point);
 
     @Generated
     @Selector("isInBoundsWithX:y:")
-    public native boolean isInBoundsWithXY(@NFloat double x, @NFloat double y);
+    public native boolean isInBoundsWithXY(double x, double y);
 
     @Generated
     @Selector("isInBoundsX:")
-    public native boolean isInBoundsX(@NFloat double x);
+    public native boolean isInBoundsX(double x);
 
     @Generated
     @Selector("isInBoundsY:")
-    public native boolean isInBoundsY(@NFloat double y);
+    public native boolean isInBoundsY(double y);
 
     /**
      * A method to check whether a line between two coordinates intersects with the view port  by using a linear function.
@@ -293,7 +287,7 @@ public class ChartViewPortHandler extends NSObject {
      */
     @Generated
     @Selector("isIntersectingLineFrom:to:")
-    public native boolean isIntersectingLineFromTo(@ByValue CGPoint startPoint, @ByValue CGPoint endPoint);
+    public native boolean isIntersectingLineFromTo(@ByValue apple.coregraphics.struct.CGPoint startPoint, @ByValue apple.coregraphics.struct.CGPoint endPoint);
 
     @Generated
     @Selector("isSubclassOfClass:")
@@ -304,61 +298,52 @@ public class ChartViewPortHandler extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * The minimum x-scale factor
+     * maximum scale value on the x-axis
      */
     @Generated
     @Selector("maxScaleX")
-    @NFloat
     public native double maxScaleX();
 
     /**
-     * The minimum y-scale factor
+     * maximum scale value on the y-axis
      */
     @Generated
     @Selector("maxScaleY")
-    @NFloat
     public native double maxScaleY();
 
     /**
-     * The minimum x-scale factor
+     * minimum scale value on the x-axis
      */
     @Generated
     @Selector("minScaleX")
-    @NFloat
     public native double minScaleX();
 
     /**
-     * The minimum y-scale factor
+     * minimum scale value on the y-axis
      */
     @Generated
     @Selector("minScaleY")
-    @NFloat
     public native double minScaleY();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ChartViewPortHandler new_objc();
 
     @Generated
     @Selector("offsetBottom")
-    @NFloat
     public native double offsetBottom();
 
     @Generated
     @Selector("offsetLeft")
-    @NFloat
     public native double offsetLeft();
 
     @Generated
     @Selector("offsetRight")
-    @NFloat
     public native double offsetRight();
 
     @Generated
     @Selector("offsetTop")
-    @NFloat
     public native double offsetTop();
 
     /**
@@ -367,7 +352,7 @@ public class ChartViewPortHandler extends NSObject {
     @Generated
     @Selector("refreshWithNewMatrix:chart:invalidate:")
     @ByValue
-    public native CGAffineTransform refreshWithNewMatrixChartInvalidate(@ByValue CGAffineTransform newMatrix,
+    public native apple.coregraphics.struct.CGAffineTransform refreshWithNewMatrixChartInvalidate(@ByValue apple.coregraphics.struct.CGAffineTransform newMatrix,
             ChartViewBase chart, boolean invalidate);
 
     /**
@@ -376,7 +361,7 @@ public class ChartViewPortHandler extends NSObject {
     @Generated
     @Selector("resetZoom")
     @ByValue
-    public native CGAffineTransform resetZoom();
+    public native apple.coregraphics.struct.CGAffineTransform resetZoom();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -388,81 +373,79 @@ public class ChartViewPortHandler extends NSObject {
 
     @Generated
     @Selector("restrainViewPortWithOffsetLeft:offsetTop:offsetRight:offsetBottom:")
-    public native void restrainViewPortWithOffsetLeftOffsetTopOffsetRightOffsetBottom(@NFloat double offsetLeft,
-            @NFloat double offsetTop, @NFloat double offsetRight, @NFloat double offsetBottom);
+    public native void restrainViewPortWithOffsetLeftOffsetTopOffsetRightOffsetBottom(double offsetLeft,
+            double offsetTop, double offsetRight, double offsetBottom);
 
     /**
-     * The current x-scale factor
+     * contains the current scale factor of the x-axis
      */
     @Generated
     @Selector("scaleX")
-    @NFloat
     public native double scaleX();
 
     /**
-     * The current y-scale factor
+     * contains the current scale factor of the y-axis
      */
     @Generated
     @Selector("scaleY")
-    @NFloat
     public native double scaleY();
 
     @Generated
     @Selector("setChartDimensWithWidth:height:")
-    public native void setChartDimensWithWidthHeight(@NFloat double width, @NFloat double height);
+    public native void setChartDimensWithWidthHeight(double width, double height);
 
     /**
      * Set an offset in pixels that allows the user to drag the chart over it’s bounds on the x-axis.
      */
     @Generated
     @Selector("setDragOffsetX:")
-    public native void setDragOffsetX(@NFloat double offset);
+    public native void setDragOffsetX(double offset);
 
     /**
      * Set an offset in pixels that allows the user to drag the chart over it’s bounds on the y-axis.
      */
     @Generated
     @Selector("setDragOffsetY:")
-    public native void setDragOffsetY(@NFloat double offset);
+    public native void setDragOffsetY(double offset);
 
     /**
      * Sets the maximum scale factor for the x-axis
      */
     @Generated
     @Selector("setMaximumScaleX:")
-    public native void setMaximumScaleX(@NFloat double xScale);
+    public native void setMaximumScaleX(double xScale);
 
     /**
      * Sets the maximum scale factor for the y-axis
      */
     @Generated
     @Selector("setMaximumScaleY:")
-    public native void setMaximumScaleY(@NFloat double yScale);
+    public native void setMaximumScaleY(double yScale);
 
     /**
      * Sets the minimum and maximum scale factors for the x-axis
      */
     @Generated
     @Selector("setMinMaxScaleXWithMinScaleX:maxScaleX:")
-    public native void setMinMaxScaleXWithMinScaleXMaxScaleX(@NFloat double minScaleX, @NFloat double maxScaleX);
+    public native void setMinMaxScaleXWithMinScaleXMaxScaleX(double minScaleX, double maxScaleX);
 
     @Generated
     @Selector("setMinMaxScaleYWithMinScaleY:maxScaleY:")
-    public native void setMinMaxScaleYWithMinScaleYMaxScaleY(@NFloat double minScaleY, @NFloat double maxScaleY);
+    public native void setMinMaxScaleYWithMinScaleYMaxScaleY(double minScaleY, double maxScaleY);
 
     /**
      * Sets the minimum scale factor for the x-axis
      */
     @Generated
     @Selector("setMinimumScaleX:")
-    public native void setMinimumScaleX(@NFloat double xScale);
+    public native void setMinimumScaleX(double xScale);
 
     /**
      * Sets the minimum scale factor for the y-axis
      */
     @Generated
     @Selector("setMinimumScaleY:")
-    public native void setMinimumScaleY(@NFloat double yScale);
+    public native void setMinimumScaleY(double yScale);
 
     @Generated
     @Selector("setVersion:")
@@ -474,7 +457,7 @@ public class ChartViewPortHandler extends NSObject {
     @Generated
     @Selector("setZoomWithScaleX:scaleY:")
     @ByValue
-    public native CGAffineTransform setZoomWithScaleXScaleY(@NFloat double scaleX, @NFloat double scaleY);
+    public native apple.coregraphics.struct.CGAffineTransform setZoomWithScaleXScaleY(double scaleX, double scaleY);
 
     /**
      * Sets the scale factor to the specified values. x and y is pivot.
@@ -482,32 +465,33 @@ public class ChartViewPortHandler extends NSObject {
     @Generated
     @Selector("setZoomWithScaleX:scaleY:x:y:")
     @ByValue
-    public native CGAffineTransform setZoomWithScaleXScaleYXY(@NFloat double scaleX, @NFloat double scaleY,
-            @NFloat double x, @NFloat double y);
+    public native apple.coregraphics.struct.CGAffineTransform setZoomWithScaleXScaleYXY(double scaleX, double scaleY,
+            double x, double y);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * matrix used for touch events
+     */
     @Generated
     @Selector("touchMatrix")
     @ByValue
-    public native CGAffineTransform touchMatrix();
+    public native apple.coregraphics.struct.CGAffineTransform touchMatrix();
 
     /**
-     * The translation (drag / pan) distance on the x-axis
+     * current translation (drag / pan) distance on the x-axis
      */
     @Generated
     @Selector("transX")
-    @NFloat
     public native double transX();
 
     /**
-     * The translation (drag / pan) distance on the y-axis
+     * current translation (drag / pan) distance on the y-axis
      */
     @Generated
     @Selector("transY")
-    @NFloat
     public native double transY();
 
     /**
@@ -516,7 +500,7 @@ public class ChartViewPortHandler extends NSObject {
     @Generated
     @Selector("translateWithPt:")
     @ByValue
-    public native CGAffineTransform translateWithPt(@ByValue CGPoint pt);
+    public native apple.coregraphics.struct.CGAffineTransform translateWithPt(@ByValue apple.coregraphics.struct.CGPoint pt);
 
     @Generated
     @Selector("version")
@@ -529,7 +513,7 @@ public class ChartViewPortHandler extends NSObject {
     @Generated
     @Selector("zoomInX:y:")
     @ByValue
-    public native CGAffineTransform zoomInXY(@NFloat double x, @NFloat double y);
+    public native apple.coregraphics.struct.CGAffineTransform zoomInXY(double x, double y);
 
     /**
      * Zooms out by 0.7, x and y are the coordinates (in pixels) of the zoom center.
@@ -537,7 +521,7 @@ public class ChartViewPortHandler extends NSObject {
     @Generated
     @Selector("zoomOutWithX:y:")
     @ByValue
-    public native CGAffineTransform zoomOutWithXY(@NFloat double x, @NFloat double y);
+    public native apple.coregraphics.struct.CGAffineTransform zoomOutWithXY(double x, double y);
 
     /**
      * Zooms by the specified zoom factors.
@@ -545,7 +529,7 @@ public class ChartViewPortHandler extends NSObject {
     @Generated
     @Selector("zoomWithScaleX:scaleY:")
     @ByValue
-    public native CGAffineTransform zoomWithScaleXScaleY(@NFloat double scaleX, @NFloat double scaleY);
+    public native apple.coregraphics.struct.CGAffineTransform zoomWithScaleXScaleY(double scaleX, double scaleY);
 
     /**
      * Zooms around the specified center
@@ -553,6 +537,6 @@ public class ChartViewPortHandler extends NSObject {
     @Generated
     @Selector("zoomWithScaleX:scaleY:x:y:")
     @ByValue
-    public native CGAffineTransform zoomWithScaleXScaleYXY(@NFloat double scaleX, @NFloat double scaleY,
-            @NFloat double x, @NFloat double y);
+    public native apple.coregraphics.struct.CGAffineTransform zoomWithScaleXScaleYXY(double scaleX, double scaleY,
+            double x, double y);
 }

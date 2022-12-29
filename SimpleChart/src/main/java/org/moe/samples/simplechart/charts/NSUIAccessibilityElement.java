@@ -53,17 +53,16 @@ public class NSUIAccessibilityElement extends UIAccessibilityElement {
     @Generated
     @Selector("accessibilityFrame")
     @ByValue
-    public native CGRect accessibilityFrame();
+    public native apple.coregraphics.struct.CGRect accessibilityFrame();
 
     @Generated
     @Owned
     @Selector("alloc")
     public static native NSUIAccessibilityElement alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSUIAccessibilityElement allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -137,8 +136,7 @@ public class NSUIAccessibilityElement extends UIAccessibilityElement {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSUIAccessibilityElement new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -150,7 +148,7 @@ public class NSUIAccessibilityElement extends UIAccessibilityElement {
 
     @Generated
     @Selector("setAccessibilityFrame:")
-    public native void setAccessibilityFrame(@ByValue CGRect value);
+    public native void setAccessibilityFrame(@ByValue apple.coregraphics.struct.CGRect value);
 
     @Generated
     @Selector("setVersion:")

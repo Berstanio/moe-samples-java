@@ -84,15 +84,13 @@ public class PieChartView extends PieRadarChartViewBase {
     @Selector("alloc")
     public static native PieChartView alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native PieChartView allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("angleForPointWithX:y:")
-    @NFloat
-    public native double angleForPointWithXY(@NFloat double x, @NFloat double y);
+    public native double angleForPointWithXY(double x, double y);
 
     @Generated
     @Selector("animateKeyframesWithDuration:delay:options:animations:completion:")
@@ -138,25 +136,21 @@ public class PieChartView extends PieRadarChartViewBase {
 
     @Generated
     @Selector("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearance();
+    public static native PieChartView appearance();
 
     @Generated
     @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
+    public PieChartView _appearance() {
         return appearance();
     }
 
     @Generated
     @Selector("appearanceForTraitCollection:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollection(UITraitCollection trait);
+    public static native PieChartView appearanceForTraitCollection(UITraitCollection trait);
 
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+    public PieChartView _appearanceForTraitCollection(UITraitCollection trait) {
         return appearanceForTraitCollection(trait);
     }
 
@@ -164,29 +158,25 @@ public class PieChartView extends PieRadarChartViewBase {
     @Variadic()
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+    public static native PieChartView appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+    public PieChartView _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+    public static native PieChartView appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+    public PieChartView _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
@@ -195,28 +185,24 @@ public class PieChartView extends PieRadarChartViewBase {
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(
+    public static native PieChartView appearanceWhenContainedIn(
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+    public PieChartView _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
             Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+    public static native PieChartView appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+    public PieChartView _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
@@ -255,7 +241,7 @@ public class PieChartView extends PieRadarChartViewBase {
     @Generated
     @Selector("centerCircleBox")
     @ByValue
-    public native CGPoint centerCircleBox();
+    public native apple.coregraphics.struct.CGPoint centerCircleBox();
 
     /**
      * the text that is displayed in the center of the pie-chart
@@ -270,14 +256,13 @@ public class PieChartView extends PieRadarChartViewBase {
     @Generated
     @Selector("centerTextOffset")
     @ByValue
-    public native CGPoint centerTextOffset();
+    public native apple.coregraphics.struct.CGPoint centerTextOffset();
 
     /**
      * the rectangular radius of the bounding box for the center text, as a percentage of the pie hole
      */
     @Generated
     @Selector("centerTextRadiusPercent")
-    @NFloat
     public native double centerTextRadiusPercent();
 
     /**
@@ -286,7 +271,7 @@ public class PieChartView extends PieRadarChartViewBase {
     @Generated
     @Selector("circleBox")
     @ByValue
-    public native CGRect circleBox();
+    public native apple.coregraphics.struct.CGRect circleBox();
 
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
@@ -310,7 +295,6 @@ public class PieChartView extends PieRadarChartViewBase {
      */
     @Generated
     @Selector("dataSetIndexForIndex:")
-    @NInt
     public native long dataSetIndexForIndex(double xValue);
 
     @Generated
@@ -327,8 +311,7 @@ public class PieChartView extends PieRadarChartViewBase {
      */
     @Generated
     @Selector("distanceToCenterWithX:y:")
-    @NFloat
-    public native double distanceToCenterWithXY(@NFloat double x, @NFloat double y);
+    public native double distanceToCenterWithXY(double x, double y);
 
     /**
      * returns:
@@ -363,7 +346,7 @@ public class PieChartView extends PieRadarChartViewBase {
 
     @Generated
     @Selector("drawRect:")
-    public native void drawRect(@ByValue CGRect rect);
+    public native void drawRect(@ByValue apple.coregraphics.struct.CGRect rect);
 
     /**
      * if true, the hole will see-through to the inner tips of the slices
@@ -390,7 +373,7 @@ public class PieChartView extends PieRadarChartViewBase {
     @Generated
     @Selector("getMarkerPositionWithHighlight:")
     @ByValue
-    public native CGPoint getMarkerPositionWithHighlight(ChartHighlight highlight);
+    public native apple.coregraphics.struct.CGPoint getMarkerPositionWithHighlight(ChartHighlight highlight);
 
     @Generated
     @Selector("hash")
@@ -412,13 +395,11 @@ public class PieChartView extends PieRadarChartViewBase {
      */
     @Generated
     @Selector("holeRadiusPercent")
-    @NFloat
     public native double holeRadiusPercent();
 
     @Generated
     @Selector("indexForAngle:")
-    @NInt
-    public native long indexForAngle(@NFloat double angle);
+    public native long indexForAngle(double angle);
 
     @Generated
     @Selector("inheritedAnimationDuration")
@@ -434,7 +415,7 @@ public class PieChartView extends PieRadarChartViewBase {
 
     @Generated
     @Selector("initWithFrame:")
-    public native PieChartView initWithFrame(@ByValue CGRect frame);
+    public native PieChartView initWithFrame(@ByValue apple.coregraphics.struct.CGRect frame);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -503,7 +484,6 @@ public class PieChartView extends PieRadarChartViewBase {
      */
     @Generated
     @Selector("maxAngle")
-    @NFloat
     public native double maxAngle();
 
     @Generated
@@ -518,13 +498,12 @@ public class PieChartView extends PieRadarChartViewBase {
      */
     @Generated
     @Selector("needsHighlightWithIndex:")
-    public native boolean needsHighlightWithIndex(@NInt long index);
+    public native boolean needsHighlightWithIndex(long index);
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native PieChartView new_objc();
 
     @Generated
     @Selector("performSystemAnimation:onViews:options:animations:completion:")
@@ -542,7 +521,6 @@ public class PieChartView extends PieRadarChartViewBase {
 
     @Generated
     @Selector("radius")
-    @NFloat
     public native double radius();
 
     @Generated
@@ -624,14 +602,14 @@ public class PieChartView extends PieRadarChartViewBase {
      */
     @Generated
     @Selector("setCenterTextOffset:")
-    public native void setCenterTextOffset(@ByValue CGPoint value);
+    public native void setCenterTextOffset(@ByValue apple.coregraphics.struct.CGPoint value);
 
     /**
      * the rectangular radius of the bounding box for the center text, as a percentage of the pie hole
      */
     @Generated
     @Selector("setCenterTextRadiusPercent:")
-    public native void setCenterTextRadiusPercent(@NFloat double value);
+    public native void setCenterTextRadiusPercent(double value);
 
     /**
      * <code>true</code> if drawing the center text is enabled
@@ -691,7 +669,7 @@ public class PieChartView extends PieRadarChartViewBase {
      */
     @Generated
     @Selector("setHoleRadiusPercent:")
-    public native void setHoleRadiusPercent(@NFloat double value);
+    public native void setHoleRadiusPercent(double value);
 
     /**
      * The max angle that is used for calculating the pie-circle.
@@ -700,7 +678,7 @@ public class PieChartView extends PieRadarChartViewBase {
      */
     @Generated
     @Selector("setMaxAngle:")
-    public native void setMaxAngle(@NFloat double value);
+    public native void setMaxAngle(double value);
 
     /**
      * The color that the transparent-circle should have.
@@ -716,7 +694,7 @@ public class PieChartView extends PieRadarChartViewBase {
      */
     @Generated
     @Selector("setTransparentCircleRadiusPercent:")
-    public native void setTransparentCircleRadiusPercent(@NFloat double value);
+    public native void setTransparentCircleRadiusPercent(double value);
 
     /**
      * If this is enabled, values inside the PieChart are drawn in percent and not with their original value. Values provided for the ValueFormatter to format are then provided in percent.
@@ -765,7 +743,6 @@ public class PieChartView extends PieRadarChartViewBase {
      */
     @Generated
     @Selector("transparentCircleRadiusPercent")
-    @NFloat
     public native double transparentCircleRadiusPercent();
 
     /**
@@ -797,4 +774,25 @@ public class PieChartView extends PieRadarChartViewBase {
     @Generated
     @Selector("xAxis")
     public native ChartXAxis xAxis();
+
+    /**
+     * smallest pie slice angle that will have a label drawn in degrees, 0 by default
+     */
+    @Generated
+    @Selector("setSliceTextDrawingThreshold:")
+    public native void setSliceTextDrawingThreshold(double value);
+
+    /**
+     * This will throw an exception, PieChart has no XAxis object.
+     */
+    @Generated
+    @Selector("setXAxis:")
+    public native void setXAxis(ChartXAxis value);
+
+    /**
+     * smallest pie slice angle that will have a label drawn in degrees, 0 by default
+     */
+    @Generated
+    @Selector("sliceTextDrawingThreshold")
+    public native double sliceTextDrawingThreshold();
 }

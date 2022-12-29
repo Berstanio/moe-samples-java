@@ -33,13 +33,15 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.samples.simplechart.charts.protocol.IChartDataSet;
 import org.moe.samples.simplechart.charts.protocol.IChartValueFormatter;
+import org.moe.samples.simplechart.charts.protocol.ChartDataSetProtocol;
+import org.moe.samples.simplechart.charts.protocol.ChartValueFormatter;
 
 @Generated
 @Library("Charts")
 @Runtime(ObjCRuntime.class)
 @ObjCClassName("_TtC6Charts16ChartBaseDataSet")
 @ObjCClassBinding
-public class ChartBaseDataSet extends NSObject implements IChartDataSet, NSCopying {
+public class ChartBaseDataSet extends NSObject implements ChartDataSetProtocol, NSCopying {
     static {
         NatJ.register();
     }
@@ -70,10 +72,9 @@ public class ChartBaseDataSet extends NSObject implements IChartDataSet, NSCopyi
     @Selector("alloc")
     public static native ChartBaseDataSet alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ChartBaseDataSet allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -81,7 +82,6 @@ public class ChartBaseDataSet extends NSObject implements IChartDataSet, NSCopyi
 
     @Generated
     @Selector("axisDependency")
-    @NInt
     public native long axisDependency();
 
     @Generated
@@ -116,7 +116,7 @@ public class ChartBaseDataSet extends NSObject implements IChartDataSet, NSCopyi
 
     @Generated
     @Selector("colorAtIndex:")
-    public native UIColor colorAtIndex(@NInt long index);
+    public native UIColor colorAtIndex(long index);
 
     @Generated
     @Selector("colors")
@@ -154,12 +154,11 @@ public class ChartBaseDataSet extends NSObject implements IChartDataSet, NSCopyi
 
     @Generated
     @Selector("entryCount")
-    @NInt
     public native long entryCount();
 
     @Generated
     @Selector("entryForIndex:")
-    public native ChartDataEntry entryForIndex(@NInt long i);
+    public native ChartDataEntry entryForIndex(long i);
 
     @Generated
     @Selector("entryForXValue:closestToY:")
@@ -167,21 +166,18 @@ public class ChartBaseDataSet extends NSObject implements IChartDataSet, NSCopyi
 
     @Generated
     @Selector("entryForXValue:closestToY:rounding:")
-    public native ChartDataEntry entryForXValueClosestToYRounding(double x, double y, @NInt long rounding);
+    public native ChartDataEntry entryForXValueClosestToYRounding(double x, double y, long rounding);
 
     @Generated
     @Selector("entryIndexWithEntry:")
-    @NInt
     public native long entryIndexWithEntry(ChartDataEntry e);
 
     @Generated
     @Selector("entryIndexWithX:closestToY:rounding:")
-    @NInt
-    public native long entryIndexWithXClosestToYRounding(double xValue, double y, @NInt long rounding);
+    public native long entryIndexWithXClosestToYRounding(double xValue, double y, long rounding);
 
     @Generated
     @Selector("form")
-    @NInt
     public native long form();
 
     @Generated
@@ -190,17 +186,14 @@ public class ChartBaseDataSet extends NSObject implements IChartDataSet, NSCopyi
 
     @Generated
     @Selector("formLineDashPhase")
-    @NFloat
     public native double formLineDashPhase();
 
     @Generated
     @Selector("formLineWidth")
-    @NFloat
     public native double formLineWidth();
 
     @Generated
     @Selector("formSize")
-    @NFloat
     public native double formSize();
 
     @Generated
@@ -215,7 +208,7 @@ public class ChartBaseDataSet extends NSObject implements IChartDataSet, NSCopyi
     @Generated
     @Selector("iconsOffset")
     @ByValue
-    public native CGPoint iconsOffset();
+    public native apple.coregraphics.struct.CGPoint iconsOffset();
 
     @Generated
     @Selector("init")
@@ -267,14 +260,9 @@ public class ChartBaseDataSet extends NSObject implements IChartDataSet, NSCopyi
     public native String label();
 
     @Generated
-    @Selector("needsFormatter")
-    public native boolean needsFormatter();
-
-    @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ChartBaseDataSet new_objc();
 
     @Generated
     @Selector("notifyDataSetChanged")
@@ -286,7 +274,7 @@ public class ChartBaseDataSet extends NSObject implements IChartDataSet, NSCopyi
 
     @Generated
     @Selector("removeEntryWithIndex:")
-    public native boolean removeEntryWithIndex(@NInt long index);
+    public native boolean removeEntryWithIndex(long index);
 
     @Generated
     @Selector("removeEntryWithX:")
@@ -317,7 +305,7 @@ public class ChartBaseDataSet extends NSObject implements IChartDataSet, NSCopyi
      */
     @Generated
     @Selector("setAxisDependency:")
-    public native void setAxisDependency(@NInt long value);
+    public native void setAxisDependency(long value);
 
     @Generated
     @Selector("setColor:")
@@ -331,7 +319,7 @@ public class ChartBaseDataSet extends NSObject implements IChartDataSet, NSCopyi
      */
     @Generated
     @Selector("setColor:alpha:")
-    public native void setColorAlpha(UIColor color, @NFloat double alpha);
+    public native void setColorAlpha(UIColor color, double alpha);
 
     /**
      * All the colors that are used for this DataSet.
@@ -349,7 +337,7 @@ public class ChartBaseDataSet extends NSObject implements IChartDataSet, NSCopyi
      */
     @Generated
     @Selector("setColors:alpha:")
-    public native void setColorsAlpha(NSArray<? extends UIColor> colors, @NFloat double alpha);
+    public native void setColorsAlpha(NSArray<? extends UIColor> colors, double alpha);
 
     @Generated
     @Selector("setDrawIconsEnabled:")
@@ -364,7 +352,7 @@ public class ChartBaseDataSet extends NSObject implements IChartDataSet, NSCopyi
      */
     @Generated
     @Selector("setForm:")
-    public native void setForm(@NInt long value);
+    public native void setForm(long value);
 
     /**
      * Line dash configuration for legend shapes that consist of lines.
@@ -382,7 +370,7 @@ public class ChartBaseDataSet extends NSObject implements IChartDataSet, NSCopyi
      */
     @Generated
     @Selector("setFormLineDashPhase:")
-    public native void setFormLineDashPhase(@NFloat double value);
+    public native void setFormLineDashPhase(double value);
 
     /**
      * The line width for drawing the form of this dataset in the legend
@@ -390,7 +378,7 @@ public class ChartBaseDataSet extends NSObject implements IChartDataSet, NSCopyi
      */
     @Generated
     @Selector("setFormLineWidth:")
-    public native void setFormLineWidth(@NFloat double value);
+    public native void setFormLineWidth(double value);
 
     /**
      * The form size to draw for this dataset in the legend.
@@ -398,7 +386,7 @@ public class ChartBaseDataSet extends NSObject implements IChartDataSet, NSCopyi
      */
     @Generated
     @Selector("setFormSize:")
-    public native void setFormSize(@NFloat double value);
+    public native void setFormSize(double value);
 
     @Generated
     @Selector("setHighlightEnabled:")
@@ -406,7 +394,7 @@ public class ChartBaseDataSet extends NSObject implements IChartDataSet, NSCopyi
 
     @Generated
     @Selector("setIconsOffset:")
-    public native void setIconsOffset(@ByValue CGPoint value);
+    public native void setIconsOffset(@ByValue apple.coregraphics.struct.CGPoint value);
 
     /**
      * The label string that describes the DataSet.
@@ -428,7 +416,7 @@ public class ChartBaseDataSet extends NSObject implements IChartDataSet, NSCopyi
 
     @Generated
     @Selector("setValueFormatter:")
-    public native void setValueFormatter(@Mapped(ObjCObjectMapper.class) IChartValueFormatter value);
+    public native void setValueFormatter(@Mapped(ObjCObjectMapper.class) ChartValueFormatter value);
 
     @Generated
     @Selector("setValueTextColor:")
@@ -457,7 +445,7 @@ public class ChartBaseDataSet extends NSObject implements IChartDataSet, NSCopyi
     @Generated
     @Selector("valueFormatter")
     @MappedReturn(ObjCObjectMapper.class)
-    public native IChartValueFormatter valueFormatter();
+    public native ChartValueFormatter valueFormatter();
 
     @Generated
     @Selector("valueTextColor")
@@ -465,7 +453,7 @@ public class ChartBaseDataSet extends NSObject implements IChartDataSet, NSCopyi
 
     @Generated
     @Selector("valueTextColorAt:")
-    public native UIColor valueTextColorAt(@NInt long index);
+    public native UIColor valueTextColorAt(long index);
 
     @Generated
     @Selector("version")
@@ -491,4 +479,12 @@ public class ChartBaseDataSet extends NSObject implements IChartDataSet, NSCopyi
     @Generated
     @Selector("yMin")
     public native double yMin();
+
+    @Generated
+    @Selector("setValueLabelAngle:")
+    public native void setValueLabelAngle(double value);
+
+    @Generated
+    @Selector("valueLabelAngle")
+    public native double valueLabelAngle();
 }

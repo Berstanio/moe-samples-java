@@ -51,7 +51,7 @@ public class ChartAxisRendererBase extends ChartRenderer {
     @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSObject allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -150,7 +150,7 @@ public class ChartAxisRendererBase extends ChartRenderer {
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSObject new_objc();
 
     /**
      * Draws the axis labels on the specified context

@@ -25,6 +25,7 @@ import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.samples.simplechart.charts.protocol.IChartDataSet;
+import org.moe.samples.simplechart.charts.protocol.ChartDataSetProtocol;
 
 @Generated
 @Library("Charts")
@@ -50,10 +51,9 @@ public class BarChartData extends BarLineScatterCandleBubbleChartData {
     @Selector("alloc")
     public static native BarChartData alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native BarChartData allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -128,7 +128,7 @@ public class BarChartData extends BarLineScatterCandleBubbleChartData {
 
     @Generated
     @Selector("initWithDataSet:")
-    public native BarChartData initWithDataSet(@Mapped(ObjCObjectMapper.class) IChartDataSet dataSet);
+    public native BarChartData initWithDataSet(@Mapped(ObjCObjectMapper.class) ChartDataSetProtocol dataSet);
 
     @Generated
     @Selector("initWithDataSets:")
@@ -158,8 +158,7 @@ public class BarChartData extends BarLineScatterCandleBubbleChartData {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native BarChartData new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

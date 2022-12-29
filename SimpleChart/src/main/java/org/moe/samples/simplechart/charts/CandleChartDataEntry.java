@@ -50,10 +50,9 @@ public class CandleChartDataEntry extends ChartDataEntry {
     @Selector("alloc")
     public static native CandleChartDataEntry alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CandleChartDataEntry allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -206,8 +205,7 @@ public class CandleChartDataEntry extends ChartDataEntry {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CandleChartDataEntry new_objc();
 
     /**
      * open value

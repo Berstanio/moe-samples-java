@@ -57,10 +57,9 @@ public class ChartLimitLine extends ChartComponentBase {
     @Selector("alloc")
     public static native ChartLimitLine alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ChartLimitLine allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -140,7 +139,6 @@ public class ChartLimitLine extends ChartComponentBase {
 
     @Generated
     @Selector("labelPosition")
-    @NInt
     public native long labelPosition();
 
     /**
@@ -160,7 +158,6 @@ public class ChartLimitLine extends ChartComponentBase {
 
     @Generated
     @Selector("lineDashPhase")
-    @NFloat
     public native double lineDashPhase();
 
     /**
@@ -168,14 +165,12 @@ public class ChartLimitLine extends ChartComponentBase {
      */
     @Generated
     @Selector("lineWidth")
-    @NFloat
     public native double lineWidth();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ChartLimitLine new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -195,7 +190,7 @@ public class ChartLimitLine extends ChartComponentBase {
 
     @Generated
     @Selector("setLabelPosition:")
-    public native void setLabelPosition(@NInt long value);
+    public native void setLabelPosition(long value);
 
     /**
      * limit / maximum (the y-value or xIndex)
@@ -214,14 +209,14 @@ public class ChartLimitLine extends ChartComponentBase {
 
     @Generated
     @Selector("setLineDashPhase:")
-    public native void setLineDashPhase(@NFloat double value);
+    public native void setLineDashPhase(double value);
 
     /**
      * set the line width of the chart (min = 0.2, max = 12); default 2
      */
     @Generated
     @Selector("setLineWidth:")
-    public native void setLineWidth(@NFloat double value);
+    public native void setLineWidth(double value);
 
     @Generated
     @Selector("setValueFont:")

@@ -51,10 +51,9 @@ public class AnimatedMoveViewJob extends AnimatedViewPortJob {
     @Selector("alloc")
     public static native AnimatedMoveViewJob alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AnimatedMoveViewJob allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -109,8 +108,8 @@ public class AnimatedMoveViewJob extends AnimatedViewPortJob {
             double yValue,
             ChartTransformer transformer,
             ChartViewBase view,
-            @NFloat double xOrigin,
-            @NFloat double yOrigin,
+            double xOrigin,
+            double yOrigin,
             double duration,
             @ObjCBlock(name = "call_initWithViewPortHandlerXValueYValueTransformerViewXOriginYOriginDurationEasing") Block_initWithViewPortHandlerXValueYValueTransformerViewXOriginYOriginDurationEasing easing);
 
@@ -146,8 +145,7 @@ public class AnimatedMoveViewJob extends AnimatedViewPortJob {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AnimatedMoveViewJob new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

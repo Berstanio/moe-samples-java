@@ -27,12 +27,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.moe.samples.simplechart.charts.protocol.ChartRenderer;
 
 @Generated
 @Library("Charts")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class ChartLegendRenderer extends ChartRenderer {
+public class ChartLegendRenderer extends NSObject implements ChartRenderer {
     static {
         NatJ.register();
     }
@@ -51,10 +52,9 @@ public class ChartLegendRenderer extends ChartRenderer {
     @Selector("alloc")
     public static native ChartLegendRenderer alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ChartLegendRenderer allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -98,7 +98,7 @@ public class ChartLegendRenderer extends ChartRenderer {
      */
     @Generated
     @Selector("drawFormWithContext:x:y:entry:legend:")
-    public native void drawFormWithContextXYEntryLegend(CGContextRef context, @NFloat double x, @NFloat double y,
+    public native void drawFormWithContextXYEntryLegend(CGContextRef context, double x, double y,
             ChartLegendEntry entry, ChartLegend legend);
 
     /**
@@ -106,8 +106,8 @@ public class ChartLegendRenderer extends ChartRenderer {
      */
     @Generated
     @Selector("drawLabelWithContext:x:y:label:font:textColor:")
-    public native void drawLabelWithContextXYLabelFontTextColor(CGContextRef context, @NFloat double x,
-            @NFloat double y, String label, UIFont font, UIColor textColor);
+    public native void drawLabelWithContextXYLabelFontTextColor(CGContextRef context, double x,
+            double y, String label, UIFont font, UIColor textColor);
 
     @Generated
     @Selector("hash")
@@ -117,10 +117,6 @@ public class ChartLegendRenderer extends ChartRenderer {
     @Generated
     @Selector("init")
     public native ChartLegendRenderer init();
-
-    @Generated
-    @Selector("initWithViewPortHandler:")
-    public native ChartLegendRenderer initWithViewPortHandler(ChartViewPortHandler viewPortHandler);
 
     @Generated
     @Selector("initWithViewPortHandler:legend:")
@@ -158,8 +154,7 @@ public class ChartLegendRenderer extends ChartRenderer {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ChartLegendRenderer new_objc();
 
     @Generated
     @Selector("renderLegendWithContext:")
@@ -192,4 +187,8 @@ public class ChartLegendRenderer extends ChartRenderer {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("viewPortHandler")
+    public native ChartViewPortHandler viewPortHandler();
 }

@@ -73,10 +73,9 @@ public class PieRadarChartViewBase extends ChartViewBase {
     @Selector("alloc")
     public static native PieRadarChartViewBase alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native PieRadarChartViewBase allocWithZone(VoidPtr zone);
 
     /**
      * returns:
@@ -85,8 +84,7 @@ public class PieRadarChartViewBase extends ChartViewBase {
      */
     @Generated
     @Selector("angleForPointWithX:y:")
-    @NFloat
-    public native double angleForPointWithXY(@NFloat double x, @NFloat double y);
+    public native double angleForPointWithXY(double x, double y);
 
     @Generated
     @Selector("animateKeyframesWithDuration:delay:options:animations:completion:")
@@ -132,25 +130,21 @@ public class PieRadarChartViewBase extends ChartViewBase {
 
     @Generated
     @Selector("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearance();
+    public static native PieRadarChartViewBase appearance();
 
     @Generated
     @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
+    public PieRadarChartViewBase _appearance() {
         return appearance();
     }
 
     @Generated
     @Selector("appearanceForTraitCollection:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollection(UITraitCollection trait);
+    public static native PieRadarChartViewBase appearanceForTraitCollection(UITraitCollection trait);
 
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+    public PieRadarChartViewBase _appearanceForTraitCollection(UITraitCollection trait) {
         return appearanceForTraitCollection(trait);
     }
 
@@ -158,29 +152,25 @@ public class PieRadarChartViewBase extends ChartViewBase {
     @Variadic()
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+    public static native PieRadarChartViewBase appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+    public PieRadarChartViewBase _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+    public static native PieRadarChartViewBase appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+    public PieRadarChartViewBase _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
@@ -189,28 +179,24 @@ public class PieRadarChartViewBase extends ChartViewBase {
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(
+    public static native PieRadarChartViewBase appearanceWhenContainedIn(
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+    public PieRadarChartViewBase _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
             Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+    public static native PieRadarChartViewBase appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+    public PieRadarChartViewBase _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
@@ -273,7 +259,6 @@ public class PieRadarChartViewBase extends ChartViewBase {
      */
     @Generated
     @Selector("diameter")
-    @NFloat
     public native double diameter();
 
     /**
@@ -282,8 +267,7 @@ public class PieRadarChartViewBase extends ChartViewBase {
      */
     @Generated
     @Selector("distanceToCenterWithX:y:")
-    @NFloat
-    public native double distanceToCenterWithXY(@NFloat double x, @NFloat double y);
+    public native double distanceToCenterWithXY(double x, double y);
 
     /**
      * Calculates the position around a center point, depending on the distance
@@ -292,8 +276,8 @@ public class PieRadarChartViewBase extends ChartViewBase {
     @Generated
     @Selector("getPositionWithCenter:dist:angle:")
     @ByValue
-    public native CGPoint getPositionWithCenterDistAngle(@ByValue CGPoint center, @NFloat double dist,
-            @NFloat double angle);
+    public native apple.coregraphics.struct.CGPoint getPositionWithCenterDistAngle(@ByValue apple.coregraphics.struct.CGPoint center, double dist,
+            double angle);
 
     @Generated
     @Selector("hash")
@@ -307,8 +291,7 @@ public class PieRadarChartViewBase extends ChartViewBase {
      */
     @Generated
     @Selector("indexForAngle:")
-    @NInt
-    public native long indexForAngle(@NFloat double angle);
+    public native long indexForAngle(double angle);
 
     @Generated
     @Selector("inheritedAnimationDuration")
@@ -324,7 +307,7 @@ public class PieRadarChartViewBase extends ChartViewBase {
 
     @Generated
     @Selector("initWithFrame:")
-    public native PieRadarChartViewBase initWithFrame(@ByValue CGRect frame);
+    public native PieRadarChartViewBase initWithFrame(@ByValue apple.coregraphics.struct.CGRect frame);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -368,7 +351,6 @@ public class PieRadarChartViewBase extends ChartViewBase {
 
     @Generated
     @Selector("maxVisibleCount")
-    @NInt
     public native long maxVisibleCount();
 
     /**
@@ -376,7 +358,6 @@ public class PieRadarChartViewBase extends ChartViewBase {
      */
     @Generated
     @Selector("minOffset")
-    @NFloat
     public native double minOffset();
 
     @Generated
@@ -389,8 +370,7 @@ public class PieRadarChartViewBase extends ChartViewBase {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native PieRadarChartViewBase new_objc();
 
     @Generated
     @Selector("notifyDataSetChanged")
@@ -431,7 +411,6 @@ public class PieRadarChartViewBase extends ChartViewBase {
      */
     @Generated
     @Selector("radius")
-    @NFloat
     public native double radius();
 
     /**
@@ -440,7 +419,6 @@ public class PieRadarChartViewBase extends ChartViewBase {
      */
     @Generated
     @Selector("rawRotationAngle")
-    @NFloat
     public native double rawRotationAngle();
 
     @Generated
@@ -462,7 +440,6 @@ public class PieRadarChartViewBase extends ChartViewBase {
      */
     @Generated
     @Selector("rotationAngle")
-    @NFloat
     public native double rotationAngle();
 
     /**
@@ -536,7 +513,7 @@ public class PieRadarChartViewBase extends ChartViewBase {
      */
     @Generated
     @Selector("setMinOffset:")
-    public native void setMinOffset(@NFloat double value);
+    public native void setMinOffset(double value);
 
     /**
      * current rotation angle of the pie chart
@@ -545,7 +522,7 @@ public class PieRadarChartViewBase extends ChartViewBase {
      */
     @Generated
     @Selector("setRotationAngle:")
-    public native void setRotationAngle(@NFloat double value);
+    public native void setRotationAngle(double value);
 
     /**
      * flag that indicates if rotation is enabled or not
@@ -571,8 +548,8 @@ public class PieRadarChartViewBase extends ChartViewBase {
 
     @Generated
     @Selector("spinWithDuration:fromAngle:toAngle:")
-    public native void spinWithDurationFromAngleToAngle(double duration, @NFloat double fromAngle,
-            @NFloat double toAngle);
+    public native void spinWithDurationFromAngleToAngle(double duration, double fromAngle,
+            double toAngle);
 
     /**
      * Applys a spin animation to the Chart.
@@ -581,8 +558,8 @@ public class PieRadarChartViewBase extends ChartViewBase {
     @Selector("spinWithDuration:fromAngle:toAngle:easing:")
     public native void spinWithDurationFromAngleToAngleEasing(
             double duration,
-            @NFloat double fromAngle,
-            @NFloat double toAngle,
+            double fromAngle,
+            double toAngle,
             @ObjCBlock(name = "call_spinWithDurationFromAngleToAngleEasing") Block_spinWithDurationFromAngleToAngleEasing easing);
 
     @Runtime(ObjCRuntime.class)
@@ -594,8 +571,8 @@ public class PieRadarChartViewBase extends ChartViewBase {
 
     @Generated
     @Selector("spinWithDuration:fromAngle:toAngle:easingOption:")
-    public native void spinWithDurationFromAngleToAngleEasingOption(double duration, @NFloat double fromAngle,
-            @NFloat double toAngle, @NInt long easingOption);
+    public native void spinWithDurationFromAngleToAngleEasingOption(double duration, double fromAngle,
+            double toAngle, long easingOption);
 
     @Generated
     @Selector("stopDeceleration")

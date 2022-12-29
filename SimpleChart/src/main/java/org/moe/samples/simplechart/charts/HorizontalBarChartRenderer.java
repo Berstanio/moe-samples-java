@@ -28,6 +28,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.samples.simplechart.charts.protocol.BarChartDataProvider;
 import org.moe.samples.simplechart.charts.protocol.ChartDataProvider;
 import org.moe.samples.simplechart.charts.protocol.IBarChartDataSet;
+import org.moe.samples.simplechart.charts.protocol.BarChartDataSetProtocol;
 
 @Generated
 @Library("Charts")
@@ -53,10 +54,9 @@ public class HorizontalBarChartRenderer extends BarChartRenderer {
     @Selector("alloc")
     public static native HorizontalBarChartRenderer alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native HorizontalBarChartRenderer allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -91,7 +91,7 @@ public class HorizontalBarChartRenderer extends BarChartRenderer {
     @Generated
     @Selector("drawDataSetWithContext:dataSet:index:")
     public native void drawDataSetWithContextDataSetIndex(CGContextRef context,
-            @Mapped(ObjCObjectMapper.class) IBarChartDataSet dataSet, @NInt long index);
+            @Mapped(ObjCObjectMapper.class) BarChartDataSetProtocol dataSet, long index);
 
     @Generated
     @Selector("drawValuesWithContext:")
@@ -111,19 +111,10 @@ public class HorizontalBarChartRenderer extends BarChartRenderer {
     public native void initBuffers();
 
     @Generated
-    @Selector("initWithAnimator:viewPortHandler:")
-    public native HorizontalBarChartRenderer initWithAnimatorViewPortHandler(ChartAnimator animator,
-            ChartViewPortHandler viewPortHandler);
-
-    @Generated
     @Selector("initWithDataProvider:animator:viewPortHandler:")
     public native HorizontalBarChartRenderer initWithDataProviderAnimatorViewPortHandler(
             @Mapped(ObjCObjectMapper.class) BarChartDataProvider dataProvider, ChartAnimator animator,
             ChartViewPortHandler viewPortHandler);
-
-    @Generated
-    @Selector("initWithViewPortHandler:")
-    public native HorizontalBarChartRenderer initWithViewPortHandler(ChartViewPortHandler viewPortHandler);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -154,8 +145,7 @@ public class HorizontalBarChartRenderer extends BarChartRenderer {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native HorizontalBarChartRenderer new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

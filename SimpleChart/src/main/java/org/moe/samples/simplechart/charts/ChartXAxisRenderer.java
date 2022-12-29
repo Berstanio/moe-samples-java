@@ -35,7 +35,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Charts")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class ChartXAxisRenderer extends ChartAxisRendererBase {
+public class ChartXAxisRenderer extends NSObject {
     static {
         NatJ.register();
     }
@@ -54,10 +54,9 @@ public class ChartXAxisRenderer extends ChartAxisRendererBase {
     @Selector("alloc")
     public static native ChartXAxisRenderer alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ChartXAxisRenderer allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -82,14 +81,6 @@ public class ChartXAxisRenderer extends ChartAxisRendererBase {
     public static native Class classForKeyedUnarchiver();
 
     @Generated
-    @Selector("computeAxisValuesWithMin:max:")
-    public native void computeAxisValuesWithMinMax(double min, double max);
-
-    @Generated
-    @Selector("computeAxisWithMin:max:inverted:")
-    public native void computeAxisWithMinMaxInverted(double min, double max, boolean inverted);
-
-    @Generated
     @Selector("computeSize")
     public native void computeSize();
 
@@ -103,26 +94,19 @@ public class ChartXAxisRenderer extends ChartAxisRendererBase {
 
     @Generated
     @Selector("drawGridLineWithContext:x:y:")
-    public native void drawGridLineWithContextXY(CGContextRef context, @NFloat double x, @NFloat double y);
-
-    @Generated
-    @Selector("drawLabelWithContext:formattedLabel:x:y:attributes:constrainedToSize:anchor:angleRadians:")
-    public native void drawLabelWithContextFormattedLabelXYAttributesConstrainedToSizeAnchorAngleRadians(
-            CGContextRef context, String formattedLabel, @NFloat double x, @NFloat double y,
-            NSDictionary<String, ?> attributes, @ByValue CGSize constrainedToSize, @ByValue CGPoint anchor,
-            @NFloat double angleRadians);
+    public native void drawGridLineWithContextXY(CGContextRef context, double x, double y);
 
     /**
      * draws the x-labels on the specified y-position
      */
     @Generated
     @Selector("drawLabelsWithContext:pos:anchor:")
-    public native void drawLabelsWithContextPosAnchor(CGContextRef context, @NFloat double pos, @ByValue CGPoint anchor);
+    public native void drawLabelsWithContextPosAnchor(CGContextRef context, double pos, @ByValue apple.coregraphics.struct.CGPoint anchor);
 
     @Generated
     @Selector("gridClippingRect")
     @ByValue
-    public native CGRect gridClippingRect();
+    public native apple.coregraphics.struct.CGRect gridClippingRect();
 
     @Generated
     @Selector("hash")
@@ -132,20 +116,6 @@ public class ChartXAxisRenderer extends ChartAxisRendererBase {
     @Generated
     @Selector("init")
     public native ChartXAxisRenderer init();
-
-    @Generated
-    @Selector("initWithViewPortHandler:")
-    public native ChartXAxisRenderer initWithViewPortHandler(ChartViewPortHandler viewPortHandler);
-
-    @Generated
-    @Selector("initWithViewPortHandler:transformer:axis:")
-    public native ChartXAxisRenderer initWithViewPortHandlerTransformerAxis(ChartViewPortHandler viewPortHandler,
-            ChartTransformer transformer, ChartAxisBase axis);
-
-    @Generated
-    @Selector("initWithViewPortHandler:xAxis:transformer:")
-    public native ChartXAxisRenderer initWithViewPortHandlerXAxisTransformer(ChartViewPortHandler viewPortHandler,
-            ChartXAxis xAxis, ChartTransformer transformer);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -171,34 +141,17 @@ public class ChartXAxisRenderer extends ChartAxisRendererBase {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("renderAxisLabelsWithContext:")
-    public native void renderAxisLabelsWithContext(CGContextRef context);
-
-    @Generated
-    @Selector("renderAxisLineWithContext:")
-    public native void renderAxisLineWithContext(CGContextRef context);
-
-    @Generated
-    @Selector("renderGridLinesWithContext:")
-    public native void renderGridLinesWithContext(CGContextRef context);
+    public static native ChartXAxisRenderer new_objc();
 
     @Generated
     @Selector("renderLimitLineLabelWithContext:limitLine:position:yOffset:")
     public native void renderLimitLineLabelWithContextLimitLinePositionYOffset(CGContextRef context,
-            ChartLimitLine limitLine, @ByValue CGPoint position, @NFloat double yOffset);
+            ChartLimitLine limitLine, @ByValue apple.coregraphics.struct.CGPoint position, double yOffset);
 
     @Generated
     @Selector("renderLimitLineLineWithContext:limitLine:position:")
     public native void renderLimitLineLineWithContextLimitLinePosition(CGContextRef context, ChartLimitLine limitLine,
-            @ByValue CGPoint position);
-
-    @Generated
-    @Selector("renderLimitLinesWithContext:")
-    public native void renderLimitLinesWithContext(CGContextRef context);
+            @ByValue apple.coregraphics.struct.CGPoint position);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -220,4 +173,28 @@ public class ChartXAxisRenderer extends ChartAxisRendererBase {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("axis")
+    public native ChartXAxis axis();
+
+    @Generated
+    @Selector("drawLabelWithContext:formattedLabel:x:y:attributes:constrainedTo:anchor:angleRadians:")
+    public native void drawLabelWithContextFormattedLabelXYAttributesConstrainedToAnchorAngleRadians(
+            CGContextRef context, String formattedLabel, double x, double y, NSDictionary<String, ?> attributes,
+            @ByValue apple.coregraphics.struct.CGSize size, @ByValue apple.coregraphics.struct.CGPoint anchor,
+            double angleRadians);
+
+    @Generated
+    @Selector("initWithViewPortHandler:axis:transformer:")
+    public native ChartXAxisRenderer initWithViewPortHandlerAxisTransformer(ChartViewPortHandler viewPortHandler,
+            ChartXAxis axis, ChartTransformer transformer);
+
+    @Generated
+    @Selector("transformer")
+    public native ChartTransformer transformer();
+
+    @Generated
+    @Selector("viewPortHandler")
+    public native ChartViewPortHandler viewPortHandler();
 }

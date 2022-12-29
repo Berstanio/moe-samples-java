@@ -28,6 +28,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.samples.simplechart.charts.protocol.IChartDataSet;
 import org.moe.samples.simplechart.charts.protocol.IChartValueFormatter;
+import org.moe.samples.simplechart.charts.protocol.ChartDataSetProtocol;
+import org.moe.samples.simplechart.charts.protocol.ChartValueFormatter;
 
 @Generated
 @Library("Charts")
@@ -74,24 +76,23 @@ public class ChartData extends NSObject {
 
     @Generated
     @Selector("addDataSet:")
-    public native void addDataSet(@Mapped(ObjCObjectMapper.class) IChartDataSet dataSet);
+    public native void addDataSet(@Mapped(ObjCObjectMapper.class) ChartDataSetProtocol newElement);
 
     /**
      * Adds an Entry to the DataSet at the specified index. Entries are added to the end of the list.
      */
     @Generated
     @Selector("addEntry:dataSetIndex:")
-    public native void addEntryDataSetIndex(ChartDataEntry e, @NInt long dataSetIndex);
+    public native void addEntryDataSetIndex(ChartDataEntry e, long dataSetIndex);
 
     @Generated
     @Owned
     @Selector("alloc")
     public static native ChartData alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ChartData allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -109,14 +110,14 @@ public class ChartData extends NSObject {
      */
     @Generated
     @Selector("calcMinMaxWithDataSet:")
-    public native void calcMinMaxWithDataSet(@Mapped(ObjCObjectMapper.class) IChartDataSet d);
+    public native void calcMinMaxWithDataSet(@Mapped(ObjCObjectMapper.class) ChartDataSetProtocol d);
 
     /**
      * Adjusts the current minimum and maximum values based on the provided Entry object.
      */
     @Generated
     @Selector("calcMinMaxWithEntry:axis:")
-    public native void calcMinMaxWithEntryAxis(ChartDataEntry e, @NInt long axis);
+    public native void calcMinMaxWithEntryAxis(ChartDataEntry e, long axis);
 
     @Generated
     @Selector("calcMinMaxYFromX:toX:")
@@ -156,14 +157,10 @@ public class ChartData extends NSObject {
      */
     @Generated
     @Selector("containsWithDataSet:")
-    public native boolean containsWithDataSet(@Mapped(ObjCObjectMapper.class) IChartDataSet dataSet);
+    public native boolean containsWithDataSet(@Mapped(ObjCObjectMapper.class) ChartDataSetProtocol dataSet);
 
-    /**
-     * The number of LineDataSets this object contains
-     */
     @Generated
     @Selector("dataSetCount")
-    @NInt
     public native long dataSetCount();
 
     /**
@@ -186,48 +183,7 @@ public class ChartData extends NSObject {
      */
     @Generated
     @Selector("entryCount")
-    @NInt
     public native long entryCount();
-
-    /**
-     * Get the Entry for a corresponding highlight object
-     * \param highlight
-     * 
-     * 
-     * returns:
-     * The entry that is highlighted
-     */
-    @Generated
-    @Selector("entryForHighlight:")
-    public native ChartDataEntry entryForHighlight(ChartHighlight highlight);
-
-    /**
-     * returns:
-     * All colors used across all DataSet objects this object represents.
-     */
-    @Generated
-    @Selector("getColors")
-    public native NSArray<? extends UIColor> getColors();
-
-    @Generated
-    @Selector("getDataSetByIndex:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native IChartDataSet getDataSetByIndex(@NInt long index);
-
-    /**
-     * <em>IMPORTANT: This method does calculations at runtime. Use with care in performance critical situations.</em>
-     * \param label
-     * 
-     * \param ignorecase
-     * 
-     * 
-     * returns:
-     * The DataSet Object with the given label. Sensitive or not.
-     */
-    @Generated
-    @Selector("getDataSetByLabel:ignorecase:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native IChartDataSet getDataSetByLabelIgnorecase(String label, boolean ignorecase);
 
     /**
      * returns:
@@ -236,7 +192,7 @@ public class ChartData extends NSObject {
     @Generated
     @Selector("getDataSetForEntry:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native IChartDataSet getDataSetForEntry(ChartDataEntry e);
+    public native ChartDataSetProtocol getDataSetForEntry(ChartDataEntry e);
 
     /**
      * returns:
@@ -245,7 +201,7 @@ public class ChartData extends NSObject {
     @Generated
     @Selector("getFirstLeftWithDataSets:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native IChartDataSet getFirstLeftWithDataSets(NSArray<?> dataSets);
+    public native ChartDataSetProtocol getFirstLeftWithDataSets(NSArray<?> dataSets);
 
     /**
      * returns:
@@ -254,37 +210,20 @@ public class ChartData extends NSObject {
     @Generated
     @Selector("getFirstRightWithDataSets:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native IChartDataSet getFirstRightWithDataSets(NSArray<?> dataSets);
+    public native ChartDataSetProtocol getFirstRightWithDataSets(NSArray<?> dataSets);
 
     @Generated
     @Selector("getYMaxWithAxis:")
-    public native double getYMaxWithAxis(@NInt long axis);
+    public native double getYMaxWithAxis(long axis);
 
     @Generated
     @Selector("getYMinWithAxis:")
-    public native double getYMinWithAxis(@NInt long axis);
+    public native double getYMinWithAxis(long axis);
 
     @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
-
-    /**
-     * Enables / disables highlighting values for all DataSets this data object contains.
-     * If set to true, this means that values can be highlighted programmatically or by touch gesture.
-     */
-    @Generated
-    @Selector("highlightEnabled")
-    public native boolean highlightEnabled();
-
-    /**
-     * returns:
-     * The index of the provided DataSet in the DataSet array of this data object, or -1 if it does not exist.
-     */
-    @Generated
-    @Selector("indexOfDataSet:")
-    @NInt
-    public native long indexOfDataSet(@Mapped(ObjCObjectMapper.class) IChartDataSet dataSet);
 
     @Generated
     @Selector("init")
@@ -292,7 +231,7 @@ public class ChartData extends NSObject {
 
     @Generated
     @Selector("initWithDataSet:")
-    public native ChartData initWithDataSet(@Mapped(ObjCObjectMapper.class) IChartDataSet dataSet);
+    public native ChartData initWithDataSet(@Mapped(ObjCObjectMapper.class) ChartDataSetProtocol dataSet);
 
     @Generated
     @Selector("initWithDataSets:")
@@ -312,7 +251,8 @@ public class ChartData extends NSObject {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * if true, value highlightning is enabled
+     * Enables / disables highlighting values for all DataSets this data object contains.
+     * If set to true, this means that values can be highlighted programmatically or by touch gesture.
      */
     @Generated
     @Selector("isHighlightEnabled")
@@ -332,13 +272,12 @@ public class ChartData extends NSObject {
     @Generated
     @Selector("maxEntryCountSet")
     @MappedReturn(ObjCObjectMapper.class)
-    public native IChartDataSet maxEntryCountSet();
+    public native ChartDataSetProtocol maxEntryCountSet();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ChartData new_objc();
 
     /**
      * Call this method to let the ChartData know that the underlying data has changed.
@@ -355,27 +294,20 @@ public class ChartData extends NSObject {
      * returns:
      * <code>true</code> if a DataSet was removed, <code>false</code> ifno DataSet could be removed.
      */
-    @Generated
+    @MappedReturn(ObjCObjectMapper.class) @Generated
     @Selector("removeDataSet:")
-    public native boolean removeDataSet(@Mapped(ObjCObjectMapper.class) IChartDataSet dataSet);
+    public native ChartDataSetProtocol removeDataSet(@Mapped(ObjCObjectMapper.class) ChartDataSetProtocol dataSet);
 
-    /**
-     * Removes the DataSet at the given index in the DataSet array from the data object.
-     * Also recalculates all minimum and maximum values.
-     * 
-     * returns:
-     * <code>true</code> if a DataSet was removed, <code>false</code> ifno DataSet could be removed.
-     */
-    @Generated
+    @MappedReturn(ObjCObjectMapper.class) @Generated
     @Selector("removeDataSetByIndex:")
-    public native boolean removeDataSetByIndex(@NInt long index);
+    public native ChartDataSetProtocol removeDataSetByIndex(long position);
 
     /**
      * Removes the given Entry object from the DataSet at the specified index.
      */
     @Generated
     @Selector("removeEntry:dataSetIndex:")
-    public native boolean removeEntryDataSetIndex(ChartDataEntry entry, @NInt long dataSetIndex);
+    public native boolean removeEntryDataSetIndex(ChartDataEntry entry, long dataSetIndex);
 
     /**
      * Removes the Entry object closest to the given xIndex from the ChartDataSet at the
@@ -386,7 +318,7 @@ public class ChartData extends NSObject {
      */
     @Generated
     @Selector("removeEntryWithXValue:dataSetIndex:")
-    public native boolean removeEntryWithXValueDataSetIndex(double xValue, @NInt long dataSetIndex);
+    public native boolean removeEntryWithXValueDataSetIndex(double xValue, long dataSetIndex);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -435,14 +367,6 @@ public class ChartData extends NSObject {
     public native void setDrawValues(boolean enabled);
 
     /**
-     * Enables / disables highlighting values for all DataSets this data object contains.
-     * If set to true, this means that values can be highlighted programmatically or by touch gesture.
-     */
-    @Generated
-    @Selector("setHighlightEnabled:")
-    public native void setHighlightEnabled(boolean value);
-
-    /**
      * Sets the font for all value-labels for all DataSets this data object contains.
      */
     @Generated
@@ -450,11 +374,11 @@ public class ChartData extends NSObject {
     public native void setValueFont(UIFont font);
 
     /**
-     * Sets a custom IValueFormatter for all DataSets this data object contains.
+     * Sets a custom ValueFormatter for all DataSets this data object contains.
      */
     @Generated
     @Selector("setValueFormatter:")
-    public native void setValueFormatter(@Mapped(ObjCObjectMapper.class) IChartValueFormatter formatter);
+    public native void setValueFormatter(@Mapped(ObjCObjectMapper.class) ChartValueFormatter formatter);
 
     /**
      * Sets the color of the value-text (color in which the value-labels are drawn) for all DataSets this data object contains.
@@ -476,31 +400,75 @@ public class ChartData extends NSObject {
     @NInt
     public static native long version_static();
 
-    /**
-     * The maximum x-value the data object contains.
-     */
     @Generated
     @Selector("xMax")
     public native double xMax();
 
-    /**
-     * The minimum x-value the data object contains.
-     */
     @Generated
     @Selector("xMin")
     public native double xMin();
 
-    /**
-     * The greatest y-value the data object contains.
-     */
     @Generated
     @Selector("yMax")
     public native double yMax();
 
-    /**
-     * The smallest y-value the data object contains.
-     */
     @Generated
     @Selector("yMin")
     public native double yMin();
+
+    /**
+     * returns:
+     * All colors used across all DataSet objects this object represents.
+     */
+    @Generated
+    @Selector("colors")
+    public native NSArray<? extends UIColor> colors();
+
+    @Generated
+    @Selector("dataSetAtIndex:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native ChartDataSetProtocol dataSetAtIndex(long index);
+
+    /**
+     * <em>IMPORTANT: This method does calculations at runtime. Use with care in performance critical situations.</em>
+     * \param label
+     * 
+     * \param ignorecase
+     * 
+     * 
+     * returns:
+     * The DataSet Object with the given label. Sensitive or not.
+     */
+    @Generated
+    @Selector("dataSetForLabel:ignorecase:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native ChartDataSetProtocol dataSetForLabelIgnorecase(String label, boolean ignorecase);
+
+    /**
+     * Get the Entry for a corresponding highlight object
+     * \param highlight
+     * 
+     * 
+     * returns:
+     * The entry that is highlighted
+     */
+    @Generated
+    @Selector("entryFor:")
+    public native ChartDataEntry entryFor(ChartHighlight highlight);
+
+    /**
+     * returns:
+     * The index of the provided DataSet in the DataSet array of this data object, or -1 if it does not exist.
+     */
+    @Generated
+    @Selector("indexOf:")
+    public native long indexOf(@Mapped(ObjCObjectMapper.class) ChartDataSetProtocol dataSet);
+
+    /**
+     * Enables / disables highlighting values for all DataSets this data object contains.
+     * If set to true, this means that values can be highlighted programmatically or by touch gesture.
+     */
+    @Generated
+    @Selector("setIsHighlightEnabled:")
+    public native void setIsHighlightEnabled(boolean value);
 }

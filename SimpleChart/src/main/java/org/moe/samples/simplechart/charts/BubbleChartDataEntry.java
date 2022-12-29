@@ -51,10 +51,9 @@ public class BubbleChartDataEntry extends ChartDataEntry {
     @Selector("alloc")
     public static native BubbleChartDataEntry alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native BubbleChartDataEntry allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -127,7 +126,7 @@ public class BubbleChartDataEntry extends ChartDataEntry {
      */
     @Generated
     @Selector("initWithX:y:size:")
-    public native BubbleChartDataEntry initWithXYSize(double x, double y, @NFloat double size);
+    public native BubbleChartDataEntry initWithXYSize(double x, double y, double size);
 
     /**
      * \param x The index on the x-axis.
@@ -140,7 +139,7 @@ public class BubbleChartDataEntry extends ChartDataEntry {
      */
     @Generated
     @Selector("initWithX:y:size:data:")
-    public native BubbleChartDataEntry initWithXYSizeData(double x, double y, @NFloat double size,
+    public native BubbleChartDataEntry initWithXYSizeData(double x, double y, double size,
             @Mapped(ObjCObjectMapper.class) Object data);
 
     /**
@@ -154,7 +153,7 @@ public class BubbleChartDataEntry extends ChartDataEntry {
      */
     @Generated
     @Selector("initWithX:y:size:icon:")
-    public native BubbleChartDataEntry initWithXYSizeIcon(double x, double y, @NFloat double size, UIImage icon);
+    public native BubbleChartDataEntry initWithXYSizeIcon(double x, double y, double size, UIImage icon);
 
     /**
      * \param x The index on the x-axis.
@@ -169,7 +168,7 @@ public class BubbleChartDataEntry extends ChartDataEntry {
      */
     @Generated
     @Selector("initWithX:y:size:icon:data:")
-    public native BubbleChartDataEntry initWithXYSizeIconData(double x, double y, @NFloat double size, UIImage icon,
+    public native BubbleChartDataEntry initWithXYSizeIconData(double x, double y, double size, UIImage icon,
             @Mapped(ObjCObjectMapper.class) Object data);
 
     @Generated
@@ -213,8 +212,7 @@ public class BubbleChartDataEntry extends ChartDataEntry {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native BubbleChartDataEntry new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -229,7 +227,7 @@ public class BubbleChartDataEntry extends ChartDataEntry {
      */
     @Generated
     @Selector("setSize:")
-    public native void setSize(@NFloat double value);
+    public native void setSize(double value);
 
     @Generated
     @Selector("setVersion:")
@@ -240,7 +238,6 @@ public class BubbleChartDataEntry extends ChartDataEntry {
      */
     @Generated
     @Selector("size")
-    @NFloat
     public native double size();
 
     @Generated

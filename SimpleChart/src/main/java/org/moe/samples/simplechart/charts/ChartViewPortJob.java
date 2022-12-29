@@ -47,10 +47,9 @@ public class ChartViewPortJob extends NSObject {
     @Selector("alloc")
     public static native ChartViewPortJob alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ChartViewPortJob allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -125,8 +124,7 @@ public class ChartViewPortJob extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ChartViewPortJob new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

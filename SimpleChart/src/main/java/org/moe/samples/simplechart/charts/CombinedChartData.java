@@ -25,6 +25,7 @@ import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.samples.simplechart.charts.protocol.IChartDataSet;
+import org.moe.samples.simplechart.charts.protocol.ChartDataSetProtocol;
 
 @Generated
 @Library("Charts")
@@ -57,10 +58,9 @@ public class CombinedChartData extends BarLineScatterCandleBubbleChartData {
     @Selector("alloc")
     public static native CombinedChartData alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CombinedChartData allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -102,7 +102,7 @@ public class CombinedChartData extends BarLineScatterCandleBubbleChartData {
 
     @Generated
     @Selector("dataByIndex:")
-    public native ChartData dataByIndex(@NInt long index);
+    public native ChartData dataByIndex(long index);
 
     @Generated
     @Selector("debugDescription")
@@ -111,18 +111,6 @@ public class CombinedChartData extends BarLineScatterCandleBubbleChartData {
     @Generated
     @Selector("description")
     public static native String description_static();
-
-    /**
-     * Get the Entry for a corresponding highlight object
-     * \param highlight
-     * 
-     * 
-     * returns:
-     * The entry that is highlighted
-     */
-    @Generated
-    @Selector("entryForHighlight:")
-    public native ChartDataEntry entryForHighlight(ChartHighlight highlight);
 
     /**
      * Get dataset for highlight
@@ -135,7 +123,7 @@ public class CombinedChartData extends BarLineScatterCandleBubbleChartData {
     @Generated
     @Selector("getDataSetByHighlight:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native IChartDataSet getDataSetByHighlight(ChartHighlight highlight);
+    public native ChartDataSetProtocol getDataSetByHighlight(ChartHighlight highlight);
 
     @Generated
     @Selector("hash")
@@ -148,7 +136,7 @@ public class CombinedChartData extends BarLineScatterCandleBubbleChartData {
 
     @Generated
     @Selector("initWithDataSet:")
-    public native CombinedChartData initWithDataSet(@Mapped(ObjCObjectMapper.class) IChartDataSet dataSet);
+    public native CombinedChartData initWithDataSet(@Mapped(ObjCObjectMapper.class) ChartDataSetProtocol dataSet);
 
     @Generated
     @Selector("initWithDataSets:")
@@ -182,28 +170,27 @@ public class CombinedChartData extends BarLineScatterCandleBubbleChartData {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CombinedChartData new_objc();
 
     @Generated
     @Selector("notifyDataChanged")
     public native void notifyDataChanged();
 
-    @Generated
+    @MappedReturn(ObjCObjectMapper.class) @Generated
     @Selector("removeDataSet:")
-    public native boolean removeDataSet(@Mapped(ObjCObjectMapper.class) IChartDataSet dataSet);
+    public native ChartDataSetProtocol removeDataSet(@Mapped(ObjCObjectMapper.class) ChartDataSetProtocol dataSet);
 
-    @Generated
+    @MappedReturn(ObjCObjectMapper.class) @Generated
     @Selector("removeDataSetByIndex:")
-    public native boolean removeDataSetByIndex(@NInt long index);
+    public native ChartDataSetProtocol removeDataSetByIndex(long i);
 
     @Generated
     @Selector("removeEntry:dataSetIndex:")
-    public native boolean removeEntryDataSetIndex(ChartDataEntry entry, @NInt long dataSetIndex);
+    public native boolean removeEntryDataSetIndex(ChartDataEntry entry, long dataSetIndex);
 
     @Generated
     @Selector("removeEntryWithXValue:dataSetIndex:")
-    public native boolean removeEntryWithXValueDataSetIndex(double xValue, @NInt long dataSetIndex);
+    public native boolean removeEntryWithXValueDataSetIndex(double xValue, long dataSetIndex);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -249,4 +236,20 @@ public class CombinedChartData extends BarLineScatterCandleBubbleChartData {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("addDataSet:")
+    public native void addDataSet(@Mapped(ObjCObjectMapper.class) ChartDataSetProtocol newElement);
+
+    /**
+     * Get the Entry for a corresponding highlight object
+     * \param highlight
+     * 
+     * 
+     * returns:
+     * The entry that is highlighted
+     */
+    @Generated
+    @Selector("entryFor:")
+    public native ChartDataEntry entryFor(ChartHighlight highlight);
 }

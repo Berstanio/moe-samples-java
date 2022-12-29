@@ -48,10 +48,9 @@ public class HorizontalBarChartHighlighter extends BarChartHighlighter {
     @Selector("alloc")
     public static native HorizontalBarChartHighlighter alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native HorizontalBarChartHighlighter allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -85,7 +84,7 @@ public class HorizontalBarChartHighlighter extends BarChartHighlighter {
 
     @Generated
     @Selector("getHighlightWithX:y:")
-    public native ChartHighlight getHighlightWithXY(@NFloat double x, @NFloat double y);
+    public native ChartHighlight getHighlightWithXY(double x, double y);
 
     @Generated
     @Selector("hash")
@@ -124,8 +123,7 @@ public class HorizontalBarChartHighlighter extends BarChartHighlighter {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native HorizontalBarChartHighlighter new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

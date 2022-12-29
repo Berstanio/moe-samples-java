@@ -48,10 +48,9 @@ public class ChartXAxis extends ChartAxisBase {
     @Selector("alloc")
     public static native ChartXAxis alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ChartXAxis allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -136,7 +135,6 @@ public class ChartXAxis extends ChartAxisBase {
      */
     @Generated
     @Selector("labelHeight")
-    @NFloat
     public native double labelHeight();
 
     /**
@@ -144,7 +142,6 @@ public class ChartXAxis extends ChartAxisBase {
      */
     @Generated
     @Selector("labelPosition")
-    @NInt
     public native long labelPosition();
 
     /**
@@ -152,7 +149,6 @@ public class ChartXAxis extends ChartAxisBase {
      */
     @Generated
     @Selector("labelRotatedHeight")
-    @NFloat
     public native double labelRotatedHeight();
 
     /**
@@ -160,7 +156,6 @@ public class ChartXAxis extends ChartAxisBase {
      */
     @Generated
     @Selector("labelRotatedWidth")
-    @NFloat
     public native double labelRotatedWidth();
 
     /**
@@ -168,7 +163,6 @@ public class ChartXAxis extends ChartAxisBase {
      */
     @Generated
     @Selector("labelRotationAngle")
-    @NFloat
     public native double labelRotationAngle();
 
     /**
@@ -176,14 +170,12 @@ public class ChartXAxis extends ChartAxisBase {
      */
     @Generated
     @Selector("labelWidth")
-    @NFloat
     public native double labelWidth();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ChartXAxis new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -205,42 +197,42 @@ public class ChartXAxis extends ChartAxisBase {
      */
     @Generated
     @Selector("setLabelHeight:")
-    public native void setLabelHeight(@NFloat double value);
+    public native void setLabelHeight(double value);
 
     /**
      * the position of the x-labels relative to the chart
      */
     @Generated
     @Selector("setLabelPosition:")
-    public native void setLabelPosition(@NInt long value);
+    public native void setLabelPosition(long value);
 
     /**
      * height of the (rotated) x-axis labels in pixels - this is automatically calculated by the <code>computeSize()</code> methods in the renderers
      */
     @Generated
     @Selector("setLabelRotatedHeight:")
-    public native void setLabelRotatedHeight(@NFloat double value);
+    public native void setLabelRotatedHeight(double value);
 
     /**
      * width of the (rotated) x-axis labels in pixels - this is automatically calculated by the <code>computeSize()</code> methods in the renderers
      */
     @Generated
     @Selector("setLabelRotatedWidth:")
-    public native void setLabelRotatedWidth(@NFloat double value);
+    public native void setLabelRotatedWidth(double value);
 
     /**
      * This is the angle for drawing the X axis labels (in degrees)
      */
     @Generated
     @Selector("setLabelRotationAngle:")
-    public native void setLabelRotationAngle(@NFloat double value);
+    public native void setLabelRotationAngle(double value);
 
     /**
      * width of the x-axis labels in pixels - this is automatically calculated by the <code>computeSize()</code> methods in the renderers
      */
     @Generated
     @Selector("setLabelWidth:")
-    public native void setLabelWidth(@NFloat double value);
+    public native void setLabelWidth(double value);
 
     @Generated
     @Selector("setVersion:")
@@ -263,7 +255,7 @@ public class ChartXAxis extends ChartAxisBase {
      */
     @Generated
     @Selector("setWordWrapWidthPercent:")
-    public native void setWordWrapWidthPercent(@NFloat double value);
+    public native void setWordWrapWidthPercent(double value);
 
     @Generated
     @Selector("superclass")
@@ -291,6 +283,5 @@ public class ChartXAxis extends ChartAxisBase {
      */
     @Generated
     @Selector("wordWrapWidthPercent")
-    @NFloat
     public native double wordWrapWidthPercent();
 }

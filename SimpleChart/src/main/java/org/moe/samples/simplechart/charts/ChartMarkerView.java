@@ -38,12 +38,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.samples.simplechart.charts.protocol.IChartMarker;
+import org.moe.samples.simplechart.charts.protocol.ChartMarker;
 
 @Generated
 @Library("Charts")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class ChartMarkerView extends NSUIView implements IChartMarker {
+public class ChartMarkerView extends NSUIView implements ChartMarker {
     static {
         NatJ.register();
     }
@@ -69,10 +70,9 @@ public class ChartMarkerView extends NSUIView implements IChartMarker {
     @Selector("alloc")
     public static native ChartMarkerView alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ChartMarkerView allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("animateKeyframesWithDuration:delay:options:animations:completion:")
@@ -118,25 +118,21 @@ public class ChartMarkerView extends NSUIView implements IChartMarker {
 
     @Generated
     @Selector("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearance();
+    public static native ChartMarkerView appearance();
 
     @Generated
     @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
+    public ChartMarkerView _appearance() {
         return appearance();
     }
 
     @Generated
     @Selector("appearanceForTraitCollection:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollection(UITraitCollection trait);
+    public static native ChartMarkerView appearanceForTraitCollection(UITraitCollection trait);
 
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+    public ChartMarkerView _appearanceForTraitCollection(UITraitCollection trait) {
         return appearanceForTraitCollection(trait);
     }
 
@@ -144,29 +140,25 @@ public class ChartMarkerView extends NSUIView implements IChartMarker {
     @Variadic()
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+    public static native ChartMarkerView appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+    public ChartMarkerView _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+    public static native ChartMarkerView appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+    public ChartMarkerView _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
@@ -175,28 +167,24 @@ public class ChartMarkerView extends NSUIView implements IChartMarker {
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(
+    public static native ChartMarkerView appearanceWhenContainedIn(
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+    public ChartMarkerView _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
             Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+    public static native ChartMarkerView appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+    public ChartMarkerView _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
@@ -252,7 +240,7 @@ public class ChartMarkerView extends NSUIView implements IChartMarker {
 
     @Generated
     @Selector("drawWithContext:point:")
-    public native void drawWithContextPoint(CGContextRef context, @ByValue CGPoint point);
+    public native void drawWithContextPoint(CGContextRef context, @ByValue apple.coregraphics.struct.CGPoint point);
 
     @Generated
     @Selector("hash")
@@ -273,7 +261,7 @@ public class ChartMarkerView extends NSUIView implements IChartMarker {
 
     @Generated
     @Selector("initWithFrame:")
-    public native ChartMarkerView initWithFrame(@ByValue CGRect frame);
+    public native ChartMarkerView initWithFrame(@ByValue apple.coregraphics.struct.CGRect frame);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -310,18 +298,17 @@ public class ChartMarkerView extends NSUIView implements IChartMarker {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ChartMarkerView new_objc();
 
     @Generated
     @Selector("offset")
     @ByValue
-    public native CGPoint offset();
+    public native apple.coregraphics.struct.CGPoint offset();
 
     @Generated
     @Selector("offsetForDrawingAtPoint:")
     @ByValue
-    public native CGPoint offsetForDrawingAtPoint(@ByValue CGPoint point);
+    public native apple.coregraphics.struct.CGPoint offsetForDrawingAtPoint(@ByValue apple.coregraphics.struct.CGPoint point);
 
     @Generated
     @Selector("performSystemAnimation:onViews:options:animations:completion:")
@@ -419,7 +406,7 @@ public class ChartMarkerView extends NSUIView implements IChartMarker {
 
     @Generated
     @Selector("setOffset:")
-    public native void setOffset(@ByValue CGPoint value);
+    public native void setOffset(@ByValue apple.coregraphics.struct.CGPoint value);
 
     @Generated
     @Selector("setVersion:")

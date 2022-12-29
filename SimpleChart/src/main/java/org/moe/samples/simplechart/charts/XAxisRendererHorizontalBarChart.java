@@ -55,10 +55,9 @@ public class XAxisRendererHorizontalBarChart extends ChartXAxisRenderer {
     @Selector("alloc")
     public static native XAxisRendererHorizontalBarChart alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native XAxisRendererHorizontalBarChart allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -83,10 +82,6 @@ public class XAxisRendererHorizontalBarChart extends ChartXAxisRenderer {
     public static native Class classForKeyedUnarchiver();
 
     @Generated
-    @Selector("computeAxisWithMin:max:inverted:")
-    public native void computeAxisWithMinMaxInverted(double min, double max, boolean inverted);
-
-    @Generated
     @Selector("computeSize")
     public native void computeSize();
 
@@ -100,25 +95,25 @@ public class XAxisRendererHorizontalBarChart extends ChartXAxisRenderer {
 
     @Generated
     @Selector("drawGridLineWithContext:x:y:")
-    public native void drawGridLineWithContextXY(CGContextRef context, @NFloat double x, @NFloat double y);
+    public native void drawGridLineWithContextXY(CGContextRef context, double x, double y);
 
     @Generated
     @Selector("drawLabelWithContext:formattedLabel:x:y:attributes:anchor:angleRadians:")
     public native void drawLabelWithContextFormattedLabelXYAttributesAnchorAngleRadians(CGContextRef context,
-            String formattedLabel, @NFloat double x, @NFloat double y, NSDictionary<String, ?> attributes,
-            @ByValue CGPoint anchor, @NFloat double angleRadians);
+            String formattedLabel, double x, double y, NSDictionary<String, ?> attributes,
+            @ByValue apple.coregraphics.struct.CGPoint anchor, double angleRadians);
 
     /**
      * draws the x-labels on the specified y-position
      */
     @Generated
     @Selector("drawLabelsWithContext:pos:anchor:")
-    public native void drawLabelsWithContextPosAnchor(CGContextRef context, @NFloat double pos, @ByValue CGPoint anchor);
+    public native void drawLabelsWithContextPosAnchor(CGContextRef context, double pos, @ByValue apple.coregraphics.struct.CGPoint anchor);
 
     @Generated
     @Selector("gridClippingRect")
     @ByValue
-    public native CGRect gridClippingRect();
+    public native apple.coregraphics.struct.CGRect gridClippingRect();
 
     @Generated
     @Selector("hash")
@@ -128,25 +123,6 @@ public class XAxisRendererHorizontalBarChart extends ChartXAxisRenderer {
     @Generated
     @Selector("init")
     public native XAxisRendererHorizontalBarChart init();
-
-    @Generated
-    @Selector("initWithViewPortHandler:")
-    public native XAxisRendererHorizontalBarChart initWithViewPortHandler(ChartViewPortHandler viewPortHandler);
-
-    @Generated
-    @Selector("initWithViewPortHandler:transformer:axis:")
-    public native XAxisRendererHorizontalBarChart initWithViewPortHandlerTransformerAxis(
-            ChartViewPortHandler viewPortHandler, ChartTransformer transformer, ChartAxisBase axis);
-
-    @Generated
-    @Selector("initWithViewPortHandler:xAxis:transformer:")
-    public native XAxisRendererHorizontalBarChart initWithViewPortHandlerXAxisTransformer(
-            ChartViewPortHandler viewPortHandler, ChartXAxis xAxis, ChartTransformer transformer);
-
-    @Generated
-    @Selector("initWithViewPortHandler:xAxis:transformer:chart:")
-    public native XAxisRendererHorizontalBarChart initWithViewPortHandlerXAxisTransformerChart(
-            ChartViewPortHandler viewPortHandler, ChartXAxis xAxis, ChartTransformer transformer, BarChartView chart);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -172,20 +148,7 @@ public class XAxisRendererHorizontalBarChart extends ChartXAxisRenderer {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("renderAxisLabelsWithContext:")
-    public native void renderAxisLabelsWithContext(CGContextRef context);
-
-    @Generated
-    @Selector("renderAxisLineWithContext:")
-    public native void renderAxisLineWithContext(CGContextRef context);
-
-    @Generated
-    @Selector("renderLimitLinesWithContext:")
-    public native void renderLimitLinesWithContext(CGContextRef context);
+    public static native XAxisRendererHorizontalBarChart new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -207,4 +170,14 @@ public class XAxisRendererHorizontalBarChart extends ChartXAxisRenderer {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("initWithViewPortHandler:axis:transformer:")
+    public native XAxisRendererHorizontalBarChart initWithViewPortHandlerAxisTransformer(
+            ChartViewPortHandler viewPortHandler, ChartXAxis axis, ChartTransformer transformer);
+
+    @Generated
+    @Selector("initWithViewPortHandler:axis:transformer:chart:")
+    public native XAxisRendererHorizontalBarChart initWithViewPortHandlerAxisTransformerChart(
+            ChartViewPortHandler viewPortHandler, ChartXAxis axis, ChartTransformer transformer, BarChartView chart);
 }

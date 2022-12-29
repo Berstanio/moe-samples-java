@@ -48,10 +48,9 @@ public class PieRadarChartHighlighter extends ChartHighlighter {
     @Selector("alloc")
     public static native PieRadarChartHighlighter alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native PieRadarChartHighlighter allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -88,7 +87,7 @@ public class PieRadarChartHighlighter extends ChartHighlighter {
      */
     @Generated
     @Selector("closestHighlightWithIndex:x:y:")
-    public native ChartHighlight closestHighlightWithIndexXY(@NInt long index, @NFloat double x, @NFloat double y);
+    public native ChartHighlight closestHighlightWithIndexXY(long index, double x, double y);
 
     @Generated
     @Selector("debugDescription")
@@ -100,7 +99,7 @@ public class PieRadarChartHighlighter extends ChartHighlighter {
 
     @Generated
     @Selector("getHighlightWithX:y:")
-    public native ChartHighlight getHighlightWithXY(@NFloat double x, @NFloat double y);
+    public native ChartHighlight getHighlightWithXY(double x, double y);
 
     @Generated
     @Selector("hash")
@@ -139,8 +138,7 @@ public class PieRadarChartHighlighter extends ChartHighlighter {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native PieRadarChartHighlighter new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

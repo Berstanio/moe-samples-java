@@ -50,10 +50,9 @@ public class RadarChartRenderer extends LineRadarChartRenderer {
     @Selector("alloc")
     public static native RadarChartRenderer alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native RadarChartRenderer allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -123,18 +122,9 @@ public class RadarChartRenderer extends LineRadarChartRenderer {
     public native void initBuffers();
 
     @Generated
-    @Selector("initWithAnimator:viewPortHandler:")
-    public native RadarChartRenderer initWithAnimatorViewPortHandler(ChartAnimator animator,
-            ChartViewPortHandler viewPortHandler);
-
-    @Generated
     @Selector("initWithChart:animator:viewPortHandler:")
     public native RadarChartRenderer initWithChartAnimatorViewPortHandler(RadarChartView chart, ChartAnimator animator,
             ChartViewPortHandler viewPortHandler);
-
-    @Generated
-    @Selector("initWithViewPortHandler:")
-    public native RadarChartRenderer initWithViewPortHandler(ChartViewPortHandler viewPortHandler);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -160,8 +150,7 @@ public class RadarChartRenderer extends LineRadarChartRenderer {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native RadarChartRenderer new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

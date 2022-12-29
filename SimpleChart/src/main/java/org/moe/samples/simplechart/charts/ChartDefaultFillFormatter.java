@@ -28,6 +28,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.samples.simplechart.charts.protocol.IChartFillFormatter;
 import org.moe.samples.simplechart.charts.protocol.ILineChartDataSet;
 import org.moe.samples.simplechart.charts.protocol.LineChartDataProvider;
+import org.moe.samples.simplechart.charts.protocol.ChartFillFormatter;
+import org.moe.samples.simplechart.charts.protocol.LineChartDataSetProtocol;
 
 /**
  * Default formatter that calculates the position of the filled line.
@@ -36,7 +38,7 @@ import org.moe.samples.simplechart.charts.protocol.LineChartDataProvider;
 @Library("Charts")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class ChartDefaultFillFormatter extends NSObject implements IChartFillFormatter {
+public class ChartDefaultFillFormatter extends NSObject implements ChartFillFormatter {
     static {
         NatJ.register();
     }
@@ -55,10 +57,9 @@ public class ChartDefaultFillFormatter extends NSObject implements IChartFillFor
     @Selector("alloc")
     public static native ChartDefaultFillFormatter alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ChartDefaultFillFormatter allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -73,7 +74,6 @@ public class ChartDefaultFillFormatter extends NSObject implements IChartFillFor
     @Generated
     public interface Block_block_ret {
         @Generated
-        @NFloat
         double call_block_ret(@Mapped(ObjCObjectMapper.class) Object arg0, @Mapped(ObjCObjectMapper.class) Object arg1);
     }
 
@@ -105,9 +105,8 @@ public class ChartDefaultFillFormatter extends NSObject implements IChartFillFor
 
     @Generated
     @Selector("getFillLinePositionWithDataSet:dataProvider:")
-    @NFloat
     public native double getFillLinePositionWithDataSetDataProvider(
-            @Mapped(ObjCObjectMapper.class) ILineChartDataSet dataSet,
+            @Mapped(ObjCObjectMapper.class) LineChartDataSetProtocol dataSet,
             @Mapped(ObjCObjectMapper.class) LineChartDataProvider dataProvider);
 
     @Generated
@@ -128,7 +127,6 @@ public class ChartDefaultFillFormatter extends NSObject implements IChartFillFor
     @Generated
     public interface Block_initWithBlock {
         @Generated
-        @NFloat
         double call_initWithBlock(@Mapped(ObjCObjectMapper.class) Object arg0,
                 @Mapped(ObjCObjectMapper.class) Object arg1);
     }
@@ -157,8 +155,7 @@ public class ChartDefaultFillFormatter extends NSObject implements IChartFillFor
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ChartDefaultFillFormatter new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -176,7 +173,6 @@ public class ChartDefaultFillFormatter extends NSObject implements IChartFillFor
     @Generated
     public interface Block_setBlock {
         @Generated
-        @NFloat
         double call_setBlock(@Mapped(ObjCObjectMapper.class) Object arg0, @Mapped(ObjCObjectMapper.class) Object arg1);
     }
 
@@ -201,7 +197,6 @@ public class ChartDefaultFillFormatter extends NSObject implements IChartFillFor
     @Generated
     public interface Block_withBlock {
         @Generated
-        @NFloat
         double call_withBlock(@Mapped(ObjCObjectMapper.class) Object arg0, @Mapped(ObjCObjectMapper.class) Object arg1);
     }
 }

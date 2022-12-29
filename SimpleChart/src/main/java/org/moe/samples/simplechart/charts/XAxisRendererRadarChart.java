@@ -54,10 +54,9 @@ public class XAxisRendererRadarChart extends ChartXAxisRenderer {
     @Selector("alloc")
     public static native XAxisRendererRadarChart alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native XAxisRendererRadarChart allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -96,8 +95,8 @@ public class XAxisRendererRadarChart extends ChartXAxisRenderer {
     @Generated
     @Selector("drawLabelWithContext:formattedLabel:x:y:attributes:anchor:angleRadians:")
     public native void drawLabelWithContextFormattedLabelXYAttributesAnchorAngleRadians(CGContextRef context,
-            String formattedLabel, @NFloat double x, @NFloat double y, NSDictionary<String, ?> attributes,
-            @ByValue CGPoint anchor, @NFloat double angleRadians);
+            String formattedLabel, double x, double y, NSDictionary<String, ?> attributes,
+            @ByValue apple.coregraphics.struct.CGPoint anchor, double angleRadians);
 
     @Generated
     @Selector("hash")
@@ -107,25 +106,6 @@ public class XAxisRendererRadarChart extends ChartXAxisRenderer {
     @Generated
     @Selector("init")
     public native XAxisRendererRadarChart init();
-
-    @Generated
-    @Selector("initWithViewPortHandler:")
-    public native XAxisRendererRadarChart initWithViewPortHandler(ChartViewPortHandler viewPortHandler);
-
-    @Generated
-    @Selector("initWithViewPortHandler:transformer:axis:")
-    public native XAxisRendererRadarChart initWithViewPortHandlerTransformerAxis(ChartViewPortHandler viewPortHandler,
-            ChartTransformer transformer, ChartAxisBase axis);
-
-    @Generated
-    @Selector("initWithViewPortHandler:xAxis:chart:")
-    public native XAxisRendererRadarChart initWithViewPortHandlerXAxisChart(ChartViewPortHandler viewPortHandler,
-            ChartXAxis xAxis, RadarChartView chart);
-
-    @Generated
-    @Selector("initWithViewPortHandler:xAxis:transformer:")
-    public native XAxisRendererRadarChart initWithViewPortHandlerXAxisTransformer(ChartViewPortHandler viewPortHandler,
-            ChartXAxis xAxis, ChartTransformer transformer);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -151,16 +131,7 @@ public class XAxisRendererRadarChart extends ChartXAxisRenderer {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("renderAxisLabelsWithContext:")
-    public native void renderAxisLabelsWithContext(CGContextRef context);
-
-    @Generated
-    @Selector("renderLimitLinesWithContext:")
-    public native void renderLimitLinesWithContext(CGContextRef context);
+    public static native XAxisRendererRadarChart new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -198,4 +169,14 @@ public class XAxisRendererRadarChart extends ChartXAxisRenderer {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("initWithViewPortHandler:axis:chart:")
+    public native XAxisRendererRadarChart initWithViewPortHandlerAxisChart(ChartViewPortHandler viewPortHandler,
+            ChartXAxis axis, RadarChartView chart);
+
+    @Generated
+    @Selector("initWithViewPortHandler:axis:transformer:")
+    public native XAxisRendererRadarChart initWithViewPortHandlerAxisTransformer(ChartViewPortHandler viewPortHandler,
+            ChartXAxis axis, ChartTransformer transformer);
 }

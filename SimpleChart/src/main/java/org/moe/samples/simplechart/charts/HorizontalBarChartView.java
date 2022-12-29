@@ -71,10 +71,9 @@ public class HorizontalBarChartView extends BarChartView {
     @Selector("alloc")
     public static native HorizontalBarChartView alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native HorizontalBarChartView allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("animateKeyframesWithDuration:delay:options:animations:completion:")
@@ -120,25 +119,21 @@ public class HorizontalBarChartView extends BarChartView {
 
     @Generated
     @Selector("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearance();
+    public static native HorizontalBarChartView appearance();
 
     @Generated
     @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
+    public HorizontalBarChartView _appearance() {
         return appearance();
     }
 
     @Generated
     @Selector("appearanceForTraitCollection:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollection(UITraitCollection trait);
+    public static native HorizontalBarChartView appearanceForTraitCollection(UITraitCollection trait);
 
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+    public HorizontalBarChartView _appearanceForTraitCollection(UITraitCollection trait) {
         return appearanceForTraitCollection(trait);
     }
 
@@ -146,29 +141,25 @@ public class HorizontalBarChartView extends BarChartView {
     @Variadic()
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+    public static native HorizontalBarChartView appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+    public HorizontalBarChartView _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+    public static native HorizontalBarChartView appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+    public HorizontalBarChartView _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
@@ -177,28 +168,24 @@ public class HorizontalBarChartView extends BarChartView {
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(
+    public static native HorizontalBarChartView appearanceWhenContainedIn(
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+    public HorizontalBarChartView _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
             Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+    public static native HorizontalBarChartView appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+    public HorizontalBarChartView _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
@@ -251,21 +238,21 @@ public class HorizontalBarChartView extends BarChartView {
     @Generated
     @Selector("getBarBoundsWithEntry:")
     @ByValue
-    public native CGRect getBarBoundsWithEntry(BarChartDataEntry e);
+    public native apple.coregraphics.struct.CGRect getBarBoundsWithEntry(BarChartDataEntry e);
 
     @Generated
     @Selector("getHighlightByTouchPoint:")
-    public native ChartHighlight getHighlightByTouchPoint(@ByValue CGPoint pt);
+    public native ChartHighlight getHighlightByTouchPoint(@ByValue apple.coregraphics.struct.CGPoint pt);
 
     @Generated
     @Selector("getMarkerPositionWithHighlight:")
     @ByValue
-    public native CGPoint getMarkerPositionWithHighlight(ChartHighlight highlight);
+    public native apple.coregraphics.struct.CGPoint getMarkerPositionWithHighlight(ChartHighlight highlight);
 
     @Generated
     @Selector("getPositionWithEntry:axis:")
     @ByValue
-    public native CGPoint getPositionWithEntryAxis(ChartDataEntry e, @NInt long axis);
+    public native apple.coregraphics.struct.CGPoint getPositionWithEntryAxis(ChartDataEntry e, long axis);
 
     @Generated
     @Selector("hash")
@@ -293,7 +280,7 @@ public class HorizontalBarChartView extends BarChartView {
 
     @Generated
     @Selector("initWithFrame:")
-    public native HorizontalBarChartView initWithFrame(@ByValue CGRect frame);
+    public native HorizontalBarChartView initWithFrame(@ByValue apple.coregraphics.struct.CGRect frame);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -337,8 +324,7 @@ public class HorizontalBarChartView extends BarChartView {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native HorizontalBarChartView new_objc();
 
     @Generated
     @Selector("performSystemAnimation:onViews:options:animations:completion:")
@@ -432,15 +418,15 @@ public class HorizontalBarChartView extends BarChartView {
 
     @Generated
     @Selector("setVisibleYRangeMaximum:axis:")
-    public native void setVisibleYRangeMaximumAxis(double maxYRange, @NInt long axis);
+    public native void setVisibleYRangeMaximumAxis(double maxYRange, long axis);
 
     @Generated
     @Selector("setVisibleYRangeMinimum:axis:")
-    public native void setVisibleYRangeMinimumAxis(double minYRange, @NInt long axis);
+    public native void setVisibleYRangeMinimumAxis(double minYRange, long axis);
 
     @Generated
     @Selector("setVisibleYRangeWithMinYRange:maxYRange:axis:")
-    public native void setVisibleYRangeWithMinYRangeMaxYRangeAxis(double minYRange, double maxYRange, @NInt long axis);
+    public native void setVisibleYRangeWithMinYRangeMaxYRangeAxis(double minYRange, double maxYRange, long axis);
 
     @Generated
     @Selector("superclass")

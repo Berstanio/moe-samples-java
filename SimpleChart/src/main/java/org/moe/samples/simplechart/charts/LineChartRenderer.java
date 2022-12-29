@@ -27,6 +27,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.samples.simplechart.charts.protocol.ILineChartDataSet;
 import org.moe.samples.simplechart.charts.protocol.LineChartDataProvider;
+import org.moe.samples.simplechart.charts.protocol.LineChartDataSetProtocol;
 
 @Generated
 @Library("Charts")
@@ -52,10 +53,9 @@ public class LineChartRenderer extends LineRadarChartRenderer {
     @Selector("alloc")
     public static native LineChartRenderer alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native LineChartRenderer allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -95,12 +95,12 @@ public class LineChartRenderer extends LineRadarChartRenderer {
     @Generated
     @Selector("drawCubicBezierWithContext:dataSet:")
     public native void drawCubicBezierWithContextDataSet(CGContextRef context,
-            @Mapped(ObjCObjectMapper.class) ILineChartDataSet dataSet);
+            @Mapped(ObjCObjectMapper.class) LineChartDataSetProtocol dataSet);
 
     @Generated
     @Selector("drawDataSetWithContext:dataSet:")
     public native void drawDataSetWithContextDataSet(CGContextRef context,
-            @Mapped(ObjCObjectMapper.class) ILineChartDataSet dataSet);
+            @Mapped(ObjCObjectMapper.class) LineChartDataSetProtocol dataSet);
 
     @Generated
     @Selector("drawDataWithContext:")
@@ -117,12 +117,12 @@ public class LineChartRenderer extends LineRadarChartRenderer {
     @Generated
     @Selector("drawHorizontalBezierWithContext:dataSet:")
     public native void drawHorizontalBezierWithContextDataSet(CGContextRef context,
-            @Mapped(ObjCObjectMapper.class) ILineChartDataSet dataSet);
+            @Mapped(ObjCObjectMapper.class) LineChartDataSetProtocol dataSet);
 
     @Generated
     @Selector("drawLinearWithContext:dataSet:")
     public native void drawLinearWithContextDataSet(CGContextRef context,
-            @Mapped(ObjCObjectMapper.class) ILineChartDataSet dataSet);
+            @Mapped(ObjCObjectMapper.class) LineChartDataSetProtocol dataSet);
 
     @Generated
     @Selector("drawValuesWithContext:")
@@ -142,19 +142,10 @@ public class LineChartRenderer extends LineRadarChartRenderer {
     public native void initBuffers();
 
     @Generated
-    @Selector("initWithAnimator:viewPortHandler:")
-    public native LineChartRenderer initWithAnimatorViewPortHandler(ChartAnimator animator,
-            ChartViewPortHandler viewPortHandler);
-
-    @Generated
     @Selector("initWithDataProvider:animator:viewPortHandler:")
     public native LineChartRenderer initWithDataProviderAnimatorViewPortHandler(
             @Mapped(ObjCObjectMapper.class) LineChartDataProvider dataProvider, ChartAnimator animator,
             ChartViewPortHandler viewPortHandler);
-
-    @Generated
-    @Selector("initWithViewPortHandler:")
-    public native LineChartRenderer initWithViewPortHandler(ChartViewPortHandler viewPortHandler);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -180,8 +171,7 @@ public class LineChartRenderer extends LineRadarChartRenderer {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native LineChartRenderer new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

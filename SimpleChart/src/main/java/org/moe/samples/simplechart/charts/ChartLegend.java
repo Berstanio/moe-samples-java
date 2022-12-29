@@ -54,10 +54,9 @@ public class ChartLegend extends ChartComponentBase {
     @Selector("alloc")
     public static native ChartLegend alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ChartLegend allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -111,7 +110,6 @@ public class ChartLegend extends ChartComponentBase {
      */
     @Generated
     @Selector("direction")
-    @NInt
     public native long direction();
 
     /**
@@ -145,7 +143,6 @@ public class ChartLegend extends ChartComponentBase {
      */
     @Generated
     @Selector("form")
-    @NInt
     public native long form();
 
     /**
@@ -164,7 +161,6 @@ public class ChartLegend extends ChartComponentBase {
      */
     @Generated
     @Selector("formLineDashPhase")
-    @NFloat
     public native double formLineDashPhase();
 
     /**
@@ -172,7 +168,6 @@ public class ChartLegend extends ChartComponentBase {
      */
     @Generated
     @Selector("formLineWidth")
-    @NFloat
     public native double formLineWidth();
 
     /**
@@ -180,18 +175,16 @@ public class ChartLegend extends ChartComponentBase {
      */
     @Generated
     @Selector("formSize")
-    @NFloat
     public native double formSize();
 
     @Generated
     @Selector("formToTextSpace")
-    @NFloat
     public native double formToTextSpace();
 
     @Generated
     @Selector("getMaximumEntrySizeWithFont:")
     @ByValue
-    public native CGSize getMaximumEntrySizeWithFont(UIFont font);
+    public native apple.coregraphics.struct.CGSize getMaximumEntrySizeWithFont(UIFont font);
 
     @Generated
     @Selector("hash")
@@ -203,7 +196,6 @@ public class ChartLegend extends ChartComponentBase {
      */
     @Generated
     @Selector("horizontalAlignment")
-    @NInt
     public native long horizontalAlignment();
 
     @Generated
@@ -265,31 +257,26 @@ public class ChartLegend extends ChartComponentBase {
      */
     @Generated
     @Selector("maxSizePercent")
-    @NFloat
     public native double maxSizePercent();
 
     @Generated
     @Selector("neededHeight")
-    @NFloat
     public native double neededHeight();
 
     @Generated
     @Selector("neededWidth")
-    @NFloat
     public native double neededWidth();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ChartLegend new_objc();
 
     /**
      * The orientation of the legend
      */
     @Generated
     @Selector("orientation")
-    @NInt
     public native long orientation();
 
     /**
@@ -320,7 +307,6 @@ public class ChartLegend extends ChartComponentBase {
     public native void setCalculatedLineSizes(NSArray<? extends NSValue> value);
 
     /**
-     * MARK: - Custom legend
      * Sets a custom legend’s entries array.
      * <ul>
      *   <li>
@@ -339,7 +325,7 @@ public class ChartLegend extends ChartComponentBase {
      */
     @Generated
     @Selector("setDirection:")
-    public native void setDirection(@NInt long value);
+    public native void setDirection(long value);
 
     /**
      * Flag indicating whether the legend will draw inside the chart or outside
@@ -372,7 +358,7 @@ public class ChartLegend extends ChartComponentBase {
      */
     @Generated
     @Selector("setForm:")
-    public native void setForm(@NInt long value);
+    public native void setForm(long value);
 
     /**
      * Line dash configuration for shapes that consist of lines.
@@ -390,32 +376,32 @@ public class ChartLegend extends ChartComponentBase {
      */
     @Generated
     @Selector("setFormLineDashPhase:")
-    public native void setFormLineDashPhase(@NFloat double value);
+    public native void setFormLineDashPhase(double value);
 
     /**
      * The line width for forms that consist of lines
      */
     @Generated
     @Selector("setFormLineWidth:")
-    public native void setFormLineWidth(@NFloat double value);
+    public native void setFormLineWidth(double value);
 
     /**
      * The size of the legend forms
      */
     @Generated
     @Selector("setFormSize:")
-    public native void setFormSize(@NFloat double value);
+    public native void setFormSize(double value);
 
     @Generated
     @Selector("setFormToTextSpace:")
-    public native void setFormToTextSpace(@NFloat double value);
+    public native void setFormToTextSpace(double value);
 
     /**
      * The horizontal alignment of the legend
      */
     @Generated
     @Selector("setHorizontalAlignment:")
-    public native void setHorizontalAlignment(@NInt long value);
+    public native void setHorizontalAlignment(long value);
 
     /**
      * The maximum relative size out of the whole chart view in percent.
@@ -425,26 +411,26 @@ public class ChartLegend extends ChartComponentBase {
      */
     @Generated
     @Selector("setMaxSizePercent:")
-    public native void setMaxSizePercent(@NFloat double value);
+    public native void setMaxSizePercent(double value);
 
     @Generated
     @Selector("setNeededHeight:")
-    public native void setNeededHeight(@NFloat double value);
+    public native void setNeededHeight(double value);
 
     @Generated
     @Selector("setNeededWidth:")
-    public native void setNeededWidth(@NFloat double value);
+    public native void setNeededWidth(double value);
 
     /**
      * The orientation of the legend
      */
     @Generated
     @Selector("setOrientation:")
-    public native void setOrientation(@NInt long value);
+    public native void setOrientation(long value);
 
     @Generated
     @Selector("setStackSpace:")
-    public native void setStackSpace(@NFloat double value);
+    public native void setStackSpace(double value);
 
     @Generated
     @Selector("setTextColor:")
@@ -452,11 +438,11 @@ public class ChartLegend extends ChartComponentBase {
 
     @Generated
     @Selector("setTextHeightMax:")
-    public native void setTextHeightMax(@NFloat double value);
+    public native void setTextHeightMax(double value);
 
     @Generated
     @Selector("setTextWidthMax:")
-    public native void setTextWidthMax(@NFloat double value);
+    public native void setTextWidthMax(double value);
 
     @Generated
     @Selector("setVersion:")
@@ -467,7 +453,7 @@ public class ChartLegend extends ChartComponentBase {
      */
     @Generated
     @Selector("setVerticalAlignment:")
-    public native void setVerticalAlignment(@NInt long value);
+    public native void setVerticalAlignment(long value);
 
     /**
      * flag that indicates if word wrapping is enabled
@@ -481,15 +467,14 @@ public class ChartLegend extends ChartComponentBase {
 
     @Generated
     @Selector("setXEntrySpace:")
-    public native void setXEntrySpace(@NFloat double value);
+    public native void setXEntrySpace(double value);
 
     @Generated
     @Selector("setYEntrySpace:")
-    public native void setYEntrySpace(@NFloat double value);
+    public native void setYEntrySpace(double value);
 
     @Generated
     @Selector("stackSpace")
-    @NFloat
     public native double stackSpace();
 
     @Generated
@@ -502,12 +487,10 @@ public class ChartLegend extends ChartComponentBase {
 
     @Generated
     @Selector("textHeightMax")
-    @NFloat
     public native double textHeightMax();
 
     @Generated
     @Selector("textWidthMax")
-    @NFloat
     public native double textWidthMax();
 
     @Generated
@@ -520,7 +503,6 @@ public class ChartLegend extends ChartComponentBase {
      */
     @Generated
     @Selector("verticalAlignment")
-    @NInt
     public native long verticalAlignment();
 
     /**
@@ -535,11 +517,9 @@ public class ChartLegend extends ChartComponentBase {
 
     @Generated
     @Selector("xEntrySpace")
-    @NFloat
     public native double xEntrySpace();
 
     @Generated
     @Selector("yEntrySpace")
-    @NFloat
     public native double yEntrySpace();
 }

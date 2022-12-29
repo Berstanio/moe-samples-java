@@ -49,10 +49,9 @@ public class ChartAnimator extends NSObject {
     @Selector("alloc")
     public static native ChartAnimator alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ChartAnimator allocWithZone(VoidPtr zone);
 
     /**
      * Animates the drawing / rendering of the chart the x-axis with the specified animation time.
@@ -82,7 +81,7 @@ public class ChartAnimator extends NSObject {
      */
     @Generated
     @Selector("animateWithXAxisDuration:easingOption:")
-    public native void animateWithXAxisDurationEasingOption(double xAxisDuration, @NInt long easingOption);
+    public native void animateWithXAxisDurationEasingOption(double xAxisDuration, long easingOption);
 
     /**
      * Animates the drawing / rendering of the chart on both x- and y-axis with the specified animation time.
@@ -119,7 +118,7 @@ public class ChartAnimator extends NSObject {
     @Generated
     @Selector("animateWithXAxisDuration:yAxisDuration:easingOption:")
     public native void animateWithXAxisDurationYAxisDurationEasingOption(double xAxisDuration, double yAxisDuration,
-            @NInt long easingOption);
+            long easingOption);
 
     /**
      * Animates the drawing / rendering of the chart on both x- and y-axis with the specified animation time.
@@ -135,7 +134,7 @@ public class ChartAnimator extends NSObject {
     @Generated
     @Selector("animateWithXAxisDuration:yAxisDuration:easingOptionX:easingOptionY:")
     public native void animateWithXAxisDurationYAxisDurationEasingOptionXEasingOptionY(double xAxisDuration,
-            double yAxisDuration, @NInt long easingOptionX, @NInt long easingOptionY);
+            double yAxisDuration, long easingOptionX, long easingOptionY);
 
     /**
      * Animates the drawing / rendering of the chart on both x- and y-axis with the specified animation time.
@@ -198,7 +197,7 @@ public class ChartAnimator extends NSObject {
      */
     @Generated
     @Selector("animateWithYAxisDuration:easingOption:")
-    public native void animateWithYAxisDurationEasingOption(double yAxisDuration, @NInt long easingOption);
+    public native void animateWithYAxisDurationEasingOption(double yAxisDuration, long easingOption);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -268,8 +267,7 @@ public class ChartAnimator extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ChartAnimator new_objc();
 
     /**
      * the phase that is animated and influences the drawn values on the x-axis

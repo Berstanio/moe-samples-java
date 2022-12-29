@@ -46,6 +46,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.samples.simplechart.charts.protocol.BarLineScatterCandleBubbleChartDataProvider;
 import org.moe.samples.simplechart.charts.protocol.IBarLineScatterCandleBubbleChartDataSet;
+import org.moe.samples.simplechart.charts.protocol.BarLineScatterCandleBubbleChartDataSetProtocol;
 
 /**
  * Base-class of LineChart, BarChart, ScatterChart and CandleStickChart.
@@ -82,10 +83,9 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
     @Selector("alloc")
     public static native BarLineChartViewBase alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native BarLineChartViewBase allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("animateKeyframesWithDuration:delay:options:animations:completion:")
@@ -131,25 +131,21 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
 
     @Generated
     @Selector("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearance();
+    public static native BarLineChartViewBase appearance();
 
     @Generated
     @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
+    public BarLineChartViewBase _appearance() {
         return appearance();
     }
 
     @Generated
     @Selector("appearanceForTraitCollection:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollection(UITraitCollection trait);
+    public static native BarLineChartViewBase appearanceForTraitCollection(UITraitCollection trait);
 
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+    public BarLineChartViewBase _appearanceForTraitCollection(UITraitCollection trait) {
         return appearanceForTraitCollection(trait);
     }
 
@@ -157,29 +153,25 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
     @Variadic()
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+    public static native BarLineChartViewBase appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+    public BarLineChartViewBase _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+    public static native BarLineChartViewBase appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+    public BarLineChartViewBase _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
@@ -188,28 +180,24 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(
+    public static native BarLineChartViewBase appearanceWhenContainedIn(
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+    public BarLineChartViewBase _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
             Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+    public static native BarLineChartViewBase appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+    public BarLineChartViewBase _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
@@ -239,7 +227,6 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
 
     @Generated
     @Selector("borderLineWidth")
-    @NFloat
     public native double borderLineWidth();
 
     @Generated
@@ -255,7 +242,7 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
     @Generated
     @Selector("centerOffsets")
     @ByValue
-    public native CGPoint centerOffsets();
+    public native apple.coregraphics.struct.CGPoint centerOffsets();
 
     /**
      * This will move the center of the current viewport to the specified x-value and y-value animated.
@@ -271,7 +258,7 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
      */
     @Generated
     @Selector("centerViewToAnimatedWithXValue:yValue:axis:duration:")
-    public native void centerViewToAnimatedWithXValueYValueAxisDuration(double xValue, double yValue, @NInt long axis,
+    public native void centerViewToAnimatedWithXValueYValueAxisDuration(double xValue, double yValue, long axis,
             double duration);
 
     /**
@@ -291,7 +278,7 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
     public native void centerViewToAnimatedWithXValueYValueAxisDurationEasing(
             double xValue,
             double yValue,
-            @NInt long axis,
+            long axis,
             double duration,
             @ObjCBlock(name = "call_centerViewToAnimatedWithXValueYValueAxisDurationEasing") Block_centerViewToAnimatedWithXValueYValueAxisDurationEasing easing);
 
@@ -317,7 +304,7 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
     @Generated
     @Selector("centerViewToAnimatedWithXValue:yValue:axis:duration:easingOption:")
     public native void centerViewToAnimatedWithXValueYValueAxisDurationEasingOption(double xValue, double yValue,
-            @NInt long axis, double duration, @NInt long easingOption);
+            long axis, double duration, long easingOption);
 
     /**
      * This will move the center of the current viewport to the specified x-value and y-value.
@@ -330,7 +317,7 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
      */
     @Generated
     @Selector("centerViewToXValue:yValue:axis:")
-    public native void centerViewToXValueYValueAxis(double xValue, double yValue, @NInt long axis);
+    public native void centerViewToXValueYValueAxis(double xValue, double yValue, long axis);
 
     @Generated
     @Selector("chartXMax")
@@ -437,7 +424,7 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
 
     @Generated
     @Selector("drawRect:")
-    public native void drawRect(@ByValue CGRect rect);
+    public native void drawRect(@ByValue apple.coregraphics.struct.CGRect rect);
 
     /**
      * Resets all zooming and dragging and makes the chart fit exactly it’s bounds.
@@ -489,7 +476,7 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
      */
     @Generated
     @Selector("getAxis:")
-    public native ChartYAxis getAxis(@NInt long axis);
+    public native ChartYAxis getAxis(long axis);
 
     /**
      * returns:
@@ -497,7 +484,7 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
      */
     @Generated
     @Selector("getAxisRangeWithAxis:")
-    public native double getAxisRangeWithAxis(@NInt long axis);
+    public native double getAxisRangeWithAxis(long axis);
 
     /**
      * returns:
@@ -506,7 +493,7 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
     @Generated
     @Selector("getDataSetByTouchPointWithPoint:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native IBarLineScatterCandleBubbleChartDataSet getDataSetByTouchPointWithPoint(@ByValue CGPoint pt);
+    public native BarLineScatterCandleBubbleChartDataSetProtocol getDataSetByTouchPointWithPoint(@ByValue apple.coregraphics.struct.CGPoint pt);
 
     /**
      * returns:
@@ -514,7 +501,7 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
      */
     @Generated
     @Selector("getEntryByTouchPointWithPoint:")
-    public native ChartDataEntry getEntryByTouchPointWithPoint(@ByValue CGPoint pt);
+    public native ChartDataEntry getEntryByTouchPointWithPoint(@ByValue apple.coregraphics.struct.CGPoint pt);
 
     /**
      * returns:
@@ -523,11 +510,11 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
     @Generated
     @Selector("getPositionWithEntry:axis:")
     @ByValue
-    public native CGPoint getPositionWithEntryAxis(ChartDataEntry e, @NInt long axis);
+    public native apple.coregraphics.struct.CGPoint getPositionWithEntryAxis(ChartDataEntry e, long axis);
 
     @Generated
     @Selector("getTransformerForAxis:")
-    public native ChartTransformer getTransformerForAxis(@NInt long axis);
+    public native ChartTransformer getTransformerForAxis(long axis);
 
     /**
      * Zero (0.0) means there’s no maximum width
@@ -538,8 +525,7 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
      */
     @Generated
     @Selector("getYAxisMaxWidth:")
-    @NFloat
-    public native double getYAxisMaxWidth(@NInt long axis);
+    public native double getYAxisMaxWidth(long axis);
 
     /**
      * <em>default</em>: 0.0
@@ -549,8 +535,7 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
      */
     @Generated
     @Selector("getYAxisMinWidth:")
-    @NFloat
-    public native double getYAxisMinWidth(@NInt long axis);
+    public native double getYAxisMinWidth(long axis);
 
     /**
      * <ul>
@@ -561,8 +546,7 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
      */
     @Generated
     @Selector("getYAxisWidth:")
-    @NFloat
-    public native double getYAxisWidth(@NInt long axis);
+    public native double getYAxisWidth(long axis);
 
     /**
      * the color for the background of the chart-drawing area (everything behind the grid lines).
@@ -608,7 +592,7 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
 
     @Generated
     @Selector("initWithFrame:")
-    public native BarLineChartViewBase initWithFrame(@ByValue CGRect frame);
+    public native BarLineChartViewBase initWithFrame(@ByValue apple.coregraphics.struct.CGRect frame);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -687,7 +671,7 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
 
     @Generated
     @Selector("isInvertedWithAxis:")
-    public native boolean isInvertedWithAxis(@NInt long axis);
+    public native boolean isInvertedWithAxis(long axis);
 
     /**
      * <em>default</em>: false
@@ -747,12 +731,10 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
 
     @Generated
     @Selector("maxHighlightDistance")
-    @NFloat
     public native double maxHighlightDistance();
 
     @Generated
     @Selector("maxVisibleCount")
-    @NInt
     public native long maxVisibleCount();
 
     /**
@@ -760,7 +742,6 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
      */
     @Generated
     @Selector("minOffset")
-    @NFloat
     public native double minOffset();
 
     @Generated
@@ -785,7 +766,7 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
      */
     @Generated
     @Selector("moveViewToAnimatedWithXValue:yValue:axis:duration:")
-    public native void moveViewToAnimatedWithXValueYValueAxisDuration(double xValue, double yValue, @NInt long axis,
+    public native void moveViewToAnimatedWithXValueYValueAxisDuration(double xValue, double yValue, long axis,
             double duration);
 
     /**
@@ -806,7 +787,7 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
     public native void moveViewToAnimatedWithXValueYValueAxisDurationEasing(
             double xValue,
             double yValue,
-            @NInt long axis,
+            long axis,
             double duration,
             @ObjCBlock(name = "call_moveViewToAnimatedWithXValueYValueAxisDurationEasing") Block_moveViewToAnimatedWithXValueYValueAxisDurationEasing easing);
 
@@ -833,7 +814,7 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
     @Generated
     @Selector("moveViewToAnimatedWithXValue:yValue:axis:duration:easingOption:")
     public native void moveViewToAnimatedWithXValueYValueAxisDurationEasingOption(double xValue, double yValue,
-            @NInt long axis, double duration, @NInt long easingOption);
+            long axis, double duration, long easingOption);
 
     /**
      * Moves the left side of the current viewport to the specified x-value.
@@ -854,7 +835,7 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
      */
     @Generated
     @Selector("moveViewToXValue:yValue:axis:")
-    public native void moveViewToXValueYValueAxis(double xValue, double yValue, @NInt long axis);
+    public native void moveViewToXValueYValueAxis(double xValue, double yValue, long axis);
 
     /**
      * Centers the viewport to the specified y-value on the y-axis.
@@ -865,13 +846,12 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
      */
     @Generated
     @Selector("moveViewToY:axis:")
-    public native void moveViewToYAxis(double yValue, @NInt long axis);
+    public native void moveViewToYAxis(double yValue, long axis);
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native BarLineChartViewBase new_objc();
 
     @Generated
     @Selector("notifyDataSetChanged")
@@ -910,7 +890,7 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
     @Generated
     @Selector("pixelForValuesWithX:y:axis:")
     @ByValue
-    public native CGPoint pixelForValuesWithXYAxis(double x, double y, @NInt long axis);
+    public native apple.coregraphics.struct.CGPoint pixelForValuesWithXYAxis(double x, double y, long axis);
 
     @Generated
     @Selector("requiresConstraintBasedLayout")
@@ -959,7 +939,6 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
      */
     @Generated
     @Selector("scaleX")
-    @NFloat
     public native double scaleX();
 
     @Generated
@@ -971,7 +950,6 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
      */
     @Generated
     @Selector("scaleY")
-    @NFloat
     public native double scaleY();
 
     @Generated
@@ -1040,7 +1018,7 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
 
     @Generated
     @Selector("setBorderLineWidth:")
-    public native void setBorderLineWidth(@NFloat double value);
+    public native void setBorderLineWidth(double value);
 
     /**
      * When disabled, the data and/or highlights will not be clipped to contentRect. Disabling this option can
@@ -1078,7 +1056,7 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
      */
     @Generated
     @Selector("setDragOffsetX:")
-    public native void setDragOffsetX(@NFloat double offset);
+    public native void setDragOffsetX(double offset);
 
     /**
      * Set an offset in dp that allows the user to drag the chart over it’s
@@ -1086,7 +1064,7 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
      */
     @Generated
     @Selector("setDragOffsetY:")
-    public native void setDragOffsetY(@NFloat double offset);
+    public native void setDragOffsetY(double offset);
 
     /**
      * is dragging on the X axis enabled?
@@ -1152,14 +1130,14 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
      */
     @Generated
     @Selector("setMaxVisibleCount:")
-    public native void setMaxVisibleCount(@NInt long value);
+    public native void setMaxVisibleCount(long value);
 
     /**
      * Sets the minimum offset (padding) around the chart, defaults to 10
      */
     @Generated
     @Selector("setMinOffset:")
-    public native void setMinOffset(@NFloat double value);
+    public native void setMinOffset(double value);
 
     /**
      * flag that indicates if pinch-zoom is enabled. if true, both x and y axis can be scaled simultaneously with 2 fingers, if false, x and y axis can be scaled separately
@@ -1188,7 +1166,7 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
      */
     @Generated
     @Selector("setScaleMinima:scaleY:")
-    public native void setScaleMinimaScaleY(@NFloat double scaleX, @NFloat double scaleY);
+    public native void setScaleMinimaScaleY(double scaleX, double scaleY);
 
     @Generated
     @Selector("setScaleXEnabled:")
@@ -1208,8 +1186,8 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
      */
     @Generated
     @Selector("setViewPortOffsetsWithLeft:top:right:bottom:")
-    public native void setViewPortOffsetsWithLeftTopRightBottom(@NFloat double left, @NFloat double top,
-            @NFloat double right, @NFloat double bottom);
+    public native void setViewPortOffsetsWithLeftTopRightBottom(double left, double top,
+            double right, double bottom);
 
     /**
      * Sets the size of the area (range on the x-axis) that should be maximum visible at once (no further zooming out allowed).
@@ -1247,7 +1225,7 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
      */
     @Generated
     @Selector("setVisibleYRangeMaximum:axis:")
-    public native void setVisibleYRangeMaximumAxis(double maxYRange, @NInt long axis);
+    public native void setVisibleYRangeMaximumAxis(double maxYRange, long axis);
 
     /**
      * Sets the size of the area (range on the y-axis) that should be minimum visible at once, no further zooming in possible.
@@ -1257,7 +1235,7 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
      */
     @Generated
     @Selector("setVisibleYRangeMinimum:axis:")
-    public native void setVisibleYRangeMinimumAxis(double minYRange, @NInt long axis);
+    public native void setVisibleYRangeMinimumAxis(double minYRange, long axis);
 
     /**
      * Limits the maximum and minimum y range that can be visible by pinching and zooming.
@@ -1269,7 +1247,7 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
      */
     @Generated
     @Selector("setVisibleYRangeWithMinYRange:maxYRange:axis:")
-    public native void setVisibleYRangeWithMinYRangeMaxYRangeAxis(double minYRange, double maxYRange, @NInt long axis);
+    public native void setVisibleYRangeWithMinYRangeMaxYRangeAxis(double minYRange, double maxYRange, long axis);
 
     /**
      * The X axis renderer. This is a read-write property so you can set your own custom renderer here.
@@ -1285,14 +1263,14 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
      */
     @Generated
     @Selector("setYAxisMaxWidth:width:")
-    public native void setYAxisMaxWidthWidth(@NInt long axis, @NFloat double width);
+    public native void setYAxisMaxWidthWidth(long axis, double width);
 
     /**
      * Sets a minimum width to the specified y axis.
      */
     @Generated
     @Selector("setYAxisMinWidth:width:")
-    public native void setYAxisMinWidthWidth(@NInt long axis, @NFloat double width);
+    public native void setYAxisMinWidthWidth(long axis, double width);
 
     @Generated
     @Selector("stopDeceleration")
@@ -1341,7 +1319,7 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
     @Generated
     @Selector("valueForTouchPointWithPoint:axis:")
     @ByValue
-    public native CGPoint valueForTouchPointWithPointAxis(@ByValue CGPoint pt, @NInt long axis);
+    public native apple.coregraphics.struct.CGPoint valueForTouchPointWithPointAxis(@ByValue apple.coregraphics.struct.CGPoint pt, long axis);
 
     @Generated
     @Selector("version")
@@ -1382,8 +1360,8 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
      */
     @Generated
     @Selector("zoomAndCenterViewAnimatedWithScaleX:scaleY:xValue:yValue:axis:duration:")
-    public native void zoomAndCenterViewAnimatedWithScaleXScaleYXValueYValueAxisDuration(@NFloat double scaleX,
-            @NFloat double scaleY, double xValue, double yValue, @NInt long axis, double duration);
+    public native void zoomAndCenterViewAnimatedWithScaleXScaleYXValueYValueAxisDuration(double scaleX,
+            double scaleY, double xValue, double yValue, long axis, double duration);
 
     /**
      * Zooms by the specified scale factor to the specified values on the specified axis.
@@ -1404,11 +1382,11 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
     @Generated
     @Selector("zoomAndCenterViewAnimatedWithScaleX:scaleY:xValue:yValue:axis:duration:easing:")
     public native void zoomAndCenterViewAnimatedWithScaleXScaleYXValueYValueAxisDurationEasing(
-            @NFloat double scaleX,
-            @NFloat double scaleY,
+            double scaleX,
+            double scaleY,
             double xValue,
             double yValue,
-            @NInt long axis,
+            long axis,
             double duration,
             @ObjCBlock(name = "call_zoomAndCenterViewAnimatedWithScaleXScaleYXValueYValueAxisDurationEasing") Block_zoomAndCenterViewAnimatedWithScaleXScaleYXValueYValueAxisDurationEasing easing);
 
@@ -1438,11 +1416,10 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
     @Generated
     @Selector("zoomAndCenterViewAnimatedWithScaleX:scaleY:xValue:yValue:axis:duration:easingOption:")
     public native void zoomAndCenterViewAnimatedWithScaleXScaleYXValueYValueAxisDurationEasingOption(
-            @NFloat double scaleX, @NFloat double scaleY, double xValue, double yValue, @NInt long axis,
-            double duration, @NInt long easingOption);
+            double scaleX, double scaleY, double xValue, double yValue, long axis,
+            double duration, long easingOption);
 
     /**
-     * MARK: Viewport modifiers
      * Zooms in by 1.4, into the charts center.
      */
     @Generated
@@ -1470,7 +1447,7 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
      */
     @Generated
     @Selector("zoomToCenterWithScaleX:scaleY:")
-    public native void zoomToCenterWithScaleXScaleY(@NFloat double scaleX, @NFloat double scaleY);
+    public native void zoomToCenterWithScaleXScaleY(double scaleX, double scaleY);
 
     /**
      * Zooms in or out by the given scale factor. x and y are the coordinates
@@ -1485,8 +1462,8 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
      */
     @Generated
     @Selector("zoomWithScaleX:scaleY:x:y:")
-    public native void zoomWithScaleXScaleYXY(@NFloat double scaleX, @NFloat double scaleY, @NFloat double x,
-            @NFloat double y);
+    public native void zoomWithScaleXScaleYXY(double scaleX, double scaleY, double x,
+            double y);
 
     /**
      * Zooms in or out by the given scale factor.
@@ -1503,6 +1480,6 @@ public class BarLineChartViewBase extends ChartViewBase implements BarLineScatte
      */
     @Generated
     @Selector("zoomWithScaleX:scaleY:xValue:yValue:axis:")
-    public native void zoomWithScaleXScaleYXValueYValueAxis(@NFloat double scaleX, @NFloat double scaleY,
-            double xValue, double yValue, @NInt long axis);
+    public native void zoomWithScaleXScaleYXValueYValueAxis(double scaleX, double scaleY,
+            double xValue, double yValue, long axis);
 }

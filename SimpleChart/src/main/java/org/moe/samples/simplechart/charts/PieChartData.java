@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.samples.simplechart.charts.protocol.IChartDataSet;
+import org.moe.samples.simplechart.charts.protocol.ChartDataSetProtocol;
+import org.moe.samples.simplechart.charts.protocol.PieChartDataSetProtocol;
 
 @Generated
 @Library("Charts")
@@ -46,18 +48,13 @@ public class PieChartData extends ChartData {
     public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
-    @Selector("addDataSet:")
-    public native void addDataSet(@Mapped(ObjCObjectMapper.class) IChartDataSet d);
-
-    @Generated
     @Owned
     @Selector("alloc")
     public static native PieChartData alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native PieChartData allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -82,7 +79,8 @@ public class PieChartData extends ChartData {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * All DataSet objects this ChartData object holds.
+     * returns:
+     * All up to one dataSet object this ChartData object holds.
      */
     @Generated
     @Selector("dataSets")
@@ -97,20 +95,6 @@ public class PieChartData extends ChartData {
     public static native String description_static();
 
     @Generated
-    @Selector("entryForHighlight:")
-    public native ChartDataEntry entryForHighlight(ChartHighlight highlight);
-
-    @Generated
-    @Selector("getDataSetByIndex:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native IChartDataSet getDataSetByIndex(@NInt long index);
-
-    @Generated
-    @Selector("getDataSetByLabel:ignorecase:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native IChartDataSet getDataSetByLabelIgnorecase(String label, boolean ignorecase);
-
-    @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
@@ -121,7 +105,7 @@ public class PieChartData extends ChartData {
 
     @Generated
     @Selector("initWithDataSet:")
-    public native PieChartData initWithDataSet(@Mapped(ObjCObjectMapper.class) IChartDataSet dataSet);
+    public native PieChartData initWithDataSet(@Mapped(ObjCObjectMapper.class) ChartDataSetProtocol dataSet);
 
     @Generated
     @Selector("initWithDataSets:")
@@ -151,19 +135,7 @@ public class PieChartData extends ChartData {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    /**
-     * Removes the DataSet at the given index in the DataSet array from the data object.
-     * Also recalculates all minimum and maximum values.
-     * 
-     * returns:
-     * <code>true</code> if a DataSet was removed, <code>false</code> ifno DataSet could be removed.
-     */
-    @Generated
-    @Selector("removeDataSetByIndex:")
-    public native boolean removeDataSetByIndex(@NInt long index);
+    public static native PieChartData new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -174,7 +146,8 @@ public class PieChartData extends ChartData {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * All DataSet objects this ChartData object holds.
+     * returns:
+     * All up to one dataSet object this ChartData object holds.
      */
     @Generated
     @Selector("setDataSets:")
@@ -199,4 +172,27 @@ public class PieChartData extends ChartData {
     @Generated
     @Selector("yValueSum")
     public native double yValueSum();
+
+    @Generated
+    @Selector("dataSet")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native PieChartDataSetProtocol dataSet();
+
+    @Generated
+    @Selector("dataSetAtIndex:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native ChartDataSetProtocol dataSetAtIndex(long index);
+
+    @Generated
+    @Selector("dataSetForLabel:ignorecase:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native ChartDataSetProtocol dataSetForLabelIgnorecase(String label, boolean ignorecase);
+
+    @Generated
+    @Selector("entryFor:")
+    public native ChartDataEntry entryFor(ChartHighlight highlight);
+
+    @Generated
+    @Selector("setDataSet:")
+    public native void setDataSet(@Mapped(ObjCObjectMapper.class) PieChartDataSetProtocol value);
 }

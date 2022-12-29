@@ -72,10 +72,9 @@ public class CandleStickChartView extends BarLineChartViewBase implements Candle
     @Selector("alloc")
     public static native CandleStickChartView alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CandleStickChartView allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("animateKeyframesWithDuration:delay:options:animations:completion:")
@@ -121,25 +120,21 @@ public class CandleStickChartView extends BarLineChartViewBase implements Candle
 
     @Generated
     @Selector("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearance();
+    public static native CandleStickChartView appearance();
 
     @Generated
     @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
+    public CandleStickChartView _appearance() {
         return appearance();
     }
 
     @Generated
     @Selector("appearanceForTraitCollection:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollection(UITraitCollection trait);
+    public static native CandleStickChartView appearanceForTraitCollection(UITraitCollection trait);
 
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+    public CandleStickChartView _appearanceForTraitCollection(UITraitCollection trait) {
         return appearanceForTraitCollection(trait);
     }
 
@@ -147,29 +142,25 @@ public class CandleStickChartView extends BarLineChartViewBase implements Candle
     @Variadic()
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+    public static native CandleStickChartView appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+    public CandleStickChartView _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+    public static native CandleStickChartView appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+    public CandleStickChartView _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
@@ -178,28 +169,24 @@ public class CandleStickChartView extends BarLineChartViewBase implements Candle
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(
+    public static native CandleStickChartView appearanceWhenContainedIn(
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+    public CandleStickChartView _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
             Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+    public static native CandleStickChartView appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+    public CandleStickChartView _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
@@ -232,7 +219,7 @@ public class CandleStickChartView extends BarLineChartViewBase implements Candle
     @Generated
     @Selector("centerOffsets")
     @ByValue
-    public native CGPoint centerOffsets();
+    public native apple.coregraphics.struct.CGPoint centerOffsets();
 
     @Generated
     @Selector("chartXMax")
@@ -280,7 +267,7 @@ public class CandleStickChartView extends BarLineChartViewBase implements Candle
 
     @Generated
     @Selector("getTransformerForAxis:")
-    public native ChartTransformer getTransformerForAxis(@NInt long forAxis);
+    public native ChartTransformer getTransformerForAxis(long forAxis);
 
     @Generated
     @Selector("hash")
@@ -305,7 +292,7 @@ public class CandleStickChartView extends BarLineChartViewBase implements Candle
 
     @Generated
     @Selector("initWithFrame:")
-    public native CandleStickChartView initWithFrame(@ByValue CGRect frame);
+    public native CandleStickChartView initWithFrame(@ByValue apple.coregraphics.struct.CGRect frame);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -322,7 +309,7 @@ public class CandleStickChartView extends BarLineChartViewBase implements Candle
 
     @Generated
     @Selector("isInvertedWithAxis:")
-    public native boolean isInvertedWithAxis(@NInt long axis);
+    public native boolean isInvertedWithAxis(long axis);
 
     @Generated
     @Selector("isSubclassOfClass:")
@@ -342,12 +329,10 @@ public class CandleStickChartView extends BarLineChartViewBase implements Candle
 
     @Generated
     @Selector("maxHighlightDistance")
-    @NFloat
     public native double maxHighlightDistance();
 
     @Generated
     @Selector("maxVisibleCount")
-    @NInt
     public native long maxVisibleCount();
 
     @Generated
@@ -360,8 +345,7 @@ public class CandleStickChartView extends BarLineChartViewBase implements Candle
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CandleStickChartView new_objc();
 
     @Generated
     @Selector("performSystemAnimation:onViews:options:animations:completion:")

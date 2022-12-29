@@ -20,7 +20,7 @@ import org.moe.samples.simplechart.charts.LineChartData;
 public interface LineChartDataProvider extends BarLineScatterCandleBubbleChartDataProvider {
     @Generated
     @Selector("getAxis:")
-    ChartYAxis getAxis(@NInt long axis);
+    ChartYAxis getAxis(long axis);
 
     @Generated
     @Selector("lineData")

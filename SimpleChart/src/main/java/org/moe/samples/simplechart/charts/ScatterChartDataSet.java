@@ -33,13 +33,16 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.samples.simplechart.charts.protocol.IChartValueFormatter;
 import org.moe.samples.simplechart.charts.protocol.IScatterChartDataSet;
 import org.moe.samples.simplechart.charts.protocol.IShapeRenderer;
+import org.moe.samples.simplechart.charts.protocol.ChartValueFormatter;
+import org.moe.samples.simplechart.charts.protocol.ScatterChartDataSetProtocol;
+import org.moe.samples.simplechart.charts.protocol.ShapeRenderer;
 
 @Generated
 @Library("Charts")
 @Runtime(ObjCRuntime.class)
 @ObjCClassName("_TtC6Charts19ScatterChartDataSet")
 @ObjCClassBinding
-public class ScatterChartDataSet extends LineScatterCandleRadarChartDataSet implements IScatterChartDataSet {
+public class ScatterChartDataSet extends LineScatterCandleRadarChartDataSet implements ScatterChartDataSetProtocol {
     static {
         NatJ.register();
     }
@@ -70,10 +73,9 @@ public class ScatterChartDataSet extends LineScatterCandleRadarChartDataSet impl
     @Selector("alloc")
     public static native ScatterChartDataSet alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ScatterChartDataSet allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -81,7 +83,6 @@ public class ScatterChartDataSet extends LineScatterCandleRadarChartDataSet impl
 
     @Generated
     @Selector("axisDependency")
-    @NInt
     public native long axisDependency();
 
     @Generated
@@ -116,7 +117,7 @@ public class ScatterChartDataSet extends LineScatterCandleRadarChartDataSet impl
 
     @Generated
     @Selector("colorAtIndex:")
-    public native UIColor colorAtIndex(@NInt long atIndex);
+    public native UIColor colorAtIndex(long atIndex);
 
     @Generated
     @Selector("colors")
@@ -162,12 +163,11 @@ public class ScatterChartDataSet extends LineScatterCandleRadarChartDataSet impl
 
     @Generated
     @Selector("entryCount")
-    @NInt
     public native long entryCount();
 
     @Generated
     @Selector("entryForIndex:")
-    public native ChartDataEntry entryForIndex(@NInt long i);
+    public native ChartDataEntry entryForIndex(long i);
 
     @Generated
     @Selector("entryForXValue:closestToY:")
@@ -175,21 +175,18 @@ public class ScatterChartDataSet extends LineScatterCandleRadarChartDataSet impl
 
     @Generated
     @Selector("entryForXValue:closestToY:rounding:")
-    public native ChartDataEntry entryForXValueClosestToYRounding(double xValue, double yValue, @NInt long rounding);
+    public native ChartDataEntry entryForXValueClosestToYRounding(double xValue, double yValue, long rounding);
 
     @Generated
     @Selector("entryIndexWithEntry:")
-    @NInt
     public native long entryIndexWithEntry(ChartDataEntry e);
 
     @Generated
     @Selector("entryIndexWithX:closestToY:rounding:")
-    @NInt
-    public native long entryIndexWithXClosestToYRounding(double xValue, double yValue, @NInt long rounding);
+    public native long entryIndexWithXClosestToYRounding(double xValue, double yValue, long rounding);
 
     @Generated
     @Selector("form")
-    @NInt
     public native long form();
 
     @Generated
@@ -198,17 +195,14 @@ public class ScatterChartDataSet extends LineScatterCandleRadarChartDataSet impl
 
     @Generated
     @Selector("formLineDashPhase")
-    @NFloat
     public native double formLineDashPhase();
 
     @Generated
     @Selector("formLineWidth")
-    @NFloat
     public native double formLineWidth();
 
     @Generated
     @Selector("formSize")
-    @NFloat
     public native double formSize();
 
     @Generated
@@ -230,18 +224,16 @@ public class ScatterChartDataSet extends LineScatterCandleRadarChartDataSet impl
 
     @Generated
     @Selector("highlightLineDashPhase")
-    @NFloat
     public native double highlightLineDashPhase();
 
     @Generated
     @Selector("highlightLineWidth")
-    @NFloat
     public native double highlightLineWidth();
 
     @Generated
     @Selector("iconsOffset")
     @ByValue
-    public native CGPoint iconsOffset();
+    public native apple.coregraphics.struct.CGPoint iconsOffset();
 
     @Generated
     @Selector("init")
@@ -309,14 +301,9 @@ public class ScatterChartDataSet extends LineScatterCandleRadarChartDataSet impl
     public native String label();
 
     @Generated
-    @Selector("needsFormatter")
-    public native boolean needsFormatter();
-
-    @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ScatterChartDataSet new_objc();
 
     @Generated
     @Selector("notifyDataSetChanged")
@@ -328,7 +315,7 @@ public class ScatterChartDataSet extends LineScatterCandleRadarChartDataSet impl
 
     @Generated
     @Selector("removeEntryWithIndex:")
-    public native boolean removeEntryWithIndex(@NInt long index);
+    public native boolean removeEntryWithIndex(long index);
 
     @Generated
     @Selector("removeEntryWithX:")
@@ -345,7 +332,7 @@ public class ScatterChartDataSet extends LineScatterCandleRadarChartDataSet impl
     @Generated
     @Selector("rendererForShape:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native IShapeRenderer rendererForShape(@NInt long shape);
+    public static native ShapeRenderer rendererForShape(long shape);
 
     @Generated
     @Selector("resetColors")
@@ -365,12 +352,10 @@ public class ScatterChartDataSet extends LineScatterCandleRadarChartDataSet impl
 
     @Generated
     @Selector("scatterShapeHoleRadius")
-    @NFloat
     public native double scatterShapeHoleRadius();
 
     @Generated
     @Selector("scatterShapeSize")
-    @NFloat
     public native double scatterShapeSize();
 
     @Generated
@@ -411,23 +396,23 @@ public class ScatterChartDataSet extends LineScatterCandleRadarChartDataSet impl
 
     @Generated
     @Selector("setHighlightLineDashPhase:")
-    public native void setHighlightLineDashPhase(@NFloat double value);
+    public native void setHighlightLineDashPhase(double value);
 
     @Generated
     @Selector("setHighlightLineWidth:")
-    public native void setHighlightLineWidth(@NFloat double value);
+    public native void setHighlightLineWidth(double value);
 
     @Generated
     @Selector("setIconsOffset:")
-    public native void setIconsOffset(@ByValue CGPoint value);
+    public native void setIconsOffset(@ByValue apple.coregraphics.struct.CGPoint value);
 
     /**
      * Sets the ScatterShape this DataSet should be drawn with.
-     * This will search for an available IShapeRenderer and set this renderer for the DataSet
+     * This will search for an available ShapeRenderer and set this renderer for the DataSet
      */
     @Generated
     @Selector("setScatterShape:")
-    public native void setScatterShape(@NInt long shape);
+    public native void setScatterShape(long shape);
 
     /**
      * Color for the hole in the shape. Setting to <code>nil</code> will behave as transparent.
@@ -443,14 +428,14 @@ public class ScatterChartDataSet extends LineScatterCandleRadarChartDataSet impl
      */
     @Generated
     @Selector("setScatterShapeHoleRadius:")
-    public native void setScatterShapeHoleRadius(@NFloat double value);
+    public native void setScatterShapeHoleRadius(double value);
 
     /**
      * The size the scatter shape will have
      */
     @Generated
     @Selector("setScatterShapeSize:")
-    public native void setScatterShapeSize(@NFloat double value);
+    public native void setScatterShapeSize(double value);
 
     /**
      * The IShapeRenderer responsible for rendering this DataSet.
@@ -459,7 +444,7 @@ public class ScatterChartDataSet extends LineScatterCandleRadarChartDataSet impl
      */
     @Generated
     @Selector("setShapeRenderer:")
-    public native void setShapeRenderer(@Mapped(ObjCObjectMapper.class) IShapeRenderer value);
+    public native void setShapeRenderer(@Mapped(ObjCObjectMapper.class) ShapeRenderer value);
 
     @Generated
     @Selector("setValueFont:")
@@ -467,7 +452,7 @@ public class ScatterChartDataSet extends LineScatterCandleRadarChartDataSet impl
 
     @Generated
     @Selector("setValueFormatter:")
-    public native void setValueFormatter(@Mapped(ObjCObjectMapper.class) IChartValueFormatter value);
+    public native void setValueFormatter(@Mapped(ObjCObjectMapper.class) ChartValueFormatter value);
 
     @Generated
     @Selector("setValueTextColor:")
@@ -484,7 +469,7 @@ public class ScatterChartDataSet extends LineScatterCandleRadarChartDataSet impl
     @Generated
     @Selector("shapeRenderer")
     @MappedReturn(ObjCObjectMapper.class)
-    public native IShapeRenderer shapeRenderer();
+    public native ShapeRenderer shapeRenderer();
 
     @Generated
     @Selector("superclass")
@@ -501,7 +486,7 @@ public class ScatterChartDataSet extends LineScatterCandleRadarChartDataSet impl
     @Generated
     @Selector("valueFormatter")
     @MappedReturn(ObjCObjectMapper.class)
-    public native IChartValueFormatter valueFormatter();
+    public native ChartValueFormatter valueFormatter();
 
     @Generated
     @Selector("valueTextColor")
@@ -509,7 +494,7 @@ public class ScatterChartDataSet extends LineScatterCandleRadarChartDataSet impl
 
     @Generated
     @Selector("valueTextColorAt:")
-    public native UIColor valueTextColorAt(@NInt long index);
+    public native UIColor valueTextColorAt(long index);
 
     @Generated
     @Selector("version")
@@ -535,4 +520,12 @@ public class ScatterChartDataSet extends LineScatterCandleRadarChartDataSet impl
     @Generated
     @Selector("yMin")
     public native double yMin();
+
+    @Generated
+    @Selector("setValueLabelAngle:")
+    public native void setValueLabelAngle(double value);
+
+    @Generated
+    @Selector("valueLabelAngle")
+    public native double valueLabelAngle();
 }

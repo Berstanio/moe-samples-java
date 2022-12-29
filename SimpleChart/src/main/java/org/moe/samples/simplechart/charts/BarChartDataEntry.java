@@ -51,10 +51,9 @@ public class BarChartDataEntry extends ChartDataEntry {
     @Selector("alloc")
     public static native BarChartDataEntry alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native BarChartDataEntry allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -230,8 +229,7 @@ public class BarChartDataEntry extends ChartDataEntry {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native BarChartDataEntry new_objc();
 
     /**
      * The sum of all positive values this entry (if stacked) contains.
@@ -268,7 +266,7 @@ public class BarChartDataEntry extends ChartDataEntry {
 
     @Generated
     @Selector("sumBelowStackIndex:")
-    public native double sumBelowStackIndex(@NInt long stackIndex);
+    public native double sumBelowStackIndex(long stackIndex);
 
     @Generated
     @Selector("superclass")

@@ -27,6 +27,7 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.moe.samples.simplechart.charts.protocol.ChartFill;
 
 @Generated
 @Library("Charts")
@@ -51,10 +52,9 @@ public class LineRadarChartRenderer extends LineScatterCandleRadarChartRenderer 
     @Selector("alloc")
     public static native LineRadarChartRenderer alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native LineRadarChartRenderer allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -91,8 +91,8 @@ public class LineRadarChartRenderer extends LineScatterCandleRadarChartRenderer 
      */
     @Generated
     @Selector("drawFilledPathWithContext:path:fill:fillAlpha:")
-    public native void drawFilledPathWithContextPathFillFillAlpha(CGContextRef context, CGPathRef path, ChartFill fill,
-            @NFloat double fillAlpha);
+    public native void drawFilledPathWithContextPathFillFillAlpha(CGContextRef context, CGPathRef path, @Mapped(ObjCObjectMapper.class) ChartFill fill,
+            double fillAlpha);
 
     /**
      * Draws the provided path in filled mode with the provided color and alpha.
@@ -100,7 +100,7 @@ public class LineRadarChartRenderer extends LineScatterCandleRadarChartRenderer 
     @Generated
     @Selector("drawFilledPathWithContext:path:fillColor:fillAlpha:")
     public native void drawFilledPathWithContextPathFillColorFillAlpha(CGContextRef context, CGPathRef path,
-            UIColor fillColor, @NFloat double fillAlpha);
+            UIColor fillColor, double fillAlpha);
 
     @Generated
     @Selector("hash")
@@ -114,15 +114,6 @@ public class LineRadarChartRenderer extends LineScatterCandleRadarChartRenderer 
     @Generated
     @Selector("initBuffers")
     public native void initBuffers();
-
-    @Generated
-    @Selector("initWithAnimator:viewPortHandler:")
-    public native LineRadarChartRenderer initWithAnimatorViewPortHandler(ChartAnimator animator,
-            ChartViewPortHandler viewPortHandler);
-
-    @Generated
-    @Selector("initWithViewPortHandler:")
-    public native LineRadarChartRenderer initWithViewPortHandler(ChartViewPortHandler viewPortHandler);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -148,8 +139,7 @@ public class LineRadarChartRenderer extends LineScatterCandleRadarChartRenderer 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native LineRadarChartRenderer new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

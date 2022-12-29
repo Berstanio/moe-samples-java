@@ -50,10 +50,9 @@ public class CombinedChartHighlighter extends ChartHighlighter {
     @Selector("alloc")
     public static native CombinedChartHighlighter alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CombinedChartHighlighter allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -87,8 +86,8 @@ public class CombinedChartHighlighter extends ChartHighlighter {
 
     @Generated
     @Selector("getHighlightsWithXValue:x:y:")
-    public native NSArray<? extends ChartHighlight> getHighlightsWithXValueXY(double xValue, @NFloat double x,
-            @NFloat double y);
+    public native NSArray<? extends ChartHighlight> getHighlightsWithXValueXY(double xValue, double x,
+            double y);
 
     @Generated
     @Selector("hash")
@@ -133,8 +132,7 @@ public class CombinedChartHighlighter extends ChartHighlighter {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CombinedChartHighlighter new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

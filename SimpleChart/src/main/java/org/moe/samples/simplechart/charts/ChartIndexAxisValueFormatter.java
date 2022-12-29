@@ -24,6 +24,7 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.samples.simplechart.charts.protocol.IChartAxisValueFormatter;
+import org.moe.samples.simplechart.charts.protocol.ChartAxisValueFormatter;
 
 /**
  * This formatter is used for passing an array of x-axis labels, on whole x steps.
@@ -32,7 +33,7 @@ import org.moe.samples.simplechart.charts.protocol.IChartAxisValueFormatter;
 @Library("Charts")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class ChartIndexAxisValueFormatter extends NSObject implements IChartAxisValueFormatter {
+public class ChartIndexAxisValueFormatter extends NSObject implements ChartAxisValueFormatter {
     static {
         NatJ.register();
     }
@@ -51,10 +52,9 @@ public class ChartIndexAxisValueFormatter extends NSObject implements IChartAxis
     @Selector("alloc")
     public static native ChartIndexAxisValueFormatter alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ChartIndexAxisValueFormatter allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -123,8 +123,7 @@ public class ChartIndexAxisValueFormatter extends NSObject implements IChartAxis
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ChartIndexAxisValueFormatter new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

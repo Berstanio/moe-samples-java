@@ -50,10 +50,9 @@ public class YAxisRendererRadarChart extends ChartYAxisRenderer {
     @Selector("alloc")
     public static native YAxisRendererRadarChart alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native YAxisRendererRadarChart allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -99,25 +98,6 @@ public class YAxisRendererRadarChart extends ChartYAxisRenderer {
     public native YAxisRendererRadarChart init();
 
     @Generated
-    @Selector("initWithViewPortHandler:")
-    public native YAxisRendererRadarChart initWithViewPortHandler(ChartViewPortHandler viewPortHandler);
-
-    @Generated
-    @Selector("initWithViewPortHandler:transformer:axis:")
-    public native YAxisRendererRadarChart initWithViewPortHandlerTransformerAxis(ChartViewPortHandler viewPortHandler,
-            ChartTransformer transformer, ChartAxisBase axis);
-
-    @Generated
-    @Selector("initWithViewPortHandler:yAxis:chart:")
-    public native YAxisRendererRadarChart initWithViewPortHandlerYAxisChart(ChartViewPortHandler viewPortHandler,
-            ChartYAxis yAxis, RadarChartView chart);
-
-    @Generated
-    @Selector("initWithViewPortHandler:yAxis:transformer:")
-    public native YAxisRendererRadarChart initWithViewPortHandlerYAxisTransformer(ChartViewPortHandler viewPortHandler,
-            ChartYAxis yAxis, ChartTransformer transformer);
-
-    @Generated
     @Selector("instanceMethodForSelector:")
     @FunctionPtr(name = "call_instanceMethodForSelector_ret")
     public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
@@ -141,16 +121,7 @@ public class YAxisRendererRadarChart extends ChartYAxisRenderer {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("renderAxisLabelsWithContext:")
-    public native void renderAxisLabelsWithContext(CGContextRef context);
-
-    @Generated
-    @Selector("renderLimitLinesWithContext:")
-    public native void renderLimitLinesWithContext(CGContextRef context);
+    public static native YAxisRendererRadarChart new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -172,4 +143,14 @@ public class YAxisRendererRadarChart extends ChartYAxisRenderer {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("initWithViewPortHandler:axis:chart:")
+    public native YAxisRendererRadarChart initWithViewPortHandlerAxisChart(ChartViewPortHandler viewPortHandler,
+            ChartYAxis axis, RadarChartView chart);
+
+    @Generated
+    @Selector("initWithViewPortHandler:axis:transformer:")
+    public native YAxisRendererRadarChart initWithViewPortHandlerAxisTransformer(ChartViewPortHandler viewPortHandler,
+            ChartYAxis axis, ChartTransformer transformer);
 }

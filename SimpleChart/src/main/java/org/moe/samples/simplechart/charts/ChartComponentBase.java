@@ -51,10 +51,9 @@ public class ChartComponentBase extends NSObject {
     @Selector("alloc")
     public static native ChartComponentBase alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ChartComponentBase allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -130,8 +129,7 @@ public class ChartComponentBase extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ChartComponentBase new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -158,15 +156,15 @@ public class ChartComponentBase extends NSObject {
      */
     @Generated
     @Selector("setXOffset:")
-    public native void setXOffset(@NFloat double value);
+    public native void setXOffset(double value);
 
     /**
-     * The offset this component has on the x-axis
+     * The offset this component has on the y-axis
      * <em>default</em>: 5.0 (or 0.0 on ChartYAxis)
      */
     @Generated
     @Selector("setYOffset:")
-    public native void setYOffset(@NFloat double value);
+    public native void setYOffset(double value);
 
     @Generated
     @Selector("superclass")
@@ -183,15 +181,13 @@ public class ChartComponentBase extends NSObject {
      */
     @Generated
     @Selector("xOffset")
-    @NFloat
     public native double xOffset();
 
     /**
-     * The offset this component has on the x-axis
+     * The offset this component has on the y-axis
      * <em>default</em>: 5.0 (or 0.0 on ChartYAxis)
      */
     @Generated
     @Selector("yOffset")
-    @NFloat
     public native double yOffset();
 }

@@ -28,6 +28,7 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.samples.simplechart.charts.protocol.IChartAxisValueFormatter;
+import org.moe.samples.simplechart.charts.protocol.ChartAxisValueFormatter;
 
 /**
  * Base class for all axes
@@ -62,10 +63,9 @@ public class ChartAxisBase extends ChartComponentBase {
     @Selector("alloc")
     public static native ChartAxisBase alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ChartAxisBase allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -81,12 +81,10 @@ public class ChartAxisBase extends ChartComponentBase {
 
     @Generated
     @Selector("axisLineDashPhase")
-    @NFloat
     public native double axisLineDashPhase();
 
     @Generated
     @Selector("axisLineWidth")
-    @NFloat
     public native double axisLineWidth();
 
     /**
@@ -94,7 +92,6 @@ public class ChartAxisBase extends ChartComponentBase {
      */
     @Generated
     @Selector("axisMaxLabels")
-    @NInt
     public native long axisMaxLabels();
 
     /**
@@ -111,7 +108,6 @@ public class ChartAxisBase extends ChartComponentBase {
      */
     @Generated
     @Selector("axisMinLabels")
-    @NInt
     public native long axisMinLabels();
 
     /**
@@ -182,7 +178,6 @@ public class ChartAxisBase extends ChartComponentBase {
      */
     @Generated
     @Selector("decimals")
-    @NInt
     public native long decimals();
 
     @Generated
@@ -232,7 +227,6 @@ public class ChartAxisBase extends ChartComponentBase {
      */
     @Generated
     @Selector("entryCount")
-    @NInt
     public native long entryCount();
 
     /**
@@ -248,7 +242,7 @@ public class ChartAxisBase extends ChartComponentBase {
      */
     @Generated
     @Selector("getFormattedLabel:")
-    public native String getFormattedLabel(@NInt long index);
+    public native String getFormattedLabel(long index);
 
     @Generated
     @Selector("getLongestLabel")
@@ -294,12 +288,10 @@ public class ChartAxisBase extends ChartComponentBase {
 
     @Generated
     @Selector("gridLineDashPhase")
-    @NFloat
     public native double gridLineDashPhase();
 
     @Generated
     @Selector("gridLineWidth")
-    @NFloat
     public native double gridLineWidth();
 
     @Generated
@@ -395,7 +387,6 @@ public class ChartAxisBase extends ChartComponentBase {
      */
     @Generated
     @Selector("labelCount")
-    @NInt
     public native long labelCount();
 
     @Generated
@@ -416,8 +407,7 @@ public class ChartAxisBase extends ChartComponentBase {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ChartAxisBase new_objc();
 
     /**
      * Removes all LimitLines from the axis.
@@ -465,18 +455,18 @@ public class ChartAxisBase extends ChartComponentBase {
 
     @Generated
     @Selector("setAxisLineDashPhase:")
-    public native void setAxisLineDashPhase(@NFloat double value);
+    public native void setAxisLineDashPhase(double value);
 
     @Generated
     @Selector("setAxisLineWidth:")
-    public native void setAxisLineWidth(@NFloat double value);
+    public native void setAxisLineWidth(double value);
 
     /**
      * The maximum number of labels on the axis
      */
     @Generated
     @Selector("setAxisMaxLabels:")
-    public native void setAxisMaxLabels(@NInt long value);
+    public native void setAxisMaxLabels(long value);
 
     /**
      * The maximum value for this axis.
@@ -492,7 +482,7 @@ public class ChartAxisBase extends ChartComponentBase {
      */
     @Generated
     @Selector("setAxisMinLabels:")
-    public native void setAxisMinLabels(@NInt long value);
+    public native void setAxisMinLabels(long value);
 
     /**
      * The minimum value for this axis.
@@ -530,7 +520,7 @@ public class ChartAxisBase extends ChartComponentBase {
      */
     @Generated
     @Selector("setDecimals:")
-    public native void setDecimals(@NInt long value);
+    public native void setDecimals(long value);
 
     @Generated
     @Selector("setDrawAxisLineEnabled:")
@@ -617,11 +607,11 @@ public class ChartAxisBase extends ChartComponentBase {
 
     @Generated
     @Selector("setGridLineDashPhase:")
-    public native void setGridLineDashPhase(@NFloat double value);
+    public native void setGridLineDashPhase(double value);
 
     @Generated
     @Selector("setGridLineWidth:")
-    public native void setGridLineWidth(@NFloat double value);
+    public native void setGridLineWidth(double value);
 
     /**
      * the number of label entries the axis should have
@@ -632,11 +622,11 @@ public class ChartAxisBase extends ChartComponentBase {
      */
     @Generated
     @Selector("setLabelCount:")
-    public native void setLabelCount(@NInt long value);
+    public native void setLabelCount(long value);
 
     @Generated
     @Selector("setLabelCount:force:")
-    public native void setLabelCountForce(@NInt long count, boolean force);
+    public native void setLabelCountForce(long count, boolean force);
 
     @Generated
     @Selector("setLabelFont:")
@@ -667,7 +657,7 @@ public class ChartAxisBase extends ChartComponentBase {
      */
     @Generated
     @Selector("setValueFormatter:")
-    public native void setValueFormatter(@Mapped(ObjCObjectMapper.class) IChartAxisValueFormatter value);
+    public native void setValueFormatter(@Mapped(ObjCObjectMapper.class) ChartAxisValueFormatter value);
 
     @Generated
     @Selector("setVersion:")
@@ -699,7 +689,7 @@ public class ChartAxisBase extends ChartComponentBase {
     @Generated
     @Selector("valueFormatter")
     @MappedReturn(ObjCObjectMapper.class)
-    public native IChartAxisValueFormatter valueFormatter();
+    public native ChartAxisValueFormatter valueFormatter();
 
     @Generated
     @Selector("version")

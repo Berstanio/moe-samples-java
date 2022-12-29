@@ -72,10 +72,9 @@ public class LineChartView extends BarLineChartViewBase implements LineChartData
     @Selector("alloc")
     public static native LineChartView alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native LineChartView allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("animateKeyframesWithDuration:delay:options:animations:completion:")
@@ -121,25 +120,21 @@ public class LineChartView extends BarLineChartViewBase implements LineChartData
 
     @Generated
     @Selector("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearance();
+    public static native LineChartView appearance();
 
     @Generated
     @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
+    public LineChartView _appearance() {
         return appearance();
     }
 
     @Generated
     @Selector("appearanceForTraitCollection:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollection(UITraitCollection trait);
+    public static native LineChartView appearanceForTraitCollection(UITraitCollection trait);
 
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+    public LineChartView _appearanceForTraitCollection(UITraitCollection trait) {
         return appearanceForTraitCollection(trait);
     }
 
@@ -147,29 +142,25 @@ public class LineChartView extends BarLineChartViewBase implements LineChartData
     @Variadic()
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+    public static native LineChartView appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+    public LineChartView _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+    public static native LineChartView appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+    public LineChartView _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
@@ -178,28 +169,24 @@ public class LineChartView extends BarLineChartViewBase implements LineChartData
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(
+    public static native LineChartView appearanceWhenContainedIn(
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+    public LineChartView _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
             Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+    public static native LineChartView appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+    public LineChartView _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
@@ -228,7 +215,7 @@ public class LineChartView extends BarLineChartViewBase implements LineChartData
     @Generated
     @Selector("centerOffsets")
     @ByValue
-    public native CGPoint centerOffsets();
+    public native apple.coregraphics.struct.CGPoint centerOffsets();
 
     @Generated
     @Selector("chartXMax")
@@ -276,11 +263,11 @@ public class LineChartView extends BarLineChartViewBase implements LineChartData
 
     @Generated
     @Selector("getAxis:")
-    public native ChartYAxis getAxis(@NInt long axis);
+    public native ChartYAxis getAxis(long axis);
 
     @Generated
     @Selector("getTransformerForAxis:")
-    public native ChartTransformer getTransformerForAxis(@NInt long forAxis);
+    public native ChartTransformer getTransformerForAxis(long forAxis);
 
     @Generated
     @Selector("hash")
@@ -305,7 +292,7 @@ public class LineChartView extends BarLineChartViewBase implements LineChartData
 
     @Generated
     @Selector("initWithFrame:")
-    public native LineChartView initWithFrame(@ByValue CGRect frame);
+    public native LineChartView initWithFrame(@ByValue apple.coregraphics.struct.CGRect frame);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -322,7 +309,7 @@ public class LineChartView extends BarLineChartViewBase implements LineChartData
 
     @Generated
     @Selector("isInvertedWithAxis:")
-    public native boolean isInvertedWithAxis(@NInt long axis);
+    public native boolean isInvertedWithAxis(long axis);
 
     @Generated
     @Selector("isSubclassOfClass:")
@@ -346,12 +333,10 @@ public class LineChartView extends BarLineChartViewBase implements LineChartData
 
     @Generated
     @Selector("maxHighlightDistance")
-    @NFloat
     public native double maxHighlightDistance();
 
     @Generated
     @Selector("maxVisibleCount")
-    @NInt
     public native long maxVisibleCount();
 
     @Generated
@@ -364,8 +349,7 @@ public class LineChartView extends BarLineChartViewBase implements LineChartData
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native LineChartView new_objc();
 
     @Generated
     @Selector("performSystemAnimation:onViews:options:animations:completion:")

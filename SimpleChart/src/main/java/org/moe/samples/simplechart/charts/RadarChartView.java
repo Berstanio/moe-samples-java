@@ -72,10 +72,9 @@ public class RadarChartView extends PieRadarChartViewBase {
     @Selector("alloc")
     public static native RadarChartView alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native RadarChartView allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("animateKeyframesWithDuration:delay:options:animations:completion:")
@@ -121,25 +120,21 @@ public class RadarChartView extends PieRadarChartViewBase {
 
     @Generated
     @Selector("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearance();
+    public static native RadarChartView appearance();
 
     @Generated
     @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
+    public RadarChartView _appearance() {
         return appearance();
     }
 
     @Generated
     @Selector("appearanceForTraitCollection:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollection(UITraitCollection trait);
+    public static native RadarChartView appearanceForTraitCollection(UITraitCollection trait);
 
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+    public RadarChartView _appearanceForTraitCollection(UITraitCollection trait) {
         return appearanceForTraitCollection(trait);
     }
 
@@ -147,29 +142,25 @@ public class RadarChartView extends PieRadarChartViewBase {
     @Variadic()
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+    public static native RadarChartView appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+    public RadarChartView _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+    public static native RadarChartView appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+    public RadarChartView _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
@@ -178,28 +169,24 @@ public class RadarChartView extends PieRadarChartViewBase {
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(
+    public static native RadarChartView appearanceWhenContainedIn(
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+    public RadarChartView _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
             Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+    public static native RadarChartView appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+    public RadarChartView _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
@@ -265,7 +252,7 @@ public class RadarChartView extends PieRadarChartViewBase {
 
     @Generated
     @Selector("drawRect:")
-    public native void drawRect(@ByValue CGRect rect);
+    public native void drawRect(@ByValue apple.coregraphics.struct.CGRect rect);
 
     /**
      * flag indicating if the web lines should be drawn or not
@@ -279,7 +266,6 @@ public class RadarChartView extends PieRadarChartViewBase {
      */
     @Generated
     @Selector("factor")
-    @NFloat
     public native double factor();
 
     @Generated
@@ -289,8 +275,7 @@ public class RadarChartView extends PieRadarChartViewBase {
 
     @Generated
     @Selector("indexForAngle:")
-    @NInt
-    public native long indexForAngle(@NFloat double angle);
+    public native long indexForAngle(double angle);
 
     @Generated
     @Selector("inheritedAnimationDuration")
@@ -306,7 +291,7 @@ public class RadarChartView extends PieRadarChartViewBase {
 
     @Generated
     @Selector("initWithFrame:")
-    public native RadarChartView initWithFrame(@ByValue CGRect frame);
+    public native RadarChartView initWithFrame(@ByValue apple.coregraphics.struct.CGRect frame);
 
     /**
      * color for the web lines in between the lines that come from the center.
@@ -320,7 +305,6 @@ public class RadarChartView extends PieRadarChartViewBase {
      */
     @Generated
     @Selector("innerWebLineWidth")
-    @NFloat
     public native double innerWebLineWidth();
 
     @Generated
@@ -358,8 +342,7 @@ public class RadarChartView extends PieRadarChartViewBase {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native RadarChartView new_objc();
 
     @Generated
     @Selector("notifyDataSetChanged")
@@ -381,7 +364,6 @@ public class RadarChartView extends PieRadarChartViewBase {
 
     @Generated
     @Selector("radius")
-    @NFloat
     public native double radius();
 
     @Generated
@@ -463,7 +445,7 @@ public class RadarChartView extends PieRadarChartViewBase {
      */
     @Generated
     @Selector("setInnerWebLineWidth:")
-    public native void setInnerWebLineWidth(@NFloat double value);
+    public native void setInnerWebLineWidth(double value);
 
     /**
      * Sets the number of web-lines that should be skipped on chart web before the next one is drawn. This targets the lines that come from the center of the RadarChart.
@@ -471,7 +453,7 @@ public class RadarChartView extends PieRadarChartViewBase {
      */
     @Generated
     @Selector("setSkipWebLineCount:")
-    public native void setSkipWebLineCount(@NInt long value);
+    public native void setSkipWebLineCount(long value);
 
     @Generated
     @Selector("setVersion:")
@@ -482,7 +464,7 @@ public class RadarChartView extends PieRadarChartViewBase {
      */
     @Generated
     @Selector("setWebAlpha:")
-    public native void setWebAlpha(@NFloat double value);
+    public native void setWebAlpha(double value);
 
     /**
      * color for the web lines that come from the center
@@ -496,7 +478,7 @@ public class RadarChartView extends PieRadarChartViewBase {
      */
     @Generated
     @Selector("setWebLineWidth:")
-    public native void setWebLineWidth(@NFloat double value);
+    public native void setWebLineWidth(double value);
 
     /**
      * Sets the number of web-lines that should be skipped on chart web before the next one is drawn. This targets the lines that come from the center of the RadarChart.
@@ -504,7 +486,6 @@ public class RadarChartView extends PieRadarChartViewBase {
      */
     @Generated
     @Selector("skipWebLineCount")
-    @NInt
     public native long skipWebLineCount();
 
     /**
@@ -512,7 +493,6 @@ public class RadarChartView extends PieRadarChartViewBase {
      */
     @Generated
     @Selector("sliceAngle")
-    @NFloat
     public native double sliceAngle();
 
     @Generated
@@ -558,7 +538,6 @@ public class RadarChartView extends PieRadarChartViewBase {
      */
     @Generated
     @Selector("webAlpha")
-    @NFloat
     public native double webAlpha();
 
     /**
@@ -573,7 +552,6 @@ public class RadarChartView extends PieRadarChartViewBase {
      */
     @Generated
     @Selector("webLineWidth")
-    @NFloat
     public native double webLineWidth();
 
     /**

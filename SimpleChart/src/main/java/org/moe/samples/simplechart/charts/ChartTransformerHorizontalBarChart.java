@@ -47,10 +47,9 @@ public class ChartTransformerHorizontalBarChart extends ChartTransformer {
     @Selector("alloc")
     public static native ChartTransformerHorizontalBarChart alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ChartTransformerHorizontalBarChart allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -119,8 +118,7 @@ public class ChartTransformerHorizontalBarChart extends ChartTransformer {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ChartTransformerHorizontalBarChart new_objc();
 
     /**
      * Prepares the matrix that contains all offsets.

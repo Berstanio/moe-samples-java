@@ -27,6 +27,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.samples.simplechart.charts.protocol.CandleChartDataProvider;
 import org.moe.samples.simplechart.charts.protocol.ICandleChartDataSet;
+import org.moe.samples.simplechart.charts.protocol.CandleChartDataSetProtocol;
 
 @Generated
 @Library("Charts")
@@ -52,10 +53,9 @@ public class CandleStickChartRenderer extends LineScatterCandleRadarChartRendere
     @Selector("alloc")
     public static native CandleStickChartRenderer alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CandleStickChartRenderer allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -95,7 +95,7 @@ public class CandleStickChartRenderer extends LineScatterCandleRadarChartRendere
     @Generated
     @Selector("drawDataSetWithContext:dataSet:")
     public native void drawDataSetWithContextDataSet(CGContextRef context,
-            @Mapped(ObjCObjectMapper.class) ICandleChartDataSet dataSet);
+            @Mapped(ObjCObjectMapper.class) CandleChartDataSetProtocol dataSet);
 
     @Generated
     @Selector("drawDataWithContext:")
@@ -127,19 +127,10 @@ public class CandleStickChartRenderer extends LineScatterCandleRadarChartRendere
     public native void initBuffers();
 
     @Generated
-    @Selector("initWithAnimator:viewPortHandler:")
-    public native CandleStickChartRenderer initWithAnimatorViewPortHandler(ChartAnimator animator,
-            ChartViewPortHandler viewPortHandler);
-
-    @Generated
     @Selector("initWithDataProvider:animator:viewPortHandler:")
     public native CandleStickChartRenderer initWithDataProviderAnimatorViewPortHandler(
             @Mapped(ObjCObjectMapper.class) CandleChartDataProvider dataProvider, ChartAnimator animator,
             ChartViewPortHandler viewPortHandler);
-
-    @Generated
-    @Selector("initWithViewPortHandler:")
-    public native CandleStickChartRenderer initWithViewPortHandler(ChartViewPortHandler viewPortHandler);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -165,8 +156,7 @@ public class CandleStickChartRenderer extends LineScatterCandleRadarChartRendere
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CandleStickChartRenderer new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

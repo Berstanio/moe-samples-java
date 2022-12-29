@@ -48,31 +48,11 @@ public class ChartDataSet extends ChartBaseDataSet {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
-    /**
-     * Adds an Entry to the DataSet dynamically.
-     * Entries are added to the end of the list.
-     * This will also recalculate the current minimum and maximum values of the DataSet and the value-sum.
-     * \param e the entry to add
-     * 
-     * 
-     * returns:
-     * True
-     */
     @Generated
     @Deprecated
     @Selector("addEntry:")
     public native boolean addEntry(ChartDataEntry e);
 
-    /**
-     * Adds an Entry to the DataSet dynamically.
-     * Entries are added to their appropriate index respective to it’s x-index.
-     * This will also recalculate the current minimum and maximum values of the DataSet and the value-sum.
-     * \param e the entry to add
-     * 
-     * 
-     * returns:
-     * True
-     */
     @Generated
     @Selector("addEntryOrdered:")
     public native boolean addEntryOrdered(ChartDataEntry e);
@@ -82,10 +62,9 @@ public class ChartDataSet extends ChartBaseDataSet {
     @Selector("alloc")
     public static native ChartDataSet alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ChartDataSet allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -147,6 +126,14 @@ public class ChartDataSet extends ChartBaseDataSet {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * note:
+     * Calls <code>notifyDataSetChanged()</code> after setting a new value.
+     * 
+     * returns:
+     * The array of y-values that this DataSet represents.
+     * the entries that this dataset represents / holds together
+     */
     @Generated
     @Selector("entries")
     public native NSArray<? extends ChartDataEntry> entries();
@@ -166,7 +153,6 @@ public class ChartDataSet extends ChartBaseDataSet {
     @Generated
     @Deprecated
     @Selector("entryCount")
-    @NInt
     public native long entryCount();
 
     /**
@@ -180,7 +166,7 @@ public class ChartDataSet extends ChartBaseDataSet {
     @Generated
     @Deprecated
     @Selector("entryForIndex:")
-    public native ChartDataEntry entryForIndex(@NInt long i);
+    public native ChartDataEntry entryForIndex(long i);
 
     /**
      * \param xValue the x-value
@@ -212,19 +198,11 @@ public class ChartDataSet extends ChartBaseDataSet {
      */
     @Generated
     @Selector("entryForXValue:closestToY:rounding:")
-    public native ChartDataEntry entryForXValueClosestToYRounding(double xValue, double yValue, @NInt long rounding);
+    public native ChartDataEntry entryForXValueClosestToYRounding(double xValue, double yValue, long rounding);
 
-    /**
-     * \param e the entry to search for
-     * 
-     * 
-     * returns:
-     * The array-index of the specified entry
-     */
     @Generated
     @Deprecated
     @Selector("entryIndexWithEntry:")
-    @NInt
     public native long entryIndexWithEntry(ChartDataEntry e);
 
     /**
@@ -241,8 +219,7 @@ public class ChartDataSet extends ChartBaseDataSet {
      */
     @Generated
     @Selector("entryIndexWithX:closestToY:rounding:")
-    @NInt
-    public native long entryIndexWithXClosestToYRounding(double xValue, double yValue, @NInt long rounding);
+    public native long entryIndexWithXClosestToYRounding(double xValue, double yValue, long rounding);
 
     @Generated
     @Selector("hash")
@@ -289,8 +266,7 @@ public class ChartDataSet extends ChartBaseDataSet {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ChartDataSet new_objc();
 
     @Generated
     @Selector("objectAtIndexedSubscript:")
@@ -304,23 +280,11 @@ public class ChartDataSet extends ChartBaseDataSet {
     @Selector("removeEntry:")
     public native boolean removeEntry(ChartDataEntry entry);
 
-    /**
-     * Removes the first Entry (at index 0) of this DataSet from the entries array.
-     * 
-     * returns:
-     * <code>true</code> if successful, <code>false</code> if not.
-     */
     @Generated
     @Deprecated
     @Selector("removeFirst")
     public native boolean removeFirst();
 
-    /**
-     * Removes the last Entry (at index size-1) of this DataSet from the entries array.
-     * 
-     * returns:
-     * <code>true</code> if successful, <code>false</code> if not.
-     */
     @Generated
     @Deprecated
     @Selector("removeLast")

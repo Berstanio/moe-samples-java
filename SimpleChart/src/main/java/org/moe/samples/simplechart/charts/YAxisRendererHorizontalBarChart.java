@@ -55,10 +55,9 @@ public class YAxisRendererHorizontalBarChart extends ChartYAxisRenderer {
     @Selector("alloc")
     public static native YAxisRendererHorizontalBarChart alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native YAxisRendererHorizontalBarChart allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -99,7 +98,7 @@ public class YAxisRendererHorizontalBarChart extends ChartYAxisRenderer {
 
     @Generated
     @Selector("drawGridLineWithContext:position:")
-    public native void drawGridLineWithContextPosition(CGContextRef context, @ByValue CGPoint position);
+    public native void drawGridLineWithContextPosition(CGContextRef context, @ByValue apple.coregraphics.struct.CGPoint position);
 
     /**
      * draws the y-labels on the specified x-position
@@ -107,7 +106,7 @@ public class YAxisRendererHorizontalBarChart extends ChartYAxisRenderer {
     @Generated
     @Selector("drawYLabelsWithContext:fixedPosition:positions:offset:")
     public native void drawYLabelsWithContextFixedPositionPositionsOffset(CGContextRef context,
-            @NFloat double fixedPosition, NSArray<? extends NSValue> positions, @NFloat double offset);
+            double fixedPosition, NSArray<? extends NSValue> positions, double offset);
 
     /**
      * Draws the zero line at the specified position.
@@ -119,7 +118,7 @@ public class YAxisRendererHorizontalBarChart extends ChartYAxisRenderer {
     @Generated
     @Selector("gridClippingRect")
     @ByValue
-    public native CGRect gridClippingRect();
+    public native apple.coregraphics.struct.CGRect gridClippingRect();
 
     @Generated
     @Selector("hash")
@@ -129,20 +128,6 @@ public class YAxisRendererHorizontalBarChart extends ChartYAxisRenderer {
     @Generated
     @Selector("init")
     public native YAxisRendererHorizontalBarChart init();
-
-    @Generated
-    @Selector("initWithViewPortHandler:")
-    public native YAxisRendererHorizontalBarChart initWithViewPortHandler(ChartViewPortHandler viewPortHandler);
-
-    @Generated
-    @Selector("initWithViewPortHandler:transformer:axis:")
-    public native YAxisRendererHorizontalBarChart initWithViewPortHandlerTransformerAxis(
-            ChartViewPortHandler viewPortHandler, ChartTransformer transformer, ChartAxisBase axis);
-
-    @Generated
-    @Selector("initWithViewPortHandler:yAxis:transformer:")
-    public native YAxisRendererHorizontalBarChart initWithViewPortHandlerYAxisTransformer(
-            ChartViewPortHandler viewPortHandler, ChartYAxis yAxis, ChartTransformer transformer);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -168,23 +153,7 @@ public class YAxisRendererHorizontalBarChart extends ChartYAxisRenderer {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    /**
-     * draws the y-axis labels to the screen
-     */
-    @Generated
-    @Selector("renderAxisLabelsWithContext:")
-    public native void renderAxisLabelsWithContext(CGContextRef context);
-
-    @Generated
-    @Selector("renderAxisLineWithContext:")
-    public native void renderAxisLineWithContext(CGContextRef context);
-
-    @Generated
-    @Selector("renderLimitLinesWithContext:")
-    public native void renderLimitLinesWithContext(CGContextRef context);
+    public static native YAxisRendererHorizontalBarChart new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -210,4 +179,9 @@ public class YAxisRendererHorizontalBarChart extends ChartYAxisRenderer {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("initWithViewPortHandler:axis:transformer:")
+    public native YAxisRendererHorizontalBarChart initWithViewPortHandlerAxisTransformer(
+            ChartViewPortHandler viewPortHandler, ChartYAxis axis, ChartTransformer transformer);
 }

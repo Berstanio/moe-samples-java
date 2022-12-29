@@ -26,12 +26,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.samples.simplechart.charts.protocol.IChartAxisValueFormatter;
+import org.moe.samples.simplechart.charts.protocol.ChartAxisValueFormatter;
 
 @Generated
 @Library("Charts")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class ChartDefaultAxisValueFormatter extends NSObject implements IChartAxisValueFormatter {
+public class ChartDefaultAxisValueFormatter extends NSObject implements ChartAxisValueFormatter {
     static {
         NatJ.register();
     }
@@ -50,10 +51,9 @@ public class ChartDefaultAxisValueFormatter extends NSObject implements IChartAx
     @Selector("alloc")
     public static native ChartDefaultAxisValueFormatter alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ChartDefaultAxisValueFormatter allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -128,7 +128,7 @@ public class ChartDefaultAxisValueFormatter extends NSObject implements IChartAx
 
     @Generated
     @Selector("initWithDecimals:")
-    public native ChartDefaultAxisValueFormatter initWithDecimals(@NInt long decimals);
+    public native ChartDefaultAxisValueFormatter initWithDecimals(long decimals);
 
     @Generated
     @Selector("initWithFormatter:")
@@ -158,8 +158,7 @@ public class ChartDefaultAxisValueFormatter extends NSObject implements IChartAx
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ChartDefaultAxisValueFormatter new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

@@ -49,10 +49,9 @@ public class ChartDataApproximator extends NSObject {
     @Selector("alloc")
     public static native ChartDataApproximator alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ChartDataApproximator allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -117,8 +116,7 @@ public class ChartDataApproximator extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ChartDataApproximator new_objc();
 
     /**
      * uses the douglas peuker algorithm to reduce the given arraylist of entries
@@ -126,7 +124,7 @@ public class ChartDataApproximator extends NSObject {
     @Generated
     @Selector("reduceWithDouglasPeuker:tolerance:")
     public static native NSArray<? extends NSValue> reduceWithDouglasPeukerTolerance(NSArray<? extends NSValue> points,
-            @NFloat double tolerance);
+            double tolerance);
 
     /**
      * uses the douglas peuker algorithm to reduce the given arraylist of entries to given number of points

@@ -26,12 +26,16 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.samples.simplechart.charts.protocol.IChartValueFormatter;
+import org.moe.samples.simplechart.charts.protocol.ChartValueFormatter;
 
+/**
+ * The default value formatter used for all chart components that needs a default
+ */
 @Generated
 @Library("Charts")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class ChartDefaultValueFormatter extends NSObject implements IChartValueFormatter {
+public class ChartDefaultValueFormatter extends NSObject implements ChartValueFormatter {
     static {
         NatJ.register();
     }
@@ -50,10 +54,9 @@ public class ChartDefaultValueFormatter extends NSObject implements IChartValueF
     @Selector("alloc")
     public static native ChartDefaultValueFormatter alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ChartDefaultValueFormatter allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -68,7 +71,7 @@ public class ChartDefaultValueFormatter extends NSObject implements IChartValueF
     @Generated
     public interface Block_block_ret {
         @Generated
-        String call_block_ret(double arg0, ChartDataEntry arg1, @NInt long arg2, ChartViewPortHandler arg3);
+        String call_block_ret(double arg0, ChartDataEntry arg1, long arg2, ChartViewPortHandler arg3);
     }
 
     @Generated
@@ -123,12 +126,12 @@ public class ChartDefaultValueFormatter extends NSObject implements IChartValueF
     @Generated
     public interface Block_initWithBlock {
         @Generated
-        String call_initWithBlock(double arg0, ChartDataEntry arg1, @NInt long arg2, ChartViewPortHandler arg3);
+        String call_initWithBlock(double arg0, ChartDataEntry arg1, long arg2, ChartViewPortHandler arg3);
     }
 
     @Generated
     @Selector("initWithDecimals:")
-    public native ChartDefaultValueFormatter initWithDecimals(@NInt long decimals);
+    public native ChartDefaultValueFormatter initWithDecimals(long decimals);
 
     @Generated
     @Selector("initWithFormatter:")
@@ -158,8 +161,7 @@ public class ChartDefaultValueFormatter extends NSObject implements IChartValueF
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ChartDefaultValueFormatter new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -177,7 +179,7 @@ public class ChartDefaultValueFormatter extends NSObject implements IChartValueF
     @Generated
     public interface Block_setBlock {
         @Generated
-        String call_setBlock(double arg0, ChartDataEntry arg1, @NInt long arg2, ChartViewPortHandler arg3);
+        String call_setBlock(double arg0, ChartDataEntry arg1, long arg2, ChartViewPortHandler arg3);
     }
 
     @Generated
@@ -195,7 +197,7 @@ public class ChartDefaultValueFormatter extends NSObject implements IChartValueF
     @Generated
     @Selector("stringForValue:entry:dataSetIndex:viewPortHandler:")
     public native String stringForValueEntryDataSetIndexViewPortHandler(double value, ChartDataEntry entry,
-            @NInt long dataSetIndex, ChartViewPortHandler viewPortHandler);
+            long dataSetIndex, ChartViewPortHandler viewPortHandler);
 
     @Generated
     @Selector("superclass")
@@ -206,7 +208,7 @@ public class ChartDefaultValueFormatter extends NSObject implements IChartValueF
     @NInt
     public static native long version_static();
 
-    @Generated
+    @Deprecated @Generated
     @Selector("withBlock:")
     public static native ChartDefaultValueFormatter withBlock(@ObjCBlock(name = "call_withBlock") Block_withBlock block);
 
@@ -214,6 +216,6 @@ public class ChartDefaultValueFormatter extends NSObject implements IChartValueF
     @Generated
     public interface Block_withBlock {
         @Generated
-        String call_withBlock(double arg0, ChartDataEntry arg1, @NInt long arg2, ChartViewPortHandler arg3);
+        String call_withBlock(double arg0, ChartDataEntry arg1, long arg2, ChartViewPortHandler arg3);
     }
 }

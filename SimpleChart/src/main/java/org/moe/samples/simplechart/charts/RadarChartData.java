@@ -28,6 +28,7 @@ import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.samples.simplechart.charts.protocol.IChartDataSet;
+import org.moe.samples.simplechart.charts.protocol.ChartDataSetProtocol;
 
 @Generated
 @Library("Charts")
@@ -53,10 +54,9 @@ public class RadarChartData extends ChartData {
     @Selector("alloc")
     public static native RadarChartData alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native RadarChartData allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -89,10 +89,6 @@ public class RadarChartData extends ChartData {
     public static native String description_static();
 
     @Generated
-    @Selector("entryForHighlight:")
-    public native ChartDataEntry entryForHighlight(ChartHighlight highlight);
-
-    @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
@@ -107,12 +103,10 @@ public class RadarChartData extends ChartData {
 
     @Generated
     @Selector("highlightLineDashPhase")
-    @NFloat
     public native double highlightLineDashPhase();
 
     @Generated
     @Selector("highlightLineWidth")
-    @NFloat
     public native double highlightLineWidth();
 
     @Generated
@@ -121,7 +115,7 @@ public class RadarChartData extends ChartData {
 
     @Generated
     @Selector("initWithDataSet:")
-    public native RadarChartData initWithDataSet(@Mapped(ObjCObjectMapper.class) IChartDataSet dataSet);
+    public native RadarChartData initWithDataSet(@Mapped(ObjCObjectMapper.class) ChartDataSetProtocol dataSet);
 
     @Generated
     @Selector("initWithDataSets:")
@@ -158,8 +152,7 @@ public class RadarChartData extends ChartData {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native RadarChartData new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -179,11 +172,11 @@ public class RadarChartData extends ChartData {
 
     @Generated
     @Selector("setHighlightLineDashPhase:")
-    public native void setHighlightLineDashPhase(@NFloat double value);
+    public native void setHighlightLineDashPhase(double value);
 
     @Generated
     @Selector("setHighlightLineWidth:")
-    public native void setHighlightLineWidth(@NFloat double value);
+    public native void setHighlightLineWidth(double value);
 
     /**
      * Sets labels that should be drawn around the RadarChart at the end of each web line.
@@ -204,4 +197,8 @@ public class RadarChartData extends ChartData {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("entryFor:")
+    public native ChartDataEntry entryFor(ChartHighlight highlight);
 }

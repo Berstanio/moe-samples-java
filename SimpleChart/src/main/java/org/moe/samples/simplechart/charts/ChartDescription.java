@@ -49,10 +49,9 @@ public class ChartDescription extends ChartComponentBase {
     @Selector("alloc")
     public static native ChartDescription alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ChartDescription allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -124,8 +123,7 @@ public class ChartDescription extends ChartComponentBase {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ChartDescription new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -154,7 +152,7 @@ public class ChartDescription extends ChartComponentBase {
      */
     @Generated
     @Selector("setTextAlign:")
-    public native void setTextAlign(@NInt long value);
+    public native void setTextAlign(long value);
 
     /**
      * Text color used for drawing the description text
@@ -183,7 +181,6 @@ public class ChartDescription extends ChartComponentBase {
      */
     @Generated
     @Selector("textAlign")
-    @NInt
     public native long textAlign();
 
     /**

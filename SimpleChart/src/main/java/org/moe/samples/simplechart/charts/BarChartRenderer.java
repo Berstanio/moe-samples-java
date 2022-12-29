@@ -30,6 +30,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.samples.simplechart.charts.protocol.BarChartDataProvider;
 import org.moe.samples.simplechart.charts.protocol.IBarChartDataSet;
+import apple.coregraphics.struct.CGPoint;
+import org.moe.natj.general.ann.ByValue;
+import org.moe.samples.simplechart.charts.protocol.BarChartDataSetProtocol;
 
 @Generated
 @Library("Charts")
@@ -55,10 +58,9 @@ public class BarChartRenderer extends BarLineScatterCandleBubbleChartRenderer {
     @Selector("alloc")
     public static native BarChartRenderer alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native BarChartRenderer allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -98,7 +100,7 @@ public class BarChartRenderer extends BarLineScatterCandleBubbleChartRenderer {
     @Generated
     @Selector("drawDataSetWithContext:dataSet:index:")
     public native void drawDataSetWithContextDataSetIndex(CGContextRef context,
-            @Mapped(ObjCObjectMapper.class) IBarChartDataSet dataSet, @NInt long index);
+            @Mapped(ObjCObjectMapper.class) BarChartDataSetProtocol dataSet, long index);
 
     @Generated
     @Selector("drawDataWithContext:")
@@ -111,14 +113,6 @@ public class BarChartRenderer extends BarLineScatterCandleBubbleChartRenderer {
     @Generated
     @Selector("drawHighlightedWithContext:indices:")
     public native void drawHighlightedWithContextIndices(CGContextRef context, NSArray<? extends ChartHighlight> indices);
-
-    /**
-     * Draws a value at the specified x and y position.
-     */
-    @Generated
-    @Selector("drawValueWithContext:value:xPos:yPos:font:align:color:")
-    public native void drawValueWithContextValueXPosYPosFontAlignColor(CGContextRef context, String value,
-            @NFloat double xPos, @NFloat double yPos, UIFont font, @NInt long align, UIColor color);
 
     @Generated
     @Selector("drawValuesWithContext:")
@@ -138,19 +132,10 @@ public class BarChartRenderer extends BarLineScatterCandleBubbleChartRenderer {
     public native void initBuffers();
 
     @Generated
-    @Selector("initWithAnimator:viewPortHandler:")
-    public native BarChartRenderer initWithAnimatorViewPortHandler(ChartAnimator animator,
-            ChartViewPortHandler viewPortHandler);
-
-    @Generated
     @Selector("initWithDataProvider:animator:viewPortHandler:")
     public native BarChartRenderer initWithDataProviderAnimatorViewPortHandler(
             @Mapped(ObjCObjectMapper.class) BarChartDataProvider dataProvider, ChartAnimator animator,
             ChartViewPortHandler viewPortHandler);
-
-    @Generated
-    @Selector("initWithViewPortHandler:")
-    public native BarChartRenderer initWithViewPortHandler(ChartViewPortHandler viewPortHandler);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -176,8 +161,7 @@ public class BarChartRenderer extends BarLineScatterCandleBubbleChartRenderer {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native BarChartRenderer new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -215,4 +199,13 @@ public class BarChartRenderer extends BarLineScatterCandleBubbleChartRenderer {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Draws a value at the specified x and y position.
+     */
+    @Generated
+    @Selector("drawValueWithContext:value:xPos:yPos:font:align:color:anchor:angleRadians:")
+    public native void drawValueWithContextValueXPosYPosFontAlignColorAnchorAngleRadians(CGContextRef context,
+            String value, double xPos, double yPos, UIFont font, long align, UIColor color, @ByValue CGPoint anchor,
+            double angleRadians);
 }

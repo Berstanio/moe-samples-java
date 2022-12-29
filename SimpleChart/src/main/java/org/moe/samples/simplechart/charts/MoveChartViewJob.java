@@ -47,10 +47,9 @@ public class MoveChartViewJob extends ChartViewPortJob {
     @Selector("alloc")
     public static native MoveChartViewJob alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MoveChartViewJob allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -125,8 +124,7 @@ public class MoveChartViewJob extends ChartViewPortJob {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MoveChartViewJob new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

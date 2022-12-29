@@ -52,7 +52,7 @@ public class ChartDataRendererBase extends ChartRenderer {
     @Generated
     @Selector("allocWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSObject allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("animator")
@@ -164,7 +164,7 @@ public class ChartDataRendererBase extends ChartRenderer {
     @Owned
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSObject new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

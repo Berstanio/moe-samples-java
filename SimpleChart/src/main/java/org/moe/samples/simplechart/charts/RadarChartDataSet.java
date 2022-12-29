@@ -32,13 +32,16 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.samples.simplechart.charts.protocol.IChartValueFormatter;
 import org.moe.samples.simplechart.charts.protocol.IRadarChartDataSet;
+import org.moe.samples.simplechart.charts.protocol.ChartFill;
+import org.moe.samples.simplechart.charts.protocol.ChartValueFormatter;
+import org.moe.samples.simplechart.charts.protocol.RadarChartDataSetProtocol;
 
 @Generated
 @Library("Charts")
 @Runtime(ObjCRuntime.class)
 @ObjCClassName("_TtC6Charts17RadarChartDataSet")
 @ObjCClassBinding
-public class RadarChartDataSet extends LineRadarChartDataSet implements IRadarChartDataSet {
+public class RadarChartDataSet extends LineRadarChartDataSet implements RadarChartDataSetProtocol {
     static {
         NatJ.register();
     }
@@ -69,10 +72,9 @@ public class RadarChartDataSet extends LineRadarChartDataSet implements IRadarCh
     @Selector("alloc")
     public static native RadarChartDataSet alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native RadarChartDataSet allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -80,7 +82,6 @@ public class RadarChartDataSet extends LineRadarChartDataSet implements IRadarCh
 
     @Generated
     @Selector("axisDependency")
-    @NInt
     public native long axisDependency();
 
     @Generated
@@ -115,7 +116,7 @@ public class RadarChartDataSet extends LineRadarChartDataSet implements IRadarCh
 
     @Generated
     @Selector("colorAtIndex:")
-    public native UIColor colorAtIndex(@NInt long atIndex);
+    public native UIColor colorAtIndex(long atIndex);
 
     @Generated
     @Selector("colors")
@@ -163,12 +164,11 @@ public class RadarChartDataSet extends LineRadarChartDataSet implements IRadarCh
 
     @Generated
     @Selector("entryCount")
-    @NInt
     public native long entryCount();
 
     @Generated
     @Selector("entryForIndex:")
-    public native ChartDataEntry entryForIndex(@NInt long i);
+    public native ChartDataEntry entryForIndex(long i);
 
     @Generated
     @Selector("entryForXValue:closestToY:")
@@ -176,25 +176,22 @@ public class RadarChartDataSet extends LineRadarChartDataSet implements IRadarCh
 
     @Generated
     @Selector("entryForXValue:closestToY:rounding:")
-    public native ChartDataEntry entryForXValueClosestToYRounding(double xValue, double yValue, @NInt long rounding);
+    public native ChartDataEntry entryForXValueClosestToYRounding(double xValue, double yValue, long rounding);
 
     @Generated
     @Selector("entryIndexWithEntry:")
-    @NInt
     public native long entryIndexWithEntry(ChartDataEntry e);
 
     @Generated
     @Selector("entryIndexWithX:closestToY:rounding:")
-    @NInt
-    public native long entryIndexWithXClosestToYRounding(double xValue, double yValue, @NInt long rounding);
+    public native long entryIndexWithXClosestToYRounding(double xValue, double yValue, long rounding);
 
-    @Generated
+    @MappedReturn(ObjCObjectMapper.class) @Generated
     @Selector("fill")
     public native ChartFill fill();
 
     @Generated
     @Selector("fillAlpha")
-    @NFloat
     public native double fillAlpha();
 
     @Generated
@@ -203,7 +200,6 @@ public class RadarChartDataSet extends LineRadarChartDataSet implements IRadarCh
 
     @Generated
     @Selector("form")
-    @NInt
     public native long form();
 
     @Generated
@@ -212,17 +208,14 @@ public class RadarChartDataSet extends LineRadarChartDataSet implements IRadarCh
 
     @Generated
     @Selector("formLineDashPhase")
-    @NFloat
     public native double formLineDashPhase();
 
     @Generated
     @Selector("formLineWidth")
-    @NFloat
     public native double formLineWidth();
 
     @Generated
     @Selector("formSize")
-    @NFloat
     public native double formSize();
 
     @Generated
@@ -236,17 +229,14 @@ public class RadarChartDataSet extends LineRadarChartDataSet implements IRadarCh
 
     @Generated
     @Selector("highlightCircleInnerRadius")
-    @NFloat
     public native double highlightCircleInnerRadius();
 
     @Generated
     @Selector("highlightCircleOuterRadius")
-    @NFloat
     public native double highlightCircleOuterRadius();
 
     @Generated
     @Selector("highlightCircleStrokeAlpha")
-    @NFloat
     public native double highlightCircleStrokeAlpha();
 
     @Generated
@@ -255,7 +245,6 @@ public class RadarChartDataSet extends LineRadarChartDataSet implements IRadarCh
 
     @Generated
     @Selector("highlightCircleStrokeWidth")
-    @NFloat
     public native double highlightCircleStrokeWidth();
 
     @Generated
@@ -272,18 +261,16 @@ public class RadarChartDataSet extends LineRadarChartDataSet implements IRadarCh
 
     @Generated
     @Selector("highlightLineDashPhase")
-    @NFloat
     public native double highlightLineDashPhase();
 
     @Generated
     @Selector("highlightLineWidth")
-    @NFloat
     public native double highlightLineWidth();
 
     @Generated
     @Selector("iconsOffset")
     @ByValue
-    public native CGPoint iconsOffset();
+    public native apple.coregraphics.struct.CGPoint iconsOffset();
 
     @Generated
     @Selector("init")
@@ -360,18 +347,12 @@ public class RadarChartDataSet extends LineRadarChartDataSet implements IRadarCh
 
     @Generated
     @Selector("lineWidth")
-    @NFloat
     public native double lineWidth();
-
-    @Generated
-    @Selector("needsFormatter")
-    public native boolean needsFormatter();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native RadarChartDataSet new_objc();
 
     @Generated
     @Selector("notifyDataSetChanged")
@@ -383,7 +364,7 @@ public class RadarChartDataSet extends LineRadarChartDataSet implements IRadarCh
 
     @Generated
     @Selector("removeEntryWithIndex:")
-    public native boolean removeEntryWithIndex(@NInt long index);
+    public native boolean removeEntryWithIndex(long index);
 
     @Generated
     @Selector("removeEntryWithX:")
@@ -443,11 +424,11 @@ public class RadarChartDataSet extends LineRadarChartDataSet implements IRadarCh
 
     @Generated
     @Selector("setFill:")
-    public native void setFill(ChartFill value);
+    public native void setFill(@Mapped(ObjCObjectMapper.class) ChartFill value);
 
     @Generated
     @Selector("setFillAlpha:")
-    public native void setFillAlpha(@NFloat double value);
+    public native void setFillAlpha(double value);
 
     @Generated
     @Selector("setFillColor:")
@@ -459,15 +440,15 @@ public class RadarChartDataSet extends LineRadarChartDataSet implements IRadarCh
 
     @Generated
     @Selector("setHighlightCircleInnerRadius:")
-    public native void setHighlightCircleInnerRadius(@NFloat double value);
+    public native void setHighlightCircleInnerRadius(double value);
 
     @Generated
     @Selector("setHighlightCircleOuterRadius:")
-    public native void setHighlightCircleOuterRadius(@NFloat double value);
+    public native void setHighlightCircleOuterRadius(double value);
 
     @Generated
     @Selector("setHighlightCircleStrokeAlpha:")
-    public native void setHighlightCircleStrokeAlpha(@NFloat double value);
+    public native void setHighlightCircleStrokeAlpha(double value);
 
     @Generated
     @Selector("setHighlightCircleStrokeColor:")
@@ -475,7 +456,7 @@ public class RadarChartDataSet extends LineRadarChartDataSet implements IRadarCh
 
     @Generated
     @Selector("setHighlightCircleStrokeWidth:")
-    public native void setHighlightCircleStrokeWidth(@NFloat double value);
+    public native void setHighlightCircleStrokeWidth(double value);
 
     @Generated
     @Selector("setHighlightColor:")
@@ -491,19 +472,19 @@ public class RadarChartDataSet extends LineRadarChartDataSet implements IRadarCh
 
     @Generated
     @Selector("setHighlightLineDashPhase:")
-    public native void setHighlightLineDashPhase(@NFloat double value);
+    public native void setHighlightLineDashPhase(double value);
 
     @Generated
     @Selector("setHighlightLineWidth:")
-    public native void setHighlightLineWidth(@NFloat double value);
+    public native void setHighlightLineWidth(double value);
 
     @Generated
     @Selector("setIconsOffset:")
-    public native void setIconsOffset(@ByValue CGPoint value);
+    public native void setIconsOffset(@ByValue apple.coregraphics.struct.CGPoint value);
 
     @Generated
     @Selector("setLineWidth:")
-    public native void setLineWidth(@NFloat double value);
+    public native void setLineWidth(double value);
 
     @Generated
     @Selector("setValueFont:")
@@ -511,7 +492,7 @@ public class RadarChartDataSet extends LineRadarChartDataSet implements IRadarCh
 
     @Generated
     @Selector("setValueFormatter:")
-    public native void setValueFormatter(@Mapped(ObjCObjectMapper.class) IChartValueFormatter value);
+    public native void setValueFormatter(@Mapped(ObjCObjectMapper.class) ChartValueFormatter value);
 
     @Generated
     @Selector("setValueTextColor:")
@@ -540,7 +521,7 @@ public class RadarChartDataSet extends LineRadarChartDataSet implements IRadarCh
     @Generated
     @Selector("valueFormatter")
     @MappedReturn(ObjCObjectMapper.class)
-    public native IChartValueFormatter valueFormatter();
+    public native ChartValueFormatter valueFormatter();
 
     @Generated
     @Selector("valueTextColor")
@@ -548,7 +529,7 @@ public class RadarChartDataSet extends LineRadarChartDataSet implements IRadarCh
 
     @Generated
     @Selector("valueTextColorAt:")
-    public native UIColor valueTextColorAt(@NInt long index);
+    public native UIColor valueTextColorAt(long index);
 
     @Generated
     @Selector("version")
@@ -574,4 +555,12 @@ public class RadarChartDataSet extends LineRadarChartDataSet implements IRadarCh
     @Generated
     @Selector("yMin")
     public native double yMin();
+
+    @Generated
+    @Selector("setValueLabelAngle:")
+    public native void setValueLabelAngle(double value);
+
+    @Generated
+    @Selector("valueLabelAngle")
+    public native double valueLabelAngle();
 }

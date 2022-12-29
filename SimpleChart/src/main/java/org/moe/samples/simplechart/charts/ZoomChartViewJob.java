@@ -48,10 +48,9 @@ public class ZoomChartViewJob extends ChartViewPortJob {
     @Selector("alloc")
     public static native ZoomChartViewJob alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ZoomChartViewJob allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -99,8 +98,8 @@ public class ZoomChartViewJob extends ChartViewPortJob {
     @Generated
     @Selector("initWithViewPortHandler:scaleX:scaleY:xValue:yValue:transformer:axis:view:")
     public native ZoomChartViewJob initWithViewPortHandlerScaleXScaleYXValueYValueTransformerAxisView(
-            ChartViewPortHandler viewPortHandler, @NFloat double scaleX, @NFloat double scaleY, double xValue,
-            double yValue, ChartTransformer transformer, @NInt long axis, ChartViewBase view);
+            ChartViewPortHandler viewPortHandler, double scaleX, double scaleY, double xValue,
+            double yValue, ChartTransformer transformer, long axis, ChartViewBase view);
 
     @Generated
     @Selector("initWithViewPortHandler:xValue:yValue:transformer:view:")
@@ -132,8 +131,7 @@ public class ZoomChartViewJob extends ChartViewPortJob {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ZoomChartViewJob new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

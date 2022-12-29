@@ -39,6 +39,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.samples.simplechart.charts.protocol.CombinedChartDataProvider;
 import org.moe.samples.simplechart.charts.protocol.IChartFillFormatter;
+import org.moe.samples.simplechart.charts.protocol.ChartFillFormatter;
 
 /**
  * This chart class allows the combination of lines, bars, scatter and candle data all displayed in one chart area.
@@ -74,10 +75,9 @@ public class CombinedChartView extends BarLineChartViewBase implements CombinedC
     @Selector("alloc")
     public static native CombinedChartView alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CombinedChartView allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("animateKeyframesWithDuration:delay:options:animations:completion:")
@@ -123,25 +123,21 @@ public class CombinedChartView extends BarLineChartViewBase implements CombinedC
 
     @Generated
     @Selector("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearance();
+    public static native CombinedChartView appearance();
 
     @Generated
     @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
+    public CombinedChartView _appearance() {
         return appearance();
     }
 
     @Generated
     @Selector("appearanceForTraitCollection:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollection(UITraitCollection trait);
+    public static native CombinedChartView appearanceForTraitCollection(UITraitCollection trait);
 
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+    public CombinedChartView _appearanceForTraitCollection(UITraitCollection trait) {
         return appearanceForTraitCollection(trait);
     }
 
@@ -149,29 +145,25 @@ public class CombinedChartView extends BarLineChartViewBase implements CombinedC
     @Variadic()
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+    public static native CombinedChartView appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+    public CombinedChartView _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+    public static native CombinedChartView appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+    public CombinedChartView _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
@@ -180,28 +172,24 @@ public class CombinedChartView extends BarLineChartViewBase implements CombinedC
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(
+    public static native CombinedChartView appearanceWhenContainedIn(
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+    public CombinedChartView _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
             Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+    public static native CombinedChartView appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+    public CombinedChartView _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
@@ -242,7 +230,7 @@ public class CombinedChartView extends BarLineChartViewBase implements CombinedC
     @Generated
     @Selector("centerOffsets")
     @ByValue
-    public native CGPoint centerOffsets();
+    public native apple.coregraphics.struct.CGPoint centerOffsets();
 
     @Generated
     @Selector("chartXMax")
@@ -318,11 +306,11 @@ public class CombinedChartView extends BarLineChartViewBase implements CombinedC
     @Generated
     @Selector("fillFormatter")
     @MappedReturn(ObjCObjectMapper.class)
-    public native IChartFillFormatter fillFormatter();
+    public native ChartFillFormatter fillFormatter();
 
     @Generated
     @Selector("getAxis:")
-    public native ChartYAxis getAxis(@NInt long axis);
+    public native ChartYAxis getAxis(long axis);
 
     /**
      * returns:
@@ -330,11 +318,11 @@ public class CombinedChartView extends BarLineChartViewBase implements CombinedC
      */
     @Generated
     @Selector("getHighlightByTouchPoint:")
-    public native ChartHighlight getHighlightByTouchPoint(@ByValue CGPoint pt);
+    public native ChartHighlight getHighlightByTouchPoint(@ByValue apple.coregraphics.struct.CGPoint pt);
 
     @Generated
     @Selector("getTransformerForAxis:")
-    public native ChartTransformer getTransformerForAxis(@NInt long forAxis);
+    public native ChartTransformer getTransformerForAxis(long forAxis);
 
     @Generated
     @Selector("hash")
@@ -395,7 +383,7 @@ public class CombinedChartView extends BarLineChartViewBase implements CombinedC
 
     @Generated
     @Selector("isInvertedWithAxis:")
-    public native boolean isInvertedWithAxis(@NInt long axis);
+    public native boolean isInvertedWithAxis(long axis);
 
     @Generated
     @Selector("isSubclassOfClass:")
@@ -419,12 +407,10 @@ public class CombinedChartView extends BarLineChartViewBase implements CombinedC
 
     @Generated
     @Selector("maxHighlightDistance")
-    @NFloat
     public native double maxHighlightDistance();
 
     @Generated
     @Selector("maxVisibleCount")
-    @NInt
     public native long maxVisibleCount();
 
     @Generated
@@ -437,8 +423,7 @@ public class CombinedChartView extends BarLineChartViewBase implements CombinedC
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CombinedChartView new_objc();
 
     @Generated
     @Selector("performSystemAnimation:onViews:options:animations:completion:")
@@ -547,7 +532,7 @@ public class CombinedChartView extends BarLineChartViewBase implements CombinedC
 
     @Generated
     @Selector("setFillFormatter:")
-    public native void setFillFormatter(@Mapped(ObjCObjectMapper.class) IChartFillFormatter value);
+    public native void setFillFormatter(@Mapped(ObjCObjectMapper.class) ChartFillFormatter value);
 
     /**
      * Set this to <code>true</code> to make the highlight operation full-bar oriented, <code>false</code> to make it highlight single values

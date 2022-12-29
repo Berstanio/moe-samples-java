@@ -54,10 +54,9 @@ public class ChartTransformer extends NSObject {
     @Selector("alloc")
     public static native ChartTransformer alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ChartTransformer allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -126,18 +125,17 @@ public class ChartTransformer extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ChartTransformer new_objc();
 
     @Generated
     @Selector("pixelForValuesWithX:y:")
     @ByValue
-    public native CGPoint pixelForValuesWithXY(double x, double y);
+    public native apple.coregraphics.struct.CGPoint pixelForValuesWithXY(double x, double y);
 
     @Generated
     @Selector("pixelToValueMatrix")
     @ByValue
-    public native CGAffineTransform pixelToValueMatrix();
+    public native apple.coregraphics.struct.CGAffineTransform pixelToValueMatrix();
 
     /**
      * Prepares the matrix that contains all offsets.
@@ -151,8 +149,8 @@ public class ChartTransformer extends NSObject {
      */
     @Generated
     @Selector("prepareMatrixValuePxWithChartXMin:deltaX:deltaY:chartYMin:")
-    public native void prepareMatrixValuePxWithChartXMinDeltaXDeltaYChartYMin(double chartXMin, @NFloat double deltaX,
-            @NFloat double deltaY, double chartYMin);
+    public native void prepareMatrixValuePxWithChartXMinDeltaXDeltaYChartYMin(double chartXMin, double deltaX,
+            double deltaY, double chartYMin);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -179,7 +177,7 @@ public class ChartTransformer extends NSObject {
     @Generated
     @Selector("valueForTouchPoint:")
     @ByValue
-    public native CGPoint valueForTouchPoint(@ByValue CGPoint point);
+    public native apple.coregraphics.struct.CGPoint valueForTouchPoint(@ByValue apple.coregraphics.struct.CGPoint point);
 
     /**
      * returns:
@@ -190,12 +188,12 @@ public class ChartTransformer extends NSObject {
     @Generated
     @Selector("valueForTouchPointWithX:y:")
     @ByValue
-    public native CGPoint valueForTouchPointWithXY(@NFloat double x, @NFloat double y);
+    public native apple.coregraphics.struct.CGPoint valueForTouchPointWithXY(double x, double y);
 
     @Generated
     @Selector("valueToPixelMatrix")
     @ByValue
-    public native CGAffineTransform valueToPixelMatrix();
+    public native apple.coregraphics.struct.CGAffineTransform valueToPixelMatrix();
 
     @Generated
     @Selector("version")

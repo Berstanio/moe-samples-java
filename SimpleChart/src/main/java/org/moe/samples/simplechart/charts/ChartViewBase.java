@@ -47,6 +47,9 @@ import org.moe.samples.simplechart.charts.protocol.ChartDataProvider;
 import org.moe.samples.simplechart.charts.protocol.ChartViewDelegate;
 import org.moe.samples.simplechart.charts.protocol.IChartHighlighter;
 import org.moe.samples.simplechart.charts.protocol.IChartMarker;
+import org.moe.samples.simplechart.charts.protocol.ChartDataRenderer;
+import org.moe.samples.simplechart.charts.protocol.ChartHighlighter;
+import org.moe.samples.simplechart.charts.protocol.ChartMarker;
 
 @Generated
 @Library("Charts")
@@ -87,10 +90,9 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
     @Selector("alloc")
     public static native ChartViewBase alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ChartViewBase allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("animateKeyframesWithDuration:delay:options:animations:completion:")
@@ -171,7 +173,7 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
      */
     @Generated
     @Selector("animateWithXAxisDuration:easingOption:")
-    public native void animateWithXAxisDurationEasingOption(double xAxisDuration, @NInt long easingOption);
+    public native void animateWithXAxisDurationEasingOption(double xAxisDuration, long easingOption);
 
     /**
      * Animates the drawing / rendering of the chart on both x- and y-axis with the specified animation time.
@@ -219,7 +221,7 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
     @Generated
     @Selector("animateWithXAxisDuration:yAxisDuration:easingOption:")
     public native void animateWithXAxisDurationYAxisDurationEasingOption(double xAxisDuration, double yAxisDuration,
-            @NInt long easingOption);
+            long easingOption);
 
     /**
      * Animates the drawing / rendering of the chart on both x- and y-axis with the specified animation time.
@@ -235,7 +237,7 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
     @Generated
     @Selector("animateWithXAxisDuration:yAxisDuration:easingOptionX:easingOptionY:")
     public native void animateWithXAxisDurationYAxisDurationEasingOptionXEasingOptionY(double xAxisDuration,
-            double yAxisDuration, @NInt long easingOptionX, @NInt long easingOptionY);
+            double yAxisDuration, long easingOptionX, long easingOptionY);
 
     /**
      * Animates the drawing / rendering of the chart on both x- and y-axis with the specified animation time.
@@ -307,7 +309,7 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
      */
     @Generated
     @Selector("animateWithYAxisDuration:easingOption:")
-    public native void animateWithYAxisDurationEasingOption(double yAxisDuration, @NInt long easingOption);
+    public native void animateWithYAxisDurationEasingOption(double yAxisDuration, long easingOption);
 
     @Generated
     @Selector("animatorStopped:")
@@ -319,25 +321,21 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
 
     @Generated
     @Selector("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearance();
+    public static native ChartViewBase appearance();
 
     @Generated
     @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
+    public ChartViewBase _appearance() {
         return appearance();
     }
 
     @Generated
     @Selector("appearanceForTraitCollection:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollection(UITraitCollection trait);
+    public static native ChartViewBase appearanceForTraitCollection(UITraitCollection trait);
 
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+    public ChartViewBase _appearanceForTraitCollection(UITraitCollection trait) {
         return appearanceForTraitCollection(trait);
     }
 
@@ -345,29 +343,25 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
     @Variadic()
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+    public static native ChartViewBase appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+    public ChartViewBase _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+    public static native ChartViewBase appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+    public ChartViewBase _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
@@ -376,28 +370,24 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(
+    public static native ChartViewBase appearanceWhenContainedIn(
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+    public ChartViewBase _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
             Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+    public static native ChartViewBase appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+    public ChartViewBase _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
@@ -426,7 +416,7 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
     @Generated
     @Selector("centerOffsets")
     @ByValue
-    public native CGPoint centerOffsets();
+    public native apple.coregraphics.struct.CGPoint centerOffsets();
 
     /**
      * The animator responsible for animating chart values.
@@ -437,7 +427,6 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
 
     /**
      * The <code>Description</code> object of the chart.
-     * This should have been called just “description”, but
      */
     @Generated
     @Selector("chartDescription")
@@ -499,7 +488,7 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
     @Generated
     @Selector("contentRect")
     @ByValue
-    public native CGRect contentRect();
+    public native apple.coregraphics.struct.CGRect contentRect();
 
     @Generated
     @Selector("data")
@@ -531,11 +520,9 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
     /**
      * Deceleration friction coefficient in [0 ; 1] interval, higher values indicate that speed will decrease slowly, for example if it set to 0, it will stop immediately.
      * 1 is an invalid value, and will be converted to 0.999 automatically.
-     * <em>default</em>: true
      */
     @Generated
     @Selector("dragDecelerationFrictionCoef")
-    @NFloat
     public native double dragDecelerationFrictionCoef();
 
     /**
@@ -548,14 +535,13 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
 
     @Generated
     @Selector("drawRect:")
-    public native void drawRect(@ByValue CGRect rect);
+    public native void drawRect(@ByValue apple.coregraphics.struct.CGRect rect);
 
     /**
      * An extra offset to be appended to the viewport’s bottom
      */
     @Generated
     @Selector("extraBottomOffset")
-    @NFloat
     public native double extraBottomOffset();
 
     /**
@@ -563,7 +549,6 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
      */
     @Generated
     @Selector("extraLeftOffset")
-    @NFloat
     public native double extraLeftOffset();
 
     /**
@@ -571,7 +556,6 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
      */
     @Generated
     @Selector("extraRightOffset")
-    @NFloat
     public native double extraRightOffset();
 
     /**
@@ -579,7 +563,6 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
      */
     @Generated
     @Selector("extraTopOffset")
-    @NFloat
     public native double extraTopOffset();
 
     /**
@@ -598,7 +581,7 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
      */
     @Generated
     @Selector("getHighlightByTouchPoint:")
-    public native ChartHighlight getHighlightByTouchPoint(@ByValue CGPoint pt);
+    public native ChartHighlight getHighlightByTouchPoint(@ByValue apple.coregraphics.struct.CGPoint pt);
 
     /**
      * returns:
@@ -607,7 +590,7 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
     @Generated
     @Selector("getMarkerPositionWithHighlight:")
     @ByValue
-    public native CGPoint getMarkerPositionWithHighlight(ChartHighlight highlight);
+    public native apple.coregraphics.struct.CGPoint getMarkerPositionWithHighlight(ChartHighlight highlight);
 
     @Generated
     @Selector("hash")
@@ -651,7 +634,7 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
      */
     @Generated
     @Selector("highlightValueWithX:dataSetIndex:dataIndex:")
-    public native void highlightValueWithXDataSetIndexDataIndex(double x, @NInt long dataSetIndex, @NInt long dataIndex);
+    public native void highlightValueWithXDataSetIndexDataIndex(double x, long dataSetIndex, long dataIndex);
 
     /**
      * Highlights any y-value at the given x-value in the given DataSet.
@@ -666,8 +649,8 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
      */
     @Generated
     @Selector("highlightValueWithX:dataSetIndex:dataIndex:callDelegate:")
-    public native void highlightValueWithXDataSetIndexDataIndexCallDelegate(double x, @NInt long dataSetIndex,
-            @NInt long dataIndex, boolean callDelegate);
+    public native void highlightValueWithXDataSetIndexDataIndexCallDelegate(double x, long dataSetIndex,
+            long dataIndex, boolean callDelegate);
 
     /**
      * Highlights the value at the given x-value and y-value in the given DataSet.
@@ -683,8 +666,8 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
      */
     @Generated
     @Selector("highlightValueWithX:y:dataSetIndex:dataIndex:")
-    public native void highlightValueWithXYDataSetIndexDataIndex(double x, double y, @NInt long dataSetIndex,
-            @NInt long dataIndex);
+    public native void highlightValueWithXYDataSetIndexDataIndex(double x, double y, long dataSetIndex,
+            long dataIndex);
 
     /**
      * Highlights the value at the given x-value and y-value in the given DataSet.
@@ -702,7 +685,7 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
     @Generated
     @Selector("highlightValueWithX:y:dataSetIndex:dataIndex:callDelegate:")
     public native void highlightValueWithXYDataSetIndexDataIndexCallDelegate(double x, double y,
-            @NInt long dataSetIndex, @NInt long dataIndex, boolean callDelegate);
+            long dataSetIndex, long dataIndex, boolean callDelegate);
 
     /**
      * Highlights the values at the given indices in the given DataSets. Provide
@@ -724,7 +707,7 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
     @Generated
     @Selector("highlighter")
     @MappedReturn(ObjCObjectMapper.class)
-    public native IChartHighlighter highlighter();
+    public native ChartHighlighter highlighter();
 
     @Generated
     @Selector("inheritedAnimationDuration")
@@ -740,7 +723,7 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
 
     @Generated
     @Selector("initWithFrame:")
-    public native ChartViewBase initWithFrame(@ByValue CGRect frame);
+    public native ChartViewBase initWithFrame(@ByValue apple.coregraphics.struct.CGRect frame);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -807,7 +790,7 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
     public static native Class layerClass();
 
     /**
-     * The Legend object of the chart. This method can be used to get an instance of the legend in order to customize the automatically generated Legend.
+     * The legend object containing all data associated with the legend
      */
     @Generated
     @Selector("legend")
@@ -826,16 +809,14 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
     @Generated
     @Selector("marker")
     @MappedReturn(ObjCObjectMapper.class)
-    public native IChartMarker marker();
+    public native ChartMarker marker();
 
     @Generated
     @Selector("maxHighlightDistance")
-    @NFloat
     public native double maxHighlightDistance();
 
     @Generated
     @Selector("maxVisibleCount")
-    @NInt
     public native long maxVisibleCount();
 
     /**
@@ -846,7 +827,7 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
     @Generated
     @Selector("midPoint")
     @ByValue
-    public native CGPoint midPoint();
+    public native apple.coregraphics.struct.CGPoint midPoint();
 
     @Generated
     @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
@@ -858,8 +839,7 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ChartViewBase new_objc();
 
     /**
      * Font to be used for the no data text.
@@ -880,7 +860,6 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
      */
     @Generated
     @Selector("noDataTextAlignment")
-    @NInt
     public native long noDataTextAlignment();
 
     /**
@@ -940,9 +919,9 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
     /**
      * object responsible for rendering the data
      */
-    @Generated
+    @MappedReturn(ObjCObjectMapper.class) @Generated
     @Selector("renderer")
-    public native ChartDataRendererBase renderer();
+    public native ChartDataRenderer renderer();
 
     @Generated
     @Selector("requiresConstraintBasedLayout")
@@ -1006,14 +985,13 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
 
     /**
      * The <code>Description</code> object of the chart.
-     * This should have been called just “description”, but
      */
     @Generated
     @Selector("setChartDescription:")
     public native void setChartDescription(ChartDescription value);
 
     /**
-     * The data for the chart
+     * object that holds all data that was originally set for the chart, before it was modified or any filtering algorithms had been applied
      */
     @Generated
     @Selector("setData:")
@@ -1051,11 +1029,10 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
     /**
      * Deceleration friction coefficient in [0 ; 1] interval, higher values indicate that speed will decrease slowly, for example if it set to 0, it will stop immediately.
      * 1 is an invalid value, and will be converted to 0.999 automatically.
-     * <em>default</em>: true
      */
     @Generated
     @Selector("setDragDecelerationFrictionCoef:")
-    public native void setDragDecelerationFrictionCoef(@NFloat double value);
+    public native void setDragDecelerationFrictionCoef(double value);
 
     /**
      * <code>true</code> if drawing the marker is enabled when tapping on values
@@ -1070,33 +1047,33 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
      */
     @Generated
     @Selector("setExtraBottomOffset:")
-    public native void setExtraBottomOffset(@NFloat double value);
+    public native void setExtraBottomOffset(double value);
 
     /**
      * An extra offset to be appended to the viewport’s left
      */
     @Generated
     @Selector("setExtraLeftOffset:")
-    public native void setExtraLeftOffset(@NFloat double value);
+    public native void setExtraLeftOffset(double value);
 
     @Generated
     @Selector("setExtraOffsetsWithLeft:top:right:bottom:")
-    public native void setExtraOffsetsWithLeftTopRightBottom(@NFloat double left, @NFloat double top,
-            @NFloat double right, @NFloat double bottom);
+    public native void setExtraOffsetsWithLeftTopRightBottom(double left, double top,
+            double right, double bottom);
 
     /**
      * An extra offset to be appended to the viewport’s right
      */
     @Generated
     @Selector("setExtraRightOffset:")
-    public native void setExtraRightOffset(@NFloat double value);
+    public native void setExtraRightOffset(double value);
 
     /**
      * An extra offset to be appended to the viewport’s top
      */
     @Generated
     @Selector("setExtraTopOffset:")
-    public native void setExtraTopOffset(@NFloat double value);
+    public native void setExtraTopOffset(double value);
 
     /**
      * Set this to false to prevent values from being highlighted by tap gesture.
@@ -1109,7 +1086,7 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
 
     @Generated
     @Selector("setHighlighter:")
-    public native void setHighlighter(@Mapped(ObjCObjectMapper.class) IChartHighlighter value);
+    public native void setHighlighter(@Mapped(ObjCObjectMapper.class) ChartHighlighter value);
 
     /**
      * The last value that was highlighted via touch.
@@ -1123,7 +1100,7 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
      */
     @Generated
     @Selector("setMarker:")
-    public native void setMarker(@Mapped(ObjCObjectMapper.class) IChartMarker value);
+    public native void setMarker(@Mapped(ObjCObjectMapper.class) ChartMarker value);
 
     /**
      * The maximum distance in screen pixels away from an entry causing it to highlight.
@@ -1131,7 +1108,7 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
      */
     @Generated
     @Selector("setMaxHighlightDistance:")
-    public native void setMaxHighlightDistance(@NFloat double value);
+    public native void setMaxHighlightDistance(double value);
 
     /**
      * Font to be used for the no data text.
@@ -1152,7 +1129,7 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
      */
     @Generated
     @Selector("setNoDataTextAlignment:")
-    public native void setNoDataTextAlignment(@NInt long value);
+    public native void setNoDataTextAlignment(long value);
 
     /**
      * color of the no data text
@@ -1166,7 +1143,7 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
      */
     @Generated
     @Selector("setRenderer:")
-    public native void setRenderer(ChartDataRendererBase value);
+    public native void setRenderer(@Mapped(ObjCObjectMapper.class) ChartDataRenderer value);
 
     @Generated
     @Selector("setVersion:")
@@ -1221,7 +1198,6 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
     public static native long version_static();
 
     /**
-     * returns:
      * The ViewPortHandler of the chart that is responsible for the
      * content area of the chart and its offsets and dimensions.
      */
@@ -1230,10 +1206,7 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
     public native ChartViewPortHandler viewPortHandler();
 
     /**
-     * returns:
-     * The object representing all x-labels, this method can be used to
-     * acquire the XAxis object and modify it (e.g. change the position of the
-     * labels)
+     * The object representing the labels on the x-axis
      */
     @Generated
     @Selector("xAxis")
@@ -1242,4 +1215,11 @@ public class ChartViewBase extends NSUIView implements ChartAnimatorDelegate, Ch
     @Generated
     @Selector("xRange")
     public native double xRange();
+
+    /**
+     * The renderer object responsible for rendering / drawing the Legend.
+     */
+    @Generated
+    @Selector("setLegendRenderer:")
+    public native void setLegendRenderer(ChartLegendRenderer value);
 }

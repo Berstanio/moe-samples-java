@@ -50,10 +50,9 @@ public class ChartLegendEntry extends NSObject {
     @Selector("alloc")
     public static native ChartLegendEntry alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ChartLegendEntry allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -93,7 +92,6 @@ public class ChartLegendEntry extends NSObject {
      */
     @Generated
     @Selector("form")
-    @NInt
     public native long form();
 
     /**
@@ -121,7 +119,6 @@ public class ChartLegendEntry extends NSObject {
      */
     @Generated
     @Selector("formLineDashPhase")
-    @NFloat
     public native double formLineDashPhase();
 
     /**
@@ -130,7 +127,6 @@ public class ChartLegendEntry extends NSObject {
      */
     @Generated
     @Selector("formLineWidth")
-    @NFloat
     public native double formLineWidth();
 
     /**
@@ -139,7 +135,6 @@ public class ChartLegendEntry extends NSObject {
      */
     @Generated
     @Selector("formSize")
-    @NFloat
     public native double formSize();
 
     @Generated
@@ -150,28 +145,6 @@ public class ChartLegendEntry extends NSObject {
     @Generated
     @Selector("init")
     public native ChartLegendEntry init();
-
-    /**
-     * \param label The legend entry text.
-     * A <code>nil</code> label will start a group.
-     * 
-     * \param form The form to draw for this entry.
-     * 
-     * \param formSize Set to NaN to use the legend’s default.
-     * 
-     * \param formLineWidth Set to NaN to use the legend’s default.
-     * 
-     * \param formLineDashPhase Line dash configuration.
-     * 
-     * \param formLineDashLengths Line dash configurationas NaN to use the legend’s default.
-     * 
-     * \param formColor The color for drawing the form.
-     */
-    @Generated
-    @Selector("initWithLabel:form:formSize:formLineWidth:formLineDashPhase:formLineDashLengths:formColor:")
-    public native ChartLegendEntry initWithLabelFormFormSizeFormLineWidthFormLineDashPhaseFormLineDashLengthsFormColor(
-            String label, @NInt long form, @NFloat double formSize, @NFloat double formLineWidth,
-            @NFloat double formLineDashPhase, NSArray<? extends NSNumber> formLineDashLengths, UIColor formColor);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -205,8 +178,7 @@ public class ChartLegendEntry extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ChartLegendEntry new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -224,7 +196,7 @@ public class ChartLegendEntry extends NSObject {
      */
     @Generated
     @Selector("setForm:")
-    public native void setForm(@NInt long value);
+    public native void setForm(long value);
 
     /**
      * The color for drawing the form
@@ -251,7 +223,7 @@ public class ChartLegendEntry extends NSObject {
      */
     @Generated
     @Selector("setFormLineDashPhase:")
-    public native void setFormLineDashPhase(@NFloat double value);
+    public native void setFormLineDashPhase(double value);
 
     /**
      * Line width used for shapes that consist of lines.
@@ -259,7 +231,7 @@ public class ChartLegendEntry extends NSObject {
      */
     @Generated
     @Selector("setFormLineWidth:")
-    public native void setFormLineWidth(@NFloat double value);
+    public native void setFormLineWidth(double value);
 
     /**
      * Form size will be considered except for when .None is used
@@ -267,7 +239,7 @@ public class ChartLegendEntry extends NSObject {
      */
     @Generated
     @Selector("setFormSize:")
-    public native void setFormSize(@NFloat double value);
+    public native void setFormSize(double value);
 
     /**
      * The legend entry text.
@@ -289,4 +261,26 @@ public class ChartLegendEntry extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * \param label The legend entry text.
+     * A <code>nil</code> label will start a group.
+     */
+    @Generated
+    @Selector("initWithLabel:")
+    public native ChartLegendEntry initWithLabel(String label);
+
+    /**
+     * The color for drawing the label
+     */
+    @Generated
+    @Selector("labelColor")
+    public native UIColor labelColor();
+
+    /**
+     * The color for drawing the label
+     */
+    @Generated
+    @Selector("setLabelColor:")
+    public native void setLabelColor(UIColor value);
 }

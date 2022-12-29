@@ -27,6 +27,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.samples.simplechart.charts.protocol.IScatterChartDataSet;
 import org.moe.samples.simplechart.charts.protocol.ScatterChartDataProvider;
+import org.moe.samples.simplechart.charts.protocol.ScatterChartDataSetProtocol;
 
 @Generated
 @Library("Charts")
@@ -52,10 +53,9 @@ public class ScatterChartRenderer extends LineScatterCandleRadarChartRenderer {
     @Selector("alloc")
     public static native ScatterChartRenderer alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ScatterChartRenderer allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -95,7 +95,7 @@ public class ScatterChartRenderer extends LineScatterCandleRadarChartRenderer {
     @Generated
     @Selector("drawDataSetWithContext:dataSet:")
     public native void drawDataSetWithContextDataSet(CGContextRef context,
-            @Mapped(ObjCObjectMapper.class) IScatterChartDataSet dataSet);
+            @Mapped(ObjCObjectMapper.class) ScatterChartDataSetProtocol dataSet);
 
     @Generated
     @Selector("drawDataWithContext:")
@@ -127,19 +127,10 @@ public class ScatterChartRenderer extends LineScatterCandleRadarChartRenderer {
     public native void initBuffers();
 
     @Generated
-    @Selector("initWithAnimator:viewPortHandler:")
-    public native ScatterChartRenderer initWithAnimatorViewPortHandler(ChartAnimator animator,
-            ChartViewPortHandler viewPortHandler);
-
-    @Generated
     @Selector("initWithDataProvider:animator:viewPortHandler:")
     public native ScatterChartRenderer initWithDataProviderAnimatorViewPortHandler(
             @Mapped(ObjCObjectMapper.class) ScatterChartDataProvider dataProvider, ChartAnimator animator,
             ChartViewPortHandler viewPortHandler);
-
-    @Generated
-    @Selector("initWithViewPortHandler:")
-    public native ScatterChartRenderer initWithViewPortHandler(ChartViewPortHandler viewPortHandler);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -165,8 +156,7 @@ public class ScatterChartRenderer extends LineScatterCandleRadarChartRenderer {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ScatterChartRenderer new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

@@ -29,12 +29,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.samples.simplechart.charts.protocol.IChartMarker;
+import org.moe.samples.simplechart.charts.protocol.ChartMarker;
 
 @Generated
 @Library("Charts")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class ChartMarkerImage extends NSObject implements IChartMarker {
+public class ChartMarkerImage extends NSObject implements ChartMarker {
     static {
         NatJ.register();
     }
@@ -53,10 +54,9 @@ public class ChartMarkerImage extends NSObject implements IChartMarker {
     @Selector("alloc")
     public static native ChartMarkerImage alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ChartMarkerImage allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -94,7 +94,7 @@ public class ChartMarkerImage extends NSObject implements IChartMarker {
 
     @Generated
     @Selector("drawWithContext:point:")
-    public native void drawWithContextPoint(CGContextRef context, @ByValue CGPoint point);
+    public native void drawWithContextPoint(CGContextRef context, @ByValue apple.coregraphics.struct.CGPoint point);
 
     @Generated
     @Selector("hash")
@@ -136,18 +136,17 @@ public class ChartMarkerImage extends NSObject implements IChartMarker {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ChartMarkerImage new_objc();
 
     @Generated
     @Selector("offset")
     @ByValue
-    public native CGPoint offset();
+    public native apple.coregraphics.struct.CGPoint offset();
 
     @Generated
     @Selector("offsetForDrawingAtPoint:")
     @ByValue
-    public native CGPoint offsetForDrawingAtPoint(@ByValue CGPoint point);
+    public native apple.coregraphics.struct.CGPoint offsetForDrawingAtPoint(@ByValue apple.coregraphics.struct.CGPoint point);
 
     @Generated
     @Selector("refreshContentWithEntry:highlight:")
@@ -186,14 +185,14 @@ public class ChartMarkerImage extends NSObject implements IChartMarker {
 
     @Generated
     @Selector("setOffset:")
-    public native void setOffset(@ByValue CGPoint value);
+    public native void setOffset(@ByValue apple.coregraphics.struct.CGPoint value);
 
     /**
      * As long as size is 0.0/0.0 - it will default to the image’s size
      */
     @Generated
     @Selector("setSize:")
-    public native void setSize(@ByValue CGSize value);
+    public native void setSize(@ByValue apple.coregraphics.struct.CGSize value);
 
     @Generated
     @Selector("setVersion:")
@@ -205,7 +204,7 @@ public class ChartMarkerImage extends NSObject implements IChartMarker {
     @Generated
     @Selector("size")
     @ByValue
-    public native CGSize size();
+    public native apple.coregraphics.struct.CGSize size();
 
     @Generated
     @Selector("superclass")

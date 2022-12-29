@@ -47,10 +47,9 @@ public class ChartRange extends NSObject {
     @Selector("alloc")
     public static native ChartRange alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ChartRange allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -142,8 +141,7 @@ public class ChartRange extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ChartRange new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

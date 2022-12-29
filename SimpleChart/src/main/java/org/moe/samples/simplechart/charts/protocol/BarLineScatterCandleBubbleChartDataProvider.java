@@ -19,7 +19,7 @@ import org.moe.samples.simplechart.charts.ChartTransformer;
 public interface BarLineScatterCandleBubbleChartDataProvider extends ChartDataProvider {
     @Generated
     @Selector("getTransformerForAxis:")
-    ChartTransformer getTransformerForAxis(@NInt long forAxis);
+    ChartTransformer getTransformerForAxis(long forAxis);
 
     @Generated
     @Selector("highestVisibleX")
@@ -27,7 +27,7 @@ public interface BarLineScatterCandleBubbleChartDataProvider extends ChartDataPr
 
     @Generated
     @Selector("isInvertedWithAxis:")
-    boolean isInvertedWithAxis(@NInt long axis);
+    boolean isInvertedWithAxis(long axis);
 
     @Generated
     @Selector("lowestVisibleX")

@@ -33,7 +33,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Charts")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class ChartYAxisRenderer extends ChartAxisRendererBase {
+public class ChartYAxisRenderer extends NSObject {
     static {
         NatJ.register();
     }
@@ -52,10 +52,9 @@ public class ChartYAxisRenderer extends ChartAxisRendererBase {
     @Selector("alloc")
     public static native ChartYAxisRenderer alloc();
 
-    @Generated
+    @Owned @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ChartYAxisRenderer allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -89,7 +88,7 @@ public class ChartYAxisRenderer extends ChartAxisRendererBase {
 
     @Generated
     @Selector("drawGridLineWithContext:position:")
-    public native void drawGridLineWithContextPosition(CGContextRef context, @ByValue CGPoint position);
+    public native void drawGridLineWithContextPosition(CGContextRef context, @ByValue apple.coregraphics.struct.CGPoint position);
 
     /**
      * Draws the zero line at the specified position.
@@ -101,7 +100,7 @@ public class ChartYAxisRenderer extends ChartAxisRendererBase {
     @Generated
     @Selector("gridClippingRect")
     @ByValue
-    public native CGRect gridClippingRect();
+    public native apple.coregraphics.struct.CGRect gridClippingRect();
 
     @Generated
     @Selector("hash")
@@ -111,20 +110,6 @@ public class ChartYAxisRenderer extends ChartAxisRendererBase {
     @Generated
     @Selector("init")
     public native ChartYAxisRenderer init();
-
-    @Generated
-    @Selector("initWithViewPortHandler:")
-    public native ChartYAxisRenderer initWithViewPortHandler(ChartViewPortHandler viewPortHandler);
-
-    @Generated
-    @Selector("initWithViewPortHandler:transformer:axis:")
-    public native ChartYAxisRenderer initWithViewPortHandlerTransformerAxis(ChartViewPortHandler viewPortHandler,
-            ChartTransformer transformer, ChartAxisBase axis);
-
-    @Generated
-    @Selector("initWithViewPortHandler:yAxis:transformer:")
-    public native ChartYAxisRenderer initWithViewPortHandlerYAxisTransformer(ChartViewPortHandler viewPortHandler,
-            ChartYAxis yAxis, ChartTransformer transformer);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -150,27 +135,7 @@ public class ChartYAxisRenderer extends ChartAxisRendererBase {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    /**
-     * draws the y-axis labels to the screen
-     */
-    @Generated
-    @Selector("renderAxisLabelsWithContext:")
-    public native void renderAxisLabelsWithContext(CGContextRef context);
-
-    @Generated
-    @Selector("renderAxisLineWithContext:")
-    public native void renderAxisLineWithContext(CGContextRef context);
-
-    @Generated
-    @Selector("renderGridLinesWithContext:")
-    public native void renderGridLinesWithContext(CGContextRef context);
-
-    @Generated
-    @Selector("renderLimitLinesWithContext:")
-    public native void renderLimitLinesWithContext(CGContextRef context);
+    public static native ChartYAxisRenderer new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -196,4 +161,29 @@ public class ChartYAxisRenderer extends ChartAxisRendererBase {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("axis")
+    public native ChartYAxis axis();
+
+    @Generated
+    @Selector("computeAxisValuesWithMin:max:")
+    public native void computeAxisValuesWithMinMax(double min, double max);
+
+    @Generated
+    @Selector("computeAxisWithMin:max:inverted:")
+    public native void computeAxisWithMinMaxInverted(double min, double max, boolean inverted);
+
+    @Generated
+    @Selector("initWithViewPortHandler:axis:transformer:")
+    public native ChartYAxisRenderer initWithViewPortHandlerAxisTransformer(ChartViewPortHandler viewPortHandler,
+            ChartYAxis axis, ChartTransformer transformer);
+
+    @Generated
+    @Selector("transformer")
+    public native ChartTransformer transformer();
+
+    @Generated
+    @Selector("viewPortHandler")
+    public native ChartViewPortHandler viewPortHandler();
 }
